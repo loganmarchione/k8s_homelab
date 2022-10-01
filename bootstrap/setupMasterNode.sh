@@ -35,20 +35,27 @@ installPackages() {
 installK3s() {
   message "STATE: Detecting K3s..."
   if [[ -x "$(command -v /usr/local/bin/k3s)" ]]; then
-    message "STATE: K3s is already installed, do you want to install it again?"
-    read -p "Continue (y/n)?" CONT
-    if [ "$CONT" = "y" ]; then
-      echo "yaaa";
-      exit 1
-      message "Installing K3s"
-      curl -sfL https://get.k3s.io | sh -s - server --cluster-init --tls-san $(hostname --fqdn) --disable servicelb
-      #   sleep 10
-    elif [ "$CONT" = "n" ]; then
-      exit 1
+    message "STATE: K3s is already installed"
+    read -p "Do you wish to install it again? (y/n) " yn
+    if [[ $yn =~ ^[Yy]$ ]]; then
+      :
     else
-      exit 1
+      message "STATE: Exiting"
+      exit 0
     fi
   fi
+
+  message "STATE: Installing K3s"
+  curl -sfL https://get.k3s.io | sh -s - server --cluster-init --tls-san $(hostname --fqdn) --disable servicelb
+
+  message "STATE: Waiting for K3s to start"
+  sleep 15
+
+  message "STATE: Copying your kubeconfig file"
+  mkdir -p $HOME/.kube
+  sudo cp /etc/rancher/k3s/k3s.yaml $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  export KUBECONFIG=~/.kube/config
 
   message "STATE: Getting cluster info"
   kubectl cluster-info
@@ -57,9 +64,9 @@ installK3s() {
   kubectl get nodes -o wide
 
   message "STATE: Contents of your kubeconfig file are below (copy/paste this for later)"
-  cat /etc/rancher/k3s/k3s.yaml
+  cat $HOME/.kube/config 
 
-  if [[ -x "$(command -v ufw)" ]]; then
+  if [[ -x "$(command -v /usr/sbin/ufw)" ]]; then
     message "STATE: UFW is installed, opening 6443/tcp"
     sudo ufw allow 6443/tcp
     sudo ufw reload
