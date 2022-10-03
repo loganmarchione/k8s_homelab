@@ -80,10 +80,17 @@ installArgoCD() {
   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 }
 
+installCertManager() {
+  message "STATE: Installing cert-manager"
+
+  kubectl apply -f cert-manager-namespace.yaml
+}
+
 userCheck
 installPackages
 installK3s
 installHelm
 installArgoCD
+installCertManager
 
 message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
