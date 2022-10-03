@@ -28,7 +28,7 @@ userCheck() {
 installPackages() {
   message "STATE: Updating system and installing packages"
   sudo apt update && sudo apt upgrade -y
-  sudo apt install -y curl
+  sudo apt install -y curl open-iscsi
   sudo apt autoremove -y
 }
 
@@ -76,7 +76,7 @@ installHelm() {
 installArgoCD() {
   message "STATE: Installing ArgoCD"
 
-  kubectl create namespace argocd --dry-run=client -o yaml | kubectl apply -f -
+  kubectl apply -f argocd-namespace.yaml
   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 }
 
