@@ -82,18 +82,8 @@ installArgoCD() {
 
 userCheck
 installPackages
+installK3s
+installHelm
+installArgoCD
 
- message "STATE: Detecting K3s..."
- if [[ -x "$(command -v /usr/local/bin/k3s)" ]]; then
-   message "STATE: K3s is already installed"
-   read -p "Do you wish to install it again? (y/n) " yn
-   if [[ $yn =~ ^[Yy]$ ]]; then
-     installK3s
-     installHelm
-     installArgoCD
-     message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
-   else
-     message "STATE: Exiting"
-     exit 0
-   fi
- fi
+message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
