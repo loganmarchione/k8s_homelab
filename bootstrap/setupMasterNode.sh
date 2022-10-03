@@ -55,7 +55,8 @@ installK3s() {
   mkdir -p $HOME/.kube
   sudo cp /etc/rancher/k3s/k3s.yaml $HOME/.kube/config
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
-  export KUBECONFIG=~/.kube/config
+  sed -i -e "s/127.0.0.1/$(hostname --fqdn)/g" $HOME/.kube/config
+  export KUBECONFIG=$HOME/.kube/config
 
   message "STATE: Getting cluster info"
   kubectl cluster-info
@@ -63,7 +64,7 @@ installK3s() {
   message "STATE: Getting nodes"
   kubectl get nodes -o wide
 
-  message "STATE: Contents of your kubeconfig file are below (copy/paste this for later)"
+  message "STATE: Contents of $HOME/.kube/config file are below (copy/paste this for later)"
   cat $HOME/.kube/config 
 
   if [[ -x "$(command -v /usr/sbin/ufw)" ]]; then
@@ -80,4 +81,4 @@ userCheck
 installPackages
 installK3s 
 
-message "STATE: Completed"
+message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
