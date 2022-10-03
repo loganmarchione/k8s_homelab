@@ -33,20 +33,8 @@ installPackages() {
 }
 
 installK3s() {
-  message "STATE: Detecting K3s..."
-  if [[ -x "$(command -v /usr/local/bin/k3s)" ]]; then
-    message "STATE: K3s is already installed"
-    read -p "Do you wish to install it again? (y/n) " yn
-    if [[ $yn =~ ^[Yy]$ ]]; then
-      :
-    else
-      message "STATE: Exiting"
-      exit 0
-    fi
-  fi
-
   message "STATE: Installing K3s"
-  curl -sfL https://get.k3s.io | sh -s - server --cluster-init --tls-san $(hostname --fqdn) --disable servicelb
+  curl -sfL https://get.k3s.io | sh -s - server --cluster-init --tls-san $(hostname --fqdn)
 
   message "STATE: Waiting for K3s to start"
   sleep 15
@@ -76,9 +64,36 @@ installK3s() {
   fi
 }
 
+installHelm() {
+  message "STATE: Installing Helm"
+
+  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+  chmod 700 get_helm.sh
+  ./get_helm.sh
+  rm get_helm.sh
+}
+
+installArgoCD() {
+  message "STATE: Installing ArgoCD"
+
+  kubectl create namespace argocd --dry-run=client -o yaml | kubectl apply -f -
+  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+}
 
 userCheck
 installPackages
-installK3s 
 
-message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
+ message "STATE: Detecting K3s..."
+ if [[ -x "$(command -v /usr/local/bin/k3s)" ]]; then
+   message "STATE: K3s is already installed"
+   read -p "Do you wish to install it again? (y/n) " yn
+   if [[ $yn =~ ^[Yy]$ ]]; then
+     installK3s
+     installHelm
+     installArgoCD
+     message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
+   else
+     message "STATE: Exiting"
+     exit 0
+   fi
+ fi
