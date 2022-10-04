@@ -101,17 +101,11 @@ installCertManager() {
   kubectl apply -f cert-manager-namespace.yaml
 }
 
-installApps() {
-  message "STATE: Installing apps"
-  cat ../apps/whoami/whoami.yaml | envsubst | kubectl apply -f -
-}
-
 userCheck
 installPackages
 installK3s
 installHelm
 installArgoCD
 installCertManager
-installApps
 
 message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
