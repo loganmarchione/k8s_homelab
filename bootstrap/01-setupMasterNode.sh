@@ -98,11 +98,11 @@ installArgoCD() {
 
 installCertManager() {
   message "STATE: Installing cert-manager"
-
   kubectl apply -f cert-manager-namespace.yaml
 }
 
 installApps() {
+  message "STATE: Installing apps"
   cat ../apps/whoami/whoami.yaml | envsubst | kubectl apply -f -
 }
 
