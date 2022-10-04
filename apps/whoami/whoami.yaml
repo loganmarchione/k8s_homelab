@@ -25,8 +25,7 @@ spec:
         - name: whoami
           image: traefik/whoami:v1.8.0
           ports:
-            - name: whoami
-              containerPort: 80
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -44,21 +43,22 @@ spec:
   selector:
     app: whoami
 ---
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: whoami-ir
+  name: whoami-ingress
   namespace: k3s-test
-  labels:
-    ingressroute: whoami
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
-  entryPoints:
-    - websecure
-  routes:
-    - kind: Rule
-      match: Host(`whoami.${DOMAIN_NAME}`)
-      services:
-        - name: whoami-svc
-          port: 80
-  tls:
-    certResolver: default
+  rules:
+    - host: whoami.${DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: whoami-svc
+                port:
+                  number: 80
