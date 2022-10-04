@@ -77,7 +77,7 @@ installArgoCD() {
 
   kubectl apply -f argocd-namespace.yaml
   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-  sleep 5
+  sleep 15
 
   message "STATE: ArgoCD password is below"
   kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
@@ -86,7 +86,7 @@ installArgoCD() {
   cat argocd-ingress.yaml | envsubst | kubectl apply -f -
   kubectl patch deployment -n argocd argocd-server --patch-file argocd-no-tls.yaml
 
-  message "STATE: ArgoCD webUI is available at:   https://argocd.$DOMAIN_NAME"
+  message "STATE: ArgoCD webUI is available at:   https://argocd.${DOMAIN_NAME}"
 }
 
 installCertManager() {
