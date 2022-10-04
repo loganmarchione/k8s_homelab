@@ -79,14 +79,21 @@ installArgoCD() {
   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
   sleep 15
 
-  message "STATE: ArgoCD password is below"
-  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+  message "STATE: Installing ArgoCD CLI tool"
+  sudo curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+  sudo chmod +x /usr/local/bin/argocd
 
   message "STATE: Setting up ArgoCD Traefik IngressRoute"
   cat argocd-ingress.yaml | envsubst | kubectl apply -f -
   kubectl patch deployment -n argocd argocd-server --patch-file argocd-no-tls.yaml
 
-  message "STATE: ArgoCD webUI is available at:   https://argocd.${DOMAIN_NAME}"
+  message "STATE: ArgoCD password is below"
+  argo_pass=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo)
+  echo "Username: admin"
+  echo "Password: ${argo_pass}"
+
+  message "STATE: You will now be prompted to login to:   https://${ARGO_DOMAIN}"
+  argocd login --grpc-web --insecure --username admin --password ${argo_pass} ${ARGO_DOMAIN}
 }
 
 installCertManager() {
@@ -95,11 +102,16 @@ installCertManager() {
   kubectl apply -f cert-manager-namespace.yaml
 }
 
+installApps() {
+  cat ../apps/whoami/whoami.yaml | envsubst | kubectl apply -f -
+}
+
 userCheck
 installPackages
 installK3s
 installHelm
 installArgoCD
 installCertManager
+installApps
 
 message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
