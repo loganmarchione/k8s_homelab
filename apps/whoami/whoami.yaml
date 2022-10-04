@@ -28,3 +28,18 @@ spec:
             - name: whoami
               containerPort: 80
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whoami-svc
+  namespace: k3s-test
+  labels:
+    service: whoami
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+  selector:
+    app: whoami
