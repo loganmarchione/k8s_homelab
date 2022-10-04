@@ -43,3 +43,22 @@ spec:
       protocol: TCP
   selector:
     app: whoami
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: whoami-ir
+  namespace: k3s-test
+  labels:
+    ingressroute: whoami
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`whoami.${DOMAIN_NAME}`)
+      services:
+        - name: whoami-svc
+          port: 80
+  tls:
+    certResolver: default
