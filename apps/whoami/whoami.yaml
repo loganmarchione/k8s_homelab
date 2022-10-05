@@ -7,10 +7,8 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: whoami-deploy
+  name: whoami-deployment
   namespace: k3s-test
-  labels:
-    app: whoami
 spec:
   replicas: 3
   selector:
@@ -30,14 +28,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: whoami-svc
+  name: whoami-service
   namespace: k3s-test
-  labels:
-    service: whoami
 spec:
   type: ClusterIP
   ports:
     - name: http
+      targetPort: 80
       port: 80
       protocol: TCP
   selector:
@@ -59,6 +56,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: whoami-svc
+                name: whoami-service
                 port:
                   number: 80
