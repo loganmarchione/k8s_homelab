@@ -14,6 +14,9 @@ spec:
     path: infrastructure/cert-manager
     repoURL: {{ .Values.spec.repo.url }}
     targetRevision: {{ .Values.spec.repo.revision }}
+    helm:
+      valueFiles:
+        - values.yaml
   syncPolicy:
     automated:
       prune: true
