@@ -12,8 +12,8 @@ spec:
   project: default
   source:
     path: main/homelab/whoami
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    repoURL: {{ .Values.spec.repo.url }}
+    targetRevision: {{ .Values.spec.repo.revision }}
     helm:
       valueFiles:
         - values.yaml

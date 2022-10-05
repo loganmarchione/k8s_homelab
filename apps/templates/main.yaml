@@ -12,5 +12,5 @@ spec:
   project: default
   source:
     path: main/
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    repoURL: {{ .Values.spec.repo.url }}
+    targetRevision: {{ .Values.spec.repo.revision }}
