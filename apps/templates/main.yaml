@@ -14,3 +14,7 @@ spec:
     path: main/
     repoURL: {{ .Values.spec.repo.url }}
     targetRevision: {{ .Values.spec.repo.revision }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
