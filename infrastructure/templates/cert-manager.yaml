@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: whoami
+  name: cert-manager
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,7 +11,7 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: main/homelab/whoami
+    path: infrastructure/cert-manager
     repoURL: {{ .Values.spec.repo.url }}
     targetRevision: {{ .Values.spec.repo.revision }}
   syncPolicy:
