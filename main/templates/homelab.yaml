@@ -11,6 +11,9 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: homelab/
+    path: main/homelab
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
+    helm:
+      valueFiles:
+        - values.yaml
