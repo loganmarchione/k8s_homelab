@@ -8,9 +8,9 @@ metadata:
 spec:
   destination:
     namespace: argocd
-    server: https://kubernetes.default.svc
+    server: {{ .Values.spec.destination.server }}
   project: default
   source:
     path: infrastructure/
-    repoURL: https://github.com/loganmarchione/k8s_homelab.git
-    targetRevision: HEAD
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
