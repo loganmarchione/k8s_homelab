@@ -11,11 +11,5 @@ spec:
   project: default
   source:
     path: infrastructure/
-    repoURL: {{ .Values.repo.url }}
-    targetRevision: {{ .Values.repo.revision }}
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - ApplyOutOfSyncOnly=true
+    repoURL: https://github.com/loganmarchione/k8s_homelab.git
+    targetRevision: HEAD
