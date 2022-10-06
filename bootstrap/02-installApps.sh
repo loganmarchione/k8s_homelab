@@ -26,7 +26,7 @@ userCheck() {
 
 installApps() {
   message "STATE: Installing apps"
-  cat ../apps/whoami/whoami.yaml | envsubst | kubectl apply -f -
+  helm template ../apps/ | kubectl apply -f -
 }
 
 userCheck
