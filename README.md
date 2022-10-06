@@ -32,6 +32,26 @@
     </tr>
 </table>
 
+### Infrastructure
+
+<table>
+    <tr>
+        <th>Logo</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png"></td>
+        <td><a href="https://cert-manager.io/">cert-manager</a></td>
+        <td>X.509 certificate management for Kubernetes</td>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://bitnami.com/downloads/logos/bitnami-mark.svg"></td>
+        <td><a href="https://github.com/bitnami-labs/sealed-secrets">Sealed Secrets</a></td>
+        <td>"Sealed Secrets" for Kubernetes</td>
+    </tr>
+</table>
+
 ### Apps
 
 <table>
