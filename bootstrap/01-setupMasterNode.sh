@@ -26,14 +26,15 @@ userCheck() {
 
 installPackages() {
   message "STATE: Updating system and installing packages"
-  sudo apt update && sudo apt upgrade -y
-  sudo apt install -y curl open-iscsi
-  sudo apt autoremove -y
+  sudo apt-get update -q > /dev/null
+  sudo apt-get upgrade -qy > /dev/null
+  sudo apt-get install -qy curl open-iscsi > /dev/null
+  sudo apt-get autoremove -qy > /dev/null
 }
 
 installK3s() {
   message "STATE: Installing K3s"
-  curl -sfL https://get.k3s.io | sh -s - server --cluster-init --tls-san $(hostname --fqdn)
+  curl -sSL https://get.k3s.io | sh -s - server --cluster-init --tls-san $(hostname --fqdn)
 
   message "STATE: Waiting for K3s to start"
   sleep 15
@@ -55,8 +56,8 @@ installK3s() {
 
   if [[ -x "$(command -v /usr/sbin/ufw)" ]]; then
     message "STATE: UFW is installed, opening 6443/tcp"
-    sudo ufw allow 6443/tcp
-    sudo ufw reload
+    sudo ufw allow 6443/tcp > /dev/null
+    sudo ufw reload > /dev/null
   else
     message "ERROR: UFW was not found, please make sure 6443/tcp is open"
   fi
@@ -64,7 +65,7 @@ installK3s() {
 
 installHelm() {
   message "STATE: Installing Helm"
-  curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+  curl -sSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 }
 
 installArgoCD() {
@@ -73,8 +74,7 @@ installArgoCD() {
   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
   message "STATE: Waiting for ArgoCD"
-  ARGOCDSERVER_POD=$(kubectl get pod -n argocd -o custom-columns=:metadata.name | grep argocd-server)
-  kubectl wait pod/${ARGOCDSERVER_POD} -n argocd --for condition=Ready --timeout=120s
+  kubectl wait --for condition=Ready pods --all --namespace argocd --timeout=120s
 
   message "STATE: Setting up ArgoCD Traefik IngressRoute"
   cat argocd-ingress.yaml | envsubst | kubectl apply -f -
