@@ -41,3 +41,7 @@
         <th>Description</th>
     </tr>
 </table>
+
+## Installation
+
+See the [README](/bootstrap/README.md) for more information
