@@ -2,7 +2,7 @@
 
 This is intended to be run on a single-node cluster.
 
-Start by cloning the repo, editing the `.env` file, and bootstrapping the cluster.
+Start by cloning the repo, editing the `.env` file, and bootstrapping the cluster (installing K3s, Helm, and ArgoCD).
 
 ```
 git clone https://github.com/loganmarchione/k8s_homelab.git
@@ -13,7 +13,7 @@ vim .env
 ./01-setupMasterNode.sh
 ```
 
-Next, install applications.
+Next, install applications (this is done via ArgoCD).
 
 ```
 ./02-installApps.sh
