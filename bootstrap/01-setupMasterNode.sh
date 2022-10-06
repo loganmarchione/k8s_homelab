@@ -69,10 +69,12 @@ installHelm() {
 
 installArgoCD() {
   message "STATE: Installing ArgoCD"
-
   kubectl apply -f argocd-namespace.yaml
   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-  sleep 15
+
+  message "STATE: Waiting for ArgoCD"
+  ARGOCDSERVER_POD=$(kubectl get pod -n argocd -o custom-columns=:metadata.name | grep argocd-server)
+  kubectl wait pod/${ARGOCDSERVER_POD} -n argocd --for condition=Ready --timeout=120s
 
   message "STATE: Setting up ArgoCD Traefik IngressRoute"
   cat argocd-ingress.yaml | envsubst | kubectl apply -f -
