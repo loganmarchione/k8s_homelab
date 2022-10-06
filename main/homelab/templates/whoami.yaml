@@ -7,14 +7,21 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: whoami
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
     path: main/homelab/whoami
     repoURL: {{ .Values.spec.repo.url }}
     targetRevision: {{ .Values.spec.repo.revision }}
+    helm:
+      valueFiles:
+        - values.yaml
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
     automated:
       prune: true
       selfHeal: true
+      allowEmpty: false
