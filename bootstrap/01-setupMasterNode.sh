@@ -51,8 +51,7 @@ installK3s() {
   message "STATE: Getting nodes"
   kubectl get nodes -o wide
 
-  message "STATE: Contents of $HOME/.kube/config file are below (copy/paste this for later)"
-  cat $HOME/.kube/config 
+  message "STATE: Your kubeconfig is located at:   $HOME/.kube/config"
 
   if [[ -x "$(command -v /usr/sbin/ufw)" ]]; then
     message "STATE: UFW is installed, opening 6443/tcp"
@@ -65,11 +64,7 @@ installK3s() {
 
 installHelm() {
   message "STATE: Installing Helm"
-
-  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-  chmod 700 get_helm.sh
-  ./get_helm.sh
-  rm get_helm.sh
+  curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 }
 
 installArgoCD() {
@@ -78,10 +73,6 @@ installArgoCD() {
   kubectl apply -f argocd-namespace.yaml
   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
   sleep 15
-
-  message "STATE: Installing ArgoCD CLI tool"
-  sudo curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-  sudo chmod +x /usr/local/bin/argocd
 
   message "STATE: Setting up ArgoCD Traefik IngressRoute"
   cat argocd-ingress.yaml | envsubst | kubectl apply -f -
@@ -92,20 +83,28 @@ installArgoCD() {
   echo "Username: admin"
   echo "Password: ${argo_pass}"
 
-  message "STATE: You will now be prompted to login to:   https://${ARGO_DOMAIN}"
+  message "STATE: Script will attempt to auto-login to ArgoCD:   https://${ARGO_DOMAIN}"
   argocd login --grpc-web --insecure --username admin --password ${argo_pass} ${ARGO_DOMAIN}
 }
 
-installCertManager() {
-  message "STATE: Installing cert-manager"
-  kubectl apply -f cert-manager-namespace.yaml
+installTools() {
+  message "STATE: Installing command-line tools"
+
+  message "STATE: Installing ArgoCD CLI tool"
+  sudo curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+  sudo chmod +x /usr/local/bin/argocd
+
+  message "STATE: Installing kubeseal CLI tool"
+  sudo curl -sSL https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.0/kubeseal-0.18.0-linux-arm64.tar.gz | tar -xz kubeseal
+  sudo mv kubeseal /usr/local/bin/kubeseal
+  sudo chmod +x /usr/local/bin/kubeseal
 }
 
 userCheck
 installPackages
 installK3s
 installHelm
+installTools
 installArgoCD
-installCertManager
 
 message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"

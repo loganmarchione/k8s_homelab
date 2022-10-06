@@ -7,7 +7,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: cert-manager
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
@@ -18,6 +18,10 @@ spec:
       valueFiles:
         - values.yaml
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
     automated:
       prune: true
       selfHeal: true
+      allowEmpty: false
