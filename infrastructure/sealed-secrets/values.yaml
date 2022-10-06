@@ -4,5 +4,3 @@ spec:
   repo:
     url: https://github.com/loganmarchione/k8s_homelab.git
     revision: HEAD
-cert-manager:
-  installCRDs: true
