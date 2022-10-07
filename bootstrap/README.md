@@ -2,6 +2,7 @@
 
 This is intended to be:
 - run on a single-node cluster
+- executed on the single node (you'll need sudo access)
 - run on amd64 hardware
 
 Start by cloning the repo, editing the `.env` file, and bootstrapping the cluster (installing K3s, Helm, and ArgoCD).
