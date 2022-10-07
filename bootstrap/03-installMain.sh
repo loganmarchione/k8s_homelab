@@ -25,8 +25,8 @@ userCheck() {
 }
 
 installApps() {
-  message "STATE: Installing apps"
-  helm template ../apps/ | kubectl apply -f -
+  message "STATE: Installing..."
+  helm template ../main/ | kubectl apply -f -
 }
 
 userCheck

@@ -1,6 +1,8 @@
 # Usage
 
-This is intended to be run on a single-node cluster.
+This is intended to be:
+- run on a single-node cluster
+- run on amd64 hardware
 
 Start by cloning the repo, editing the `.env` file, and bootstrapping the cluster (installing K3s, Helm, and ArgoCD).
 
@@ -13,8 +15,14 @@ vim .env
 ./01-setupMasterNode.sh
 ```
 
-Next, install applications (this is done via ArgoCD).
+Next, install infrastructure (this is done via ArgoCD).
 
 ```
-./02-installApps.sh
+./02-installInfrastructure.sh
 ```
+
+Next, install main applications (this is done via ArgoCD)
+
+ ```
+ ./03-installMain.sh
+ ```
