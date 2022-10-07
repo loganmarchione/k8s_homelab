@@ -32,3 +32,22 @@ spec:
       protocol: TCP
   selector:
     app: drawio
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: drawio-ingress
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  rules:
+    - host: drawio.${DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: drawio-service
+                port:
+                  number: 8080
