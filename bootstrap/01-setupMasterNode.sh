@@ -81,7 +81,7 @@ installArgoCD() {
 
   message "STATE: Setting up ArgoCD Traefik IngressRoute"
   cat argocd-ingress.yaml | envsubst | kubectl apply -f -
-  kubectl patch deployment -n argocd argocd-server --patch-file argocd-no-tls.yaml
+  cat argocd-no-tls.yaml | envsubst | kubectl apply -f -
   kubectl wait --for condition=Ready pods --all --namespace argocd --timeout=90s
 
   message "STATE: ArgoCD web UI is available at:   https://${ARGO_DOMAIN}"
