@@ -14,9 +14,6 @@ spec:
     path: main/homelab
     repoURL: {{ .Values.spec.repo.url }}
     targetRevision: {{ .Values.spec.repo.revision }}
-    helm:
-      valueFiles:
-        - values.yaml
   syncPolicy:
     automated:
       prune: true
