@@ -7,6 +7,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: whoami-deployment
+  namespace: whoami
 spec:
   replicas: 3
   selector:
