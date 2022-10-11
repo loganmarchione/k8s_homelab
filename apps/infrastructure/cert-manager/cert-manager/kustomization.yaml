@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - helmrelease.yaml
+  - crds.yaml
   - issuers.yaml
