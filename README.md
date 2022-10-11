@@ -4,6 +4,8 @@
 
 ### Core
 
+The core components of the cluster
+
 <table>
     <tr>
         <th>Logo</th>
@@ -32,7 +34,9 @@
     </tr>
 </table>
 
-### Infrastructure
+### `apps/infrastructure`
+
+The infrastructure that everything else depends on
 
 <table>
     <tr>
@@ -45,20 +49,24 @@
         <td><a href="https://cert-manager.io/">cert-manager</a></td>
         <td>X.509 certificate management for Kubernetes</td>
     </tr>
-    <tr>
-        <td><img width="32" src="https://bitnami.com/downloads/logos/bitnami-mark.svg"></td>
-        <td><a href="https://github.com/bitnami-labs/sealed-secrets">Sealed Secrets</a></td>
-        <td>"Sealed Secrets" for Kubernetes</td>
-    </tr>
 </table>
 
-### Apps
+### `apps/homelab`
+
+The applications that run in my homelab (listed in alphabetical order)
 
 <table>
     <tr>
-        <th>Logo</th>
         <th>Name</th>
         <th>Description</th>
+    </tr>
+    <tr>
+        <td><a href="https://www.diagrams.net/">Diagram.net (aka Draw.io)</a></td>
+        <td>Diagram creation</td>
+    </tr>
+    <tr>
+        <td><a href="https://hub.docker.com/r/traefik/whoami/">whoami</a></td>
+        <td>Test web app written in Go</td>
     </tr>
 </table>
 
