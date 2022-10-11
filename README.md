@@ -64,4 +64,4 @@
 
 ## Installation
 
-See the [README](/bootstrap/README.md) for more information
+See the [README](/scripts/README.md) for more information
