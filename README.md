@@ -25,11 +25,6 @@
         <td><a href="https://helm.sh/">Helm</a></td>
         <td>The package manager for Kubernetes</td>
     </tr>
-    <tr>
-        <td><img width="32" src="https://cncf-branding.netlify.app/img/projects/argo/icon/color/argo-icon-color.svg"></td>
-        <td><a href="https://argoproj.github.io/cd">Argo CD</a></td>
-        <td>Declarative continuous deployment for Kubernetes</td>
-    </tr>
 </table>
 
 ### Infrastructure

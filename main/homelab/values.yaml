@@ -1,6 +1,0 @@
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-  repo:
-    url: https://github.com/loganmarchione/k8s_homelab.git
-    revision: HEAD

@@ -71,47 +71,15 @@ installHelm() {
   rmdir linux-amd64
 }
 
-installArgoCD() {
-  message "STATE: Installing ArgoCD"
-  kubectl apply -f argocd-namespace.yaml
-  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/${VERSION_ARGO}/manifests/install.yaml
-
-  message "STATE: Waiting for ArgoCD"
-  kubectl wait --for condition=Ready pods --all --namespace argocd --timeout=90s
-
-  message "STATE: Setting up ArgoCD Traefik IngressRoute"
-  cat argocd-ingress.yaml | envsubst | kubectl apply -f -
-  cat argocd-no-tls.yaml | envsubst | kubectl apply -f -
-  kubectl --namespace argocd rollout restart deployment argocd-server
-  kubectl wait --for condition=Ready pods --all --namespace argocd --timeout=90s
-
-  message "STATE: ArgoCD web UI is available at:   https://${ARGO_DOMAIN}"
-  argo_pass=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo)
-  echo "Username: admin"
-  echo "Password: ${argo_pass}"
-
-  #message "STATE: Script will attempt to auto-login to ArgoCD:   https://${ARGO_DOMAIN}"
-  #argocd login --grpc-web --insecure --username admin --password ${argo_pass} ${ARGO_DOMAIN}
-}
-
-installTools() {
-  message "STATE: Installing command-line tools"
-
-  message "STATE: Installing ArgoCD CLI tool"
-  sudo curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/${VERSION_ARGO}/argocd-linux-amd64
-  sudo chmod +x /usr/local/bin/argocd
-
-  message "STATE: Installing kubeseal CLI tool"
-  sudo curl -sSL https://github.com/bitnami-labs/sealed-secrets/releases/download/v${VERSION_KUBESEAL}/kubeseal-${VERSION_KUBESEAL}-linux-amd64.tar.gz | tar -xz kubeseal
-  sudo mv kubeseal /usr/local/bin/kubeseal
-  sudo chmod +x /usr/local/bin/kubeseal
+installFlux() {
+  message "STATE: Installing Flux"
+  curl -sSL https://fluxcd.io/install.sh | FLUX_VERSION=${VERSION_FLUX} sudo -E bash
 }
 
 userCheck
 installPackages
 installK3s
 installHelm
-installTools
-installArgoCD
+installFlux
 
 message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
