@@ -21,9 +21,14 @@
         <td>Kubernetes Ingress Controller</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://cncf-branding.netlify.app/img/projects/helm/horizontal/color/helm-horizontal-color.svg"></td>
+        <td><img width="32" src="https://cncf-branding.netlify.app/img/projects/helm/icon/color/helm-icon-color.svg"></td>
         <td><a href="https://helm.sh/">Helm</a></td>
         <td>The package manager for Kubernetes</td>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://cncf-branding.netlify.app/img/projects/flux/icon/color/flux-icon-color.svg"></td>
+        <td><a href="https://fluxcd.io/">Flux CD</a></td>
+        <td>Continuous delivery solutions for Kubernetes </td>
     </tr>
 </table>
 
