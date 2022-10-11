@@ -9,7 +9,7 @@ metadata:
   name: drawio-deployment
   namespace: drawio
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: drawio
