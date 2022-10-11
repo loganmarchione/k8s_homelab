@@ -65,3 +65,7 @@
 ## Installation
 
 See the [README](/scripts/README.md) for more information
+
+## TODO
+
+- [ ] Change intervals under `/charts` from 1m to 1h
