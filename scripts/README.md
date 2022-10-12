@@ -25,3 +25,15 @@ kubectl create secret generic cluster-secret-vars \
   --from-literal=SECRET_LETS_ENCRYPT_EMAIL=name@email.com \
   --from-literal=SECRET_AWS_REGION=us-east-1
 ```
+
+Wait a few minutes, then then run the command below (hopefully all will show true).
+
+```
+kubectl get kustomization -n flux-system
+```
+
+If you need to give it a kick in the ass, use this.
+
+```
+flux reconcile source git flux-system
+```
