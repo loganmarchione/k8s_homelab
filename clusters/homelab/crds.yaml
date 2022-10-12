@@ -6,12 +6,12 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: flux-system-helm-repositories
+    - name: charts
   interval: 1m
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./crds
+  path: ./cluster/crds
   prune: true
   postBuild:
     substituteFrom:

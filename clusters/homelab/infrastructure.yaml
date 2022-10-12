@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps/infrastructure
+  path: ./cluster/infrastructure
   prune: true
   postBuild:
     substituteFrom:
