@@ -7,13 +7,14 @@ This is intended to be:
 
 Start by cloning the repo, editing the `.env` file, and bootstrapping the cluster (installing K3s, Helm, etc...).
 
+## Setup
+
 ```
 git clone https://github.com/loganmarchione/k8s_homelab.git
 cd k8s_homelab/scripts
 cp -p .env_sample .env
 vim .env
 #MAKE YOUR CHANGES IN THE .env FILE
-./01-setupMasterNode.sh
 ```
 
 Next, you need to create a series of secrets
@@ -26,7 +27,25 @@ kubectl create secret generic cluster-secret-vars \
   --from-literal=SECRET_AWS_REGION=us-east-1
 ```
 
-Wait a few minutes, then then run the command below (hopefully all will show true).
+Bootstrap the cluster
+
+```
+./01-setupMasterNode.sh
+```
+
+## Verification
+
+Flux bootstraps in the order below.
+
+```mermaid
+flowchart TD;
+    A["flux-system (core of flux)"]-->B["charts (3rd party charts)"]
+    B-->C["crds (custom resource definitions)"];
+    C-->D[infrastructure];
+    D-->E[apps];
+```
+
+Wait a few minutes, then then run the command below (hopefully all will show `True`).
 
 ```
 kubectl get kustomization -n flux-system
