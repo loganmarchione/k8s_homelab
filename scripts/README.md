@@ -15,3 +15,13 @@ vim .env
 #MAKE YOUR CHANGES IN THE .env FILE
 ./01-setupMasterNode.sh
 ```
+
+Next, you need to create a series of secrets
+
+```
+kubectl create secret generic cluster-secret-vars \
+  --namespace=flux-system \
+  --from-literal=SECRET_INTERNAL_DOMAIN_NAME=your.domain.com \
+  --from-literal=SECRET_LETS_ENCRYPT_EMAIL=name@email.com \
+  --from-literal=SECRET_AWS_REGION=us-east-1
+```
