@@ -80,7 +80,7 @@ installFlux() {
   --owner=${GITHUB_USER} \
   --repository=${GITHUB_REPO} \
   --branch=${GITHUB_BRANCH} \
-  --path=clusters/homelab \
+  --path=clusters/base \
   --personal
 }
 
