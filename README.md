@@ -34,7 +34,7 @@ The core components of the cluster
     </tr>
 </table>
 
-### `apps/infrastructure`
+### `cluster/infrastructure`
 
 The infrastructure that everything else depends on
 
@@ -51,7 +51,7 @@ The infrastructure that everything else depends on
     </tr>
 </table>
 
-### `apps/homelab`
+### `cluster/apps`
 
 The applications that run in my homelab (listed in alphabetical order)
 
