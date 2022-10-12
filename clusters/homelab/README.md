@@ -2,8 +2,7 @@
 
 ```mermaid
 flowchart TD;
-    flux-system-->crds;
-    crds-->charts;
-    charts-->infrastructure;
-    infrastructure-->homelab;
+    A["flux-system-helm-repositories (3rd party charts)"]-->B["custom resource definitions (CRDs)"];
+    B-->C[infrastructure];
+    C-->D[homelab];
 ```
