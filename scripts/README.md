@@ -27,14 +27,16 @@ export KUBECONFIG=$HOME/.kube/config
 kubectl get nodes -o wide
 ```
 
-Next, you need to create a series of secrets
+Next, create a namespace for Flux, as well as series of secrets.
 
 ```
+kubectl create namespace flux-system --dry-run=client -o yaml | kubectl apply -f -
 kubectl create secret generic cluster-secret-vars \
   --namespace=flux-system \
   --from-literal=SECRET_INTERNAL_DOMAIN_NAME=your.domain.com \
   --from-literal=SECRET_LETS_ENCRYPT_EMAIL=name@email.com \
   --from-literal=SECRET_AWS_REGION=region-here-1
+kubectl describe secret cluster-secret-vars -n flux-system
 ```
 
 Bootstrap Flux
