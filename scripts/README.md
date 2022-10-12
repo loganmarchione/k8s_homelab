@@ -56,3 +56,10 @@ If you need to give it a kick in the ass, use this.
 ```
 flux reconcile source git flux-system
 ```
+
+After a few minutes, make sure that Let's Encrypt registered a `secret` and `ClusterIssuer` for both `production` and `staging`.
+
+```
+kubectl get secret --all-namespaces
+kubectl get clusterissuer -n cert-manager
+```
