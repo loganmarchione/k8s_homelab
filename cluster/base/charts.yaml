@@ -5,6 +5,8 @@ metadata:
   name: charts
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: flux-system
   interval: 1m
   sourceRef:
     kind: GitRepository
