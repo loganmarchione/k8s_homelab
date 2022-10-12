@@ -72,6 +72,6 @@ flux reconcile source git flux-system
 After a few minutes, make sure that Let's Encrypt registered a `secret` and `ClusterIssuer` for both `production` and `staging`.
 
 ```
-kubectl get secret --all-namespaces
+kubectl get secret -n cert-manager
 kubectl get clusterissuer -n cert-manager
 ```
