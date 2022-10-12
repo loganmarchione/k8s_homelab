@@ -20,6 +20,13 @@ vim .env
 ./01-setupMasterNode.sh
 ```
 
+At this point, you should be able to run the commands below.
+
+```
+export KUBECONFIG=$HOME/.kube/config
+kubectl get nodes -o wide
+```
+
 Next, you need to create a series of secrets
 
 ```
