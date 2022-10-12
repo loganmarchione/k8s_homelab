@@ -71,23 +71,9 @@ installHelm() {
   rmdir linux-amd64
 }
 
-installFlux() {
-  message "STATE: Installing Flux"
-  curl -sSL https://fluxcd.io/install.sh | FLUX_VERSION=${VERSION_FLUX} sudo -E bash
-
-  message "STATE: Bootstrapping Flux"
-  flux bootstrap github \
-  --owner=${GITHUB_USER} \
-  --repository=${GITHUB_REPO} \
-  --branch=${GITHUB_BRANCH} \
-  --path=cluster/base \
-  --personal
-}
-
 userCheck
 installPackages
 installK3s
 installHelm
-installFlux
 
 message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
