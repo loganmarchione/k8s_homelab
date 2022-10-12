@@ -57,7 +57,7 @@ flowchart TD;
     D-->E[apps];
 ```
 
-Wait a few seconds, then then run the command below (it will take a few minutes for everything to show `True`).
+Wait a few seconds, then run the command below (it will take a few minutes for everything to show `True`).
 
 ```
 kubectl get kustomization -n flux-system
