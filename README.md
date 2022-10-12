@@ -76,4 +76,4 @@ See the [README](/scripts/README.md) for more information
 
 ## TODO
 
-- [ ] Change intervals under `/charts` from 1m to 1h
+- [ ] Change intervals under `cluster/charts` from 1m to 1h
