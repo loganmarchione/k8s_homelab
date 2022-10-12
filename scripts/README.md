@@ -15,6 +15,7 @@ cd k8s_homelab/scripts
 cp -p .env_sample .env
 vim .env
 #MAKE YOUR CHANGES IN THE .env FILE
+./01-setupMasterNode.sh
 ```
 
 Next, you need to create a series of secrets
@@ -24,13 +25,13 @@ kubectl create secret generic cluster-secret-vars \
   --namespace=flux-system \
   --from-literal=SECRET_INTERNAL_DOMAIN_NAME=your.domain.com \
   --from-literal=SECRET_LETS_ENCRYPT_EMAIL=name@email.com \
-  --from-literal=SECRET_AWS_REGION=us-east-1
+  --from-literal=SECRET_AWS_REGION=region-here-1
 ```
 
-Bootstrap the cluster
+Bootstrap Flux
 
 ```
-./01-setupMasterNode.sh
+./02-flux.sh
 ```
 
 ## Verification
