@@ -61,4 +61,4 @@ spec:
   tls:
   - hosts:
       - whoami.${SECRET_INTERNAL_DOMAIN_NAME}
-    secretName: whoami-letsencrypt-production-cert
+    secretName: whoami-tls
