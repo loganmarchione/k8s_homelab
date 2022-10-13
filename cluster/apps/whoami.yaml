@@ -58,3 +58,5 @@ spec:
                 name: whoami-service
                 port:
                   number: 80
+  tls:
+    secretName: whoami-letsencrypt-production-cert
