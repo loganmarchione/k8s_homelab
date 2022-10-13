@@ -15,7 +15,7 @@ spec:
           region: ${SECRET_AWS_REGION}
           accessKeyID: ${SECRET_AWS_ACCESS_KEY_ID}
           secretAccessKeySecretRef:
-            name: cluster-secret-vars
+            name: lets-encrypt-secret-vars
             key: ${SECRET_AWS_ACCESS_KEY}
 ---
 apiVersion: cert-manager.io/v1
@@ -34,5 +34,5 @@ spec:
           region: ${SECRET_AWS_REGION}
           accessKeyID: ${SECRET_AWS_ACCESS_KEY_ID}
           secretAccessKeySecretRef:
-            name: cluster-secret-vars
+            name: lets-encrypt-secret-vars
             key: ${SECRET_AWS_ACCESS_KEY}
