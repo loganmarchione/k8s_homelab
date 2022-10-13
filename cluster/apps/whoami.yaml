@@ -45,6 +45,7 @@ metadata:
   name: whoami-ingress
   namespace: whoami
   annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
@@ -59,6 +60,6 @@ spec:
                 port:
                   number: 80
   tls:
-  - hosts:
-      - whoami.${SECRET_INTERNAL_DOMAIN_NAME}
-    secretName: whoami-tls
+    - hosts:
+        - whoami.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: whoami-tls
