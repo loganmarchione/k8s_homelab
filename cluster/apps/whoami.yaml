@@ -59,4 +59,6 @@ spec:
                 port:
                   number: 80
   tls:
-    - secretName: whoami-letsencrypt-production-cert
+  - hosts:
+      - whoami.${SECRET_INTERNAL_DOMAIN_NAME}
+    secretName: whoami-letsencrypt-production-cert
