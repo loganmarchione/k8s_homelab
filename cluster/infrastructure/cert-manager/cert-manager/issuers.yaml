@@ -11,12 +11,12 @@ spec:
       name: letsencrypt-production-account-key
     solvers:
     - dns01:
-       route53:
-         region: ${SECRET_AWS_REGION}
-         accessKeyID: ${SECRET_AWS_ACCESS_KEY_ID}
-         secretAccessKeySecretRef:
-           name: cluster-secret-vars
-           key: ${SECRET_AWS_ACCESS_KEY}
+        route53:
+          region: ${SECRET_AWS_REGION}
+          accessKeyID: ${SECRET_AWS_ACCESS_KEY_ID}
+          secretAccessKeySecretRef:
+            name: cluster-secret-vars
+            key: ${SECRET_AWS_ACCESS_KEY}
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -30,9 +30,9 @@ spec:
       name: letsencrypt-staging-account-key
     solvers:
     - dns01:
-       route53:
-         region: ${SECRET_AWS_REGION}
-         accessKeyID: ${SECRET_AWS_ACCESS_KEY_ID}
-         secretAccessKeySecretRef:
-           name: cluster-secret-vars
-           key: ${SECRET_AWS_ACCESS_KEY}
+        route53:
+          region: ${SECRET_AWS_REGION}
+          accessKeyID: ${SECRET_AWS_ACCESS_KEY_ID}
+          secretAccessKeySecretRef:
+            name: cluster-secret-vars
+            key: ${SECRET_AWS_ACCESS_KEY}
