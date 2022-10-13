@@ -47,6 +47,8 @@ Bootstrap Flux
 
 ## Verification
 
+### Flux
+
 Flux bootstraps in the order below.
 
 ```mermaid
@@ -69,9 +71,20 @@ If you need to give it a kick in the ass, use this.
 flux reconcile source git flux-system
 ```
 
-After a few minutes, make sure that Let's Encrypt registered a `secret` and `ClusterIssuer` for both `production` and `staging`.
+### cert-manager
+
+After a few minutes, make sure that Let's Encrypt registered a `ClusterIssuer` and `secret` for both `production` and `staging`.
 
 ```
-kubectl get secret -n cert-manager
 kubectl get clusterissuer -n cert-manager
+kubectl get secret -n cert-manager
+```
+
+A few minutes, you should see certificates appear (it will take a few minutes for everything to show `True`/`valid`).
+
+```
+kubectl get certificaterequest -n cert-manager
+kubectl get order -n cert-manager
+kubectl get challenges -n cert-manager
+kubectl get certificate -n cert-manager
 ```
