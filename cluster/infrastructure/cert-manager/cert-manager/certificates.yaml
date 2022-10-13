@@ -5,10 +5,10 @@ metadata:
   name: whoami-letsencrypt-production-cert
   namespace: cert-manager
 spec:
-  commonName: whoami.${SECRET_INTERNAL_DOMAIN_NAME} 
+  commonName: whoami.${SECRET_INTERNAL_DOMAIN_NAME}
   dnsNames:
     - whoami.${SECRET_INTERNAL_DOMAIN_NAME}
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt-production
-  secretName: whoami-tls 
+  secretName: whoami-tls
