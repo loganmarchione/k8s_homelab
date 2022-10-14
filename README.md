@@ -76,5 +76,5 @@ See the [README](/scripts/README.md) for more information
 
 ## TODO
 
-- [ ] Change intervals under `cluster/charts` from 1m to 1h
+- [x] Change intervals under `cluster/charts` from 1m to 1h
 - [ ] [Auto-issue certs](https://cert-manager.io/docs/usage/ingress/) using cert-manager
