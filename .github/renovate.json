@@ -13,7 +13,7 @@
     "ignorePaths": ["cluster/base/"]
   },
   "helm-values": {
-    "fileMatch": ["cluster/.+/helm-?release\\.ya?ml$"],
+    "fileMatch": ["cluster/.+\\.ya?ml$"],
     "ignorePaths": ["cluster/base/"]
   }
 }
