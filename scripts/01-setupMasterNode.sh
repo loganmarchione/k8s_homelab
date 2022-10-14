@@ -61,6 +61,9 @@ installK3s() {
   else
     message "ERROR: UFW was not found, please make sure 6443/tcp is open"
   fi
+
+  message "STATE: Creating starter namespaces"
+  kubectl apply -f namespaces.yaml
 }
 
 installHelm() {
