@@ -52,8 +52,12 @@ kubectl create secret generic cluster-secret-vars --namespace=flux-system \
 
 kubectl create secret generic letsencrypt-secret-vars --namespace=cert-manager \
   --from-literal=SECRET_AWS_ACCESS_KEY=wJalrXUtnFEMIKK7MDENGKbPxRfiCYEXAMPLEKEY
+```
 
-kubectl describe secret cluster-secret-vars -n flux-system
+Verify the secrets were created.
+
+```
+kubectl get secret --all-namespaces
 ```
 
 Bootstrap Flux
