@@ -10,14 +10,14 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-production-account-key
     solvers:
-    - dns01:
-        route53:
-          region: ${SECRET_AWS_REGION}
-          accessKeyID: ${SECRET_AWS_ACCESS_KEY_ID}
-          secretAccessKeySecretRef:
-            name: letsencrypt-secret-vars
-            # this is the name of the key, not the value, so no variable is used here
-            key: SECRET_AWS_ACCESS_KEY
+      - dns01:
+          route53:
+            region: ${SECRET_AWS_REGION}
+            accessKeyID: ${SECRET_AWS_ACCESS_KEY_ID}
+            secretAccessKeySecretRef:
+              name: letsencrypt-secret-vars
+              # this is the name of the key, not the value, so no variable is used here
+              key: SECRET_AWS_ACCESS_KEY
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -30,11 +30,11 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-staging-account-key
     solvers:
-    - dns01:
-        route53:
-          region: ${SECRET_AWS_REGION}
-          accessKeyID: ${SECRET_AWS_ACCESS_KEY_ID}
-          secretAccessKeySecretRef:
-            name: letsencrypt-secret-vars
-            # this is the name of the key, not the value, so no variable is used here
-            key: SECRET_AWS_ACCESS_KEY
+      - dns01:
+          route53:
+            region: ${SECRET_AWS_REGION}
+            accessKeyID: ${SECRET_AWS_ACCESS_KEY_ID}
+            secretAccessKeySecretRef:
+              name: letsencrypt-secret-vars
+              # this is the name of the key, not the value, so no variable is used here
+              key: SECRET_AWS_ACCESS_KEY

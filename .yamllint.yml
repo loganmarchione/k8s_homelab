@@ -1,0 +1,7 @@
+---
+extends: default
+
+ignore: |
+  cluster/base/flux-system
+rules:
+  line-length: disable
