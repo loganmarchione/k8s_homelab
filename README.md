@@ -61,8 +61,16 @@ The applications that run in my homelab (listed in alphabetical order)
         <th>Description</th>
     </tr>
     <tr>
+        <td><a href="https://hub.docker.com/r/mpepping/cyberchef">CyberChef</a></td>
+        <td>A Dockerized version of GCHQ's Cyber Swiss Army Knife</td>
+    </tr>
+    <tr>
         <td><a href="https://www.diagrams.net/">Diagram.net (aka Draw.io)</a></td>
         <td>Diagram creation</td>
+    </tr>
+    <tr>
+        <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
+        <td>A Dockerized version of string.is</td>
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/traefik/whoami/">whoami</a></td>
