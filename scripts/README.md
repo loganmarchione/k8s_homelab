@@ -41,7 +41,7 @@ Now, create a series of secrets.
 
 ⚠️ WARNING ⚠️
 
-Keep in mind that these secrets will be in your shell history and clipboard (you should clear both).
+Keep in mind that these secrets will be in your shell history and clipboard (you should clear both). Obviously replace the secrets (don't copy/paste directly).
 
 ```
 kubectl create secret generic cluster-secret-vars --namespace=flux-system \
