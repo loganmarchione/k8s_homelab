@@ -49,7 +49,7 @@ Bootstrap Flux
 
 ### Flux
 
-Flux bootstraps in the order below.
+Flux bootstraps in the order below (based off of the [dependencies](https://fluxcd.io/flux/components/kustomize/kustomization/#kustomization-dependencies) I've setup).
 
 ```mermaid
 flowchart TD;
