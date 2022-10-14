@@ -2,5 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
-  ]
+  ],
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Renovate Dashboard",
+  "kubernetes": {
+    "fileMatch": ["cluster/.+\\.ya?ml$"],
+    "ignorePaths": ["cluster/base/"]
+  }
 }
