@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck source-path=scripts
 
 # Be safe out there
 set -e
