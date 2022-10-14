@@ -9,6 +9,8 @@ Start by cloning the repo, editing the `.env` file, and bootstrapping the cluste
 
 ## Setup
 
+### K3s
+
 Starting by cloning the repo, editing a few variables, and then installing K3s.
 
 ```
@@ -20,18 +22,26 @@ vim .env
 ./01-setupMasterNode.sh
 ```
 
-At this point, you should be able to run the commands below.
+At this point, you should be able to run the commands below. If so, K3s is up and running!
 
 ```
 export KUBECONFIG=$HOME/.kube/config
 kubectl get nodes -o wide
 ```
 
-Next, create a series of secrets.
+You can find your kubeconfig file and copy/paste it to your local workstation for accessing your cluster remotely.
+
+```
+cat $HOME/.kube/config
+```
+
+### Flux
+
+Now, create a series of secrets.
 
 ⚠️ WARNING ⚠️
 
-Keep in mind that these secrets will be in your shell history and clipboard (you should clear both).
+Keep in mind that these secrets will be in your shell history and clipboard (you should clear both). Obviously replace the secrets (don't copy/paste directly).
 
 ```
 kubectl create secret generic cluster-secret-vars --namespace=flux-system \
@@ -42,11 +52,15 @@ kubectl create secret generic cluster-secret-vars --namespace=flux-system \
 
 kubectl create secret generic letsencrypt-secret-vars --namespace=cert-manager \
   --from-literal=SECRET_AWS_ACCESS_KEY=wJalrXUtnFEMIKK7MDENGKbPxRfiCYEXAMPLEKEY
-
-kubectl describe secret cluster-secret-vars -n flux-system
 ```
 
-Bootstrap Flux
+Verify the secrets were created.
+
+```
+kubectl get secret --all-namespaces
+```
+
+Bootstrap Flux (this will install Flux and **everything** else).
 
 ```
 ./02-flux.sh
@@ -87,11 +101,8 @@ kubectl get clusterissuer -n cert-manager
 kubectl get secret -n cert-manager
 ```
 
-A few minutes, you should see certificates appear (it will take a few minutes for everything to show `True`/`valid`).
+A few minutes, you should see certificates appear (it will take a few minutes for everything to show `True`).
 
 ```
-kubectl get certificaterequest -n cert-manager
-kubectl get order -n cert-manager
-kubectl get challenges -n cert-manager
-kubectl get certificate -n cert-manager
+kubectl get certificate --all-namespaces
 ```
