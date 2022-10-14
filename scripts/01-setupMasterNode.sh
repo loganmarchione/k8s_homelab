@@ -29,7 +29,7 @@ installPackages() {
   message "STATE: Updating system and installing packages"
   sudo apt-get update -q > /dev/null
   sudo apt-get upgrade -qy > /dev/null
-  sudo apt-get install -qy curl open-iscsi > /dev/null
+  sudo apt-get install -qy curl jq nfs-common open-iscsi > /dev/null
   sudo apt-get autoremove -qy > /dev/null
 }
 
