@@ -1,65 +1,65 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: drawio
+  name: cyberchef
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: drawio-deployment
-  namespace: drawio
+  name: cyberchef-deployment
+  namespace: cyberchef
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: drawio
+      app: cyberchef
   template:
     metadata:
       labels:
-        app: drawio
+        app: cyberchef
     spec:
       containers:
-        - name: drawio
-          image: jgraph/drawio:alpine
+        - name: cyberchef
+          image: mpepping/cyberchef:v9.46.0
           ports:
-            - containerPort: 8080
+            - containerPort: 8000
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: drawio-service
-  namespace: drawio
+  name: cyberchef-service
+  namespace: cyberchef
 spec:
   type: ClusterIP
   ports:
     - name: http
-      targetPort: 8080
-      port: 8080
+      targetPort: 8000
+      port: 8000
       protocol: TCP
   selector:
-    app: drawio
+    app: cyberchef
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: drawio-ingress
-  namespace: drawio
+  name: cyberchef-ingress
+  namespace: cyberchef
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: drawio.${SECRET_INTERNAL_DOMAIN_NAME}
+    - host: cyberchef.${SECRET_INTERNAL_DOMAIN_NAME}
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: drawio-service
+                name: cyberchef-service
                 port:
-                  number: 8080
+                  number: 8000
   tls:
     - hosts:
-        - drawio.${SECRET_INTERNAL_DOMAIN_NAME}
-      secretName: drawio-tls
+        - cyberchef.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: cyberchef-tls
