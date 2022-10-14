@@ -23,6 +23,9 @@ spec:
           image: jgraph/drawio:alpine
           ports:
             - containerPort: 8080
+          env:
+            - name: DRAWIO_BASE_URL
+              value: https://drawio.${SECRET_INTERNAL_DOMAIN_NAME}
 ---
 apiVersion: v1
 kind: Service
