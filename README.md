@@ -1,8 +1,6 @@
 # k8s_homelab
 
-[![yamllint](https://github.com/loganmarchione/k8s_homelab/actions/workflows/yamllint.yml/badge.svg)](https://github.com/loganmarchione/k8s_homelab/actions/workflows/yamllint.yml)
-
-[![shellcheck](https://github.com/loganmarchione/k8s_homelab/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/loganmarchione/k8s_homelab/actions/workflows/shellcheck.yml)
+[![yamllint](https://github.com/loganmarchione/k8s_homelab/actions/workflows/yamllint.yml/badge.svg)](https://github.com/loganmarchione/k8s_homelab/actions/workflows/yamllint.yml) [![shellcheck](https://github.com/loganmarchione/k8s_homelab/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/loganmarchione/k8s_homelab/actions/workflows/shellcheck.yml)
 
 A K3s cluster defined as code.
 
