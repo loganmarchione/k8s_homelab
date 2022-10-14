@@ -22,4 +22,4 @@ jobs:
       - name: Run shellcheck
         run: |
           shellcheck --version
-          grep -rl '^#!/.*sh' * | xargs -n1 shellcheck
+          grep -rl '^#!/.*sh' * | xargs -n1 shellcheck -x

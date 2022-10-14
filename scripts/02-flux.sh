@@ -30,9 +30,9 @@ installFlux() {
 
   message "STATE: Bootstrapping Flux"
   flux bootstrap github \
-  --owner=${GITHUB_USER} \
-  --repository=${GITHUB_REPO} \
-  --branch=${GITHUB_BRANCH} \
+  --owner="${GITHUB_USER}" \
+  --repository="${GITHUB_REPO}" \
+  --branch="${GITHUB_BRANCH}" \
   --path=cluster/base \
   --personal
 }
