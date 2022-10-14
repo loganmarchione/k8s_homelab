@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: string-is
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: string-is-deployment
+  namespace: string-is
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: string-is
+  template:
+    metadata:
+      labels:
+        app: string-is
+    spec:
+      containers:
+        - name: string-is
+          image: daveperrett/string-is:v1.34.2
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: string-is-service
+  namespace: string-is
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 3000
+      port: 3000
+      protocol: TCP
+  selector:
+    app: string-is
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: string-is-ingress
+  namespace: string-is
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: string-is.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: string-is-service
+                port:
+                  number: 3000
+  tls:
+    - hosts:
+        - string-is.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: string-is-tls
