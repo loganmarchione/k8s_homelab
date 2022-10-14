@@ -1,5 +1,9 @@
 # k8s_homelab
 
+[![yamllint](https://github.com/loganmarchione/k8s_homelab/actions/workflows/yamllint.yml/badge.svg)](https://github.com/loganmarchione/k8s_homelab/actions/workflows/yamllint.yml)
+
+A K3s cluster defined as code.
+
 ## Stack
 
 ### Core
