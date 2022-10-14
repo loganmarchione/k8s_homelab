@@ -27,15 +27,22 @@ export KUBECONFIG=$HOME/.kube/config
 kubectl get nodes -o wide
 ```
 
-Next, create a namespace for Flux, as well as series of secrets.
+Next, create a series of secrets.
+
+⚠️ WARNING ⚠️
+
+Keep in mind that these secrets will be in your shell history and clipboard (you should clear both).
 
 ```
-kubectl create namespace flux-system --dry-run=client -o yaml | kubectl apply -f -
-kubectl create secret generic cluster-secret-vars \
-  --namespace=flux-system \
+kubectl create secret generic cluster-secret-vars --namespace=flux-system \
   --from-literal=SECRET_INTERNAL_DOMAIN_NAME=your.domain.com \
   --from-literal=SECRET_LETS_ENCRYPT_EMAIL=name@email.com \
-  --from-literal=SECRET_AWS_REGION=region-here-1
+  --from-literal=SECRET_AWS_REGION=region-here-1 \
+  --from-literal=SECRET_AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+
+kubectl create secret generic letsencrypt-secret-vars --namespace=cert-manager \
+  --from-literal=SECRET_AWS_ACCESS_KEY=wJalrXUtnFEMIKK7MDENGKbPxRfiCYEXAMPLEKEY
+
 kubectl describe secret cluster-secret-vars -n flux-system
 ```
 
