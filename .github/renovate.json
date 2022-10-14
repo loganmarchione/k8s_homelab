@@ -5,6 +5,9 @@
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard",
+  "flux": {
+    "fileMatch": ["cluster/.+\\.ya?ml$"]
+  },
   "kubernetes": {
     "fileMatch": ["cluster/.+\\.ya?ml$"],
     "ignorePaths": ["cluster/base/"]
