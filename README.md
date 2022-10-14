@@ -91,4 +91,4 @@ See the [README](/scripts/README.md) for more information
 - [x] Change intervals under `cluster/charts` from 1m to 1h
 - [x] [Auto-issue certs](https://cert-manager.io/docs/usage/ingress/) using cert-manager
 - [ ] Setup [renovatebot](https://github.com/renovatebot/renovate)
-- [ ] Setup yamlint (using [GitHub Actions](https://github.com/ibiqlik/action-yamllint) or just by running `pip3 install yamllint` in the workflow)
+- [x] Setup yamlint (using [GitHub Actions](https://github.com/ibiqlik/action-yamllint) or just by running `pip3 install yamllint` in the workflow)
