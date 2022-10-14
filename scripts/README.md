@@ -9,6 +9,8 @@ Start by cloning the repo, editing the `.env` file, and bootstrapping the cluste
 
 ## Setup
 
+### K3s
+
 Starting by cloning the repo, editing a few variables, and then installing K3s.
 
 ```
@@ -20,14 +22,19 @@ vim .env
 ./01-setupMasterNode.sh
 ```
 
-At this point, you should be able to run the commands below.
+At this point, you should be able to run the commands below. If so, K3s is up and running!
 
 ```
 export KUBECONFIG=$HOME/.kube/config
 kubectl get nodes -o wide
 ```
 
-Next, create a series of secrets.
+You can find your kubeconfig file and copy/paste it to your local workstation for accessing your cluster remotely.
+`cat $HOME/.kube/config`
+
+### Flux
+
+Now, create a series of secrets.
 
 ⚠️ WARNING ⚠️
 
