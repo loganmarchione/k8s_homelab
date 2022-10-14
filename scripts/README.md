@@ -60,7 +60,7 @@ Verify the secrets were created.
 kubectl get secret --all-namespaces
 ```
 
-Bootstrap Flux
+Bootstrap Flux (this will install Flux and **everything** else).
 
 ```
 ./02-flux.sh
