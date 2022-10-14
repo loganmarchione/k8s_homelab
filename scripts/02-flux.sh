@@ -6,7 +6,7 @@ set -u
 set -o pipefail
 IFS=$'\n\t'
 
-# shellcheck source=scripts/.env
+# shellcheck source=/dev/null
 source .env
 
 message() {
