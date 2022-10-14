@@ -31,7 +31,9 @@ kubectl get nodes -o wide
 
 You can find your kubeconfig file and copy/paste it to your local workstation for accessing your cluster remotely.
 
-`cat $HOME/.kube/config`
+```
+cat $HOME/.kube/config
+```
 
 ### Flux
 
