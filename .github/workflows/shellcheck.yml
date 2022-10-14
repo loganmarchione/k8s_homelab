@@ -22,3 +22,4 @@ jobs:
       - name: Run shellcheck
         run: |
           shellcheck --version
+          shellcheck
