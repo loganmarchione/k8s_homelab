@@ -52,7 +52,7 @@ installK3s() {
   #message "STATE: Getting nodes"
   #kubectl get nodes -o wide
 
-  message "STATE: Your kubeconfig is located at:   "$HOME"/.kube/config"
+  message "STATE: Your kubeconfig is located at:   $HOME/.kube/config"
 
   if [[ -x "$(command -v /usr/sbin/ufw)" ]]; then
     message "STATE: UFW is installed, opening 6443/tcp"
