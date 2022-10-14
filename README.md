@@ -62,7 +62,7 @@ The applications that run in my homelab (listed in alphabetical order)
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/mpepping/cyberchef">CyberChef</a></td>
-        <td>A Dockerized version of GCHQ's Cyber Swiss Army Knife</td>
+        <td>A Dockerized version of <a href="https://github.com/gchq/CyberChef/">GCHQ's Cyber Swiss Army Knife</a></td>
     </tr>
     <tr>
         <td><a href="https://www.diagrams.net/">Diagram.net (aka Draw.io)</a></td>
@@ -70,7 +70,7 @@ The applications that run in my homelab (listed in alphabetical order)
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
-        <td>A Dockerized version of string.is</td>
+        <td>A Dockerized version of <a href="https://github.com/recurser/string-is">string.is</a></td>
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/traefik/whoami/">whoami</a></td>
