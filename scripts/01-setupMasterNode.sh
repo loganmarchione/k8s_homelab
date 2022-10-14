@@ -1,5 +1,4 @@
 #!/bin/bash
-# shellcheck source-path=scripts
 
 # Be safe out there
 set -e
@@ -7,6 +6,7 @@ set -u
 set -o pipefail
 IFS=$'\n\t'
 
+# shellcheck source=scripts/.env
 source .env
 
 message() {
