@@ -5,6 +5,7 @@
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard",
+  "labels": ["renovatebot"],
   "flux": {
     "fileMatch": ["cluster/.+\\.ya?ml$"]
   },
