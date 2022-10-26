@@ -5,11 +5,16 @@ Some assumptions I'm making...
 - This is intended to be run on a single-node cluster (i.e., master and worker on same node)
 - These scripts are intended to be executed on the single node itself (you'll need sudo access)
 - This will only run on amd64 hardware
-- You have a seprate mountpoint specified for your local volume storage
 
 Start by cloning the repo, editing the `.env` file, and bootstrapping the cluster (installing K3s, Helm, etc...).
 
 ## Setup
+
+### Prerequisites
+
+- You've created a GitHub [personal access token](https://github.com/settings/tokens) with the following permissions:
+  - all under `repo`
+  - all under `admin:public_key`
 
 ### K3s
 
