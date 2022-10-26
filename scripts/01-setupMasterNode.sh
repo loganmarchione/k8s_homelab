@@ -75,9 +75,19 @@ installHelm() {
   rmdir linux-amd64
 }
 
+setupMountPoints() {
+  sudo mkdir -p "${K3S_STORAGE_MP}"
+  if grep -q "${K3S_STORAGE_MP}" /etc/fstab; then
+    message "STATE: Mountpoint exists, continuing"
+  else
+    message "STATE: Mountpoint does not exist"
+  fi
+}
+
 userCheck
 installPackages
 installK3s
 installHelm
+setupMountPoints
 
 message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
