@@ -108,7 +108,7 @@ kubectl get clusterissuer -n cert-manager
 kubectl get secret -n cert-manager
 ```
 
-A few minutes, you should see certificates appear (it will take a few minutes for everything to show `True`).
+A few minutes, you should see certificates appear (it will take up to five minutes for everything to show `True`).
 
 ```
 kubectl get certificate --all-namespaces
