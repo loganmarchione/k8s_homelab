@@ -118,4 +118,5 @@ If the certificates are not issuing, use the commands below to troubleshoot.
 ```
 kubectl get certificaterequest --all-namespaces
 kubectl describe certificaterequest --all-namespaces
+kubectl get order --all-namespaces
 ```
