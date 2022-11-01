@@ -1,0 +1,88 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: codeserver
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: codeserver-config-pvc
+  namespace: codeserver
+  annotations:
+    volumeType: local
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-path
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codeserver-deployment
+  namespace: codeserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: codeserver
+  template:
+    metadata:
+      labels:
+        app: codeserver
+    spec:
+      containers:
+        - name: codeserver
+          image: linuxserver/code-server:4.8.1
+          ports:
+            - containerPort: 8443
+          volumeMounts:
+            - name: config
+              mountPath: /config
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: codeserver-config-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: codeserver-service
+  namespace: codeserver
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 8443
+      port: 8443
+      protocol: TCP
+  selector:
+    app: codeserver
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: codeserver-ingress
+  namespace: codeserver
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: codeserver.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: codeserver-service
+                port:
+                  number: 8443
+  tls:
+    - hosts:
+        - codeserver.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: codeserver-tls
