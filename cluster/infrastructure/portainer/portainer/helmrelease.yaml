@@ -24,8 +24,8 @@ spec:
       retries: 5
 # https://portainer.github.io/k8s/charts/portainer/
   values:
-    enterpriseEdition:
-      enabled: "false"
+#   enterpriseEdition:
+#     enabled: "false"
     image:
       repository: portainer/portainer-ce
       tag: 2.15.1-alpine
