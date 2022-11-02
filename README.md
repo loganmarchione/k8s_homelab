@@ -58,6 +58,11 @@ The infrastructure that everything else depends on
         <td><a href="https://cert-manager.io/">cert-manager</a></td>
         <td>X.509 certificate management for Kubernetes</td>
     </tr>
+    <tr>
+        <td><img width="32" src="https://raw.githubusercontent.com/portainer/portainer/develop/app/assets/images/logo_ico.png"></td>
+        <td><a href="https://www.portainer.io/">Portainer</a></td>
+        <td>Web-based management for Kubernetes</td>
+    </tr>
 </table>
 
 ### `cluster/apps`
