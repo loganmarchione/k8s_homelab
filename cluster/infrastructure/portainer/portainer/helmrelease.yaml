@@ -30,6 +30,10 @@ spec:
       tag: 2.15.1-alpine
     ingress:
       enabled: "true"
+      hosts:
+        - host: portainer-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
+          paths:
+            - path: /
     persistence:
       enabled: "true"
       storageClass: local-path-customized
