@@ -26,7 +26,7 @@ spec:
             - containerPort: 80
           env:
             - name: SINGLE_REGISTRY
-              value: true
+              value: "true"
             - name: NGINX_PROXY_PASS_URL
               value: http://registry-service:5000
 ---
