@@ -27,7 +27,7 @@ spec:
       enabled: "false"
     image:
       repository: portainer/portainer-ce
-      tag: 2.15.1-alpine
+      tag: 2.16.0-alpine
     ingress:
       enabled: "true"
     persistence:
