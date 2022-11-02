@@ -1,4 +1,5 @@
 # ---
+# Don't need a namespace here, since namespace is in registry.yaml
 # apiVersion: v1
 # kind: Namespace
 # metadata:
