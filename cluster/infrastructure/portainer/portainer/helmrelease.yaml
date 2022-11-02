@@ -22,6 +22,7 @@ spec:
   upgrade:
     remediation:
       retries: 5
+# https://portainer.github.io/k8s/charts/portainer/
   values:
     enterpriseEdition:
       enabled: "false"

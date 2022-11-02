@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - helmrelease.yaml
+  - ingress.yaml
