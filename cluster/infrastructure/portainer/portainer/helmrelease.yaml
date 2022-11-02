@@ -33,6 +33,6 @@ spec:
     persistence:
       enabled: "true"
       storageClass: local-path-customized
-#     size: 5Gi
+      size: 5Gi
     service:
       type: ClusterIP
