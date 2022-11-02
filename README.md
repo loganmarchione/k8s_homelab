@@ -65,6 +65,10 @@ The applications that run in my homelab (listed in alphabetical order)
         <th>Description</th>
     </tr>
     <tr>
+        <td><a href="https://hub.docker.com/r/linuxserver/code-server">Code Server</a></td>
+        <td>A Dockerized version of <a href="https://code.visualstudio.com/">VS Code</a></td>
+    </tr>
+    <tr>
         <td><a href="https://hub.docker.com/r/mpepping/cyberchef">CyberChef</a></td>
         <td>A Dockerized version of <a href="https://github.com/gchq/CyberChef/">GCHQ's Cyber Swiss Army Knife</a></td>
     </tr>
