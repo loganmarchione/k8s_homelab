@@ -1,6 +1,5 @@
 ---
 # Creating a custom StorageClass so that I can set some settings at the bottom
-# https://github.com/rancher/local-path-provisioner/issues/194
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
