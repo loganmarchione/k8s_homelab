@@ -14,11 +14,10 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   resources:
     requests:
       storage: 1Gi
-  storageClassName: local-path
+  storageClassName: local-path-customized
 ---
 apiVersion: apps/v1
 kind: Deployment
