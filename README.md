@@ -86,6 +86,10 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Docker image registry</td>
     </tr>
     <tr>
+        <td><a href="https://hub.docker.com/r/joxit/docker-registry-ui">Registry UI</a></td>
+        <td>Docker image registry UI</td>
+    </tr>
+    <tr>
         <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
         <td>A Dockerized version of <a href="https://github.com/recurser/string-is">string.is</a></td>
     </tr>
