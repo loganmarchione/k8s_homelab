@@ -99,6 +99,21 @@ If you need to give it a kick in the ass, use this.
 flux reconcile source git flux-system
 ```
 
+### StorageClass
+
+There is a custom storage class called `local-path-customized` based on Rancher's [local-path-provisioner](https://github.com/rancher/local-path-provisioner). It has the following additions:
+
+```
+reclaimPolicy: Retain
+allowVolumeExpansion: true
+```
+
+You can view the storage class below.
+
+```
+kubectl get storageclass
+```
+
 ### cert-manager
 
 After a few minutes, make sure that Let's Encrypt registered a `ClusterIssuer` and `secret` for both `production` and `staging`.
