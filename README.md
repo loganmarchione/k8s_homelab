@@ -49,6 +49,11 @@ The infrastructure that everything else depends on
         <th>Description</th>
     </tr>
     <tr>
+        <td><img width="32" src="https://raw.githubusercontent.com/rancher/ui/master/public/assets/images/logos/welcome-cow.svg"></td>
+        <td><a href="https://github.com/rancher/local-path-provisioner/">Local Path Provisioner</a></td>
+        <td>Local storage based on <code>hostPath</code> and <code>local</code> storage providers</td>
+    </tr>
+    <tr>
         <td><img width="32" src="https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png"></td>
         <td><a href="https://cert-manager.io/">cert-manager</a></td>
         <td>X.509 certificate management for Kubernetes</td>
@@ -75,6 +80,10 @@ The applications that run in my homelab (listed in alphabetical order)
     <tr>
         <td><a href="https://www.diagrams.net/">Diagram.net (aka Draw.io)</a></td>
         <td>Diagram creation</td>
+    </tr>
+    <tr>
+        <td><a href="https://hub.docker.com/_/registry">Registry</a></td>
+        <td>Docker image registry</td>
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
