@@ -81,10 +81,11 @@ Flux bootstraps in the order below (based off of the [dependencies](https://flux
 
 ```mermaid
 flowchart TD;
-    A["flux-system (core of flux)"]-->B["charts (3rd party charts)"]
-    B-->C["crds (custom resource definitions)"];
-    C-->D[infrastructure];
-    D-->E[apps];
+    A["flux-system (core of flux)"]-->B["namespaces"]
+    B-->C["charts (3rd party charts)"];
+    C-->D["crds (custom resource definitions)"];
+    D-->E[infrastructure];
+    E-->F[apps];
 ```
 
 Wait a few seconds, then run the command below (it will take a few minutes for everything to show `True`).
