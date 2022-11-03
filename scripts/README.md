@@ -63,7 +63,7 @@ kubectl create secret generic letsencrypt-secret-vars \
   --from-literal=SECRET_AWS_ACCESS_KEY=wJalrXUtnFEMIKK7MDENGKbPxRfiCYEXAMPLEKEY
 
 kubectl create secret generic pgadmin-secret-vars \
-  --namespace=pgadmin \
+  --namespace=pgadmin4 \
   --from-literal=PGADMIN_DEFAULT_EMAIL=name@email.com \
   --from-literal=PGADMIN_DEFAULT_PASSWORD=supersecretpasswordgoeshere
 ```
