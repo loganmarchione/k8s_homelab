@@ -87,6 +87,10 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Diagram creation</td>
     </tr>
     <tr>
+        <td><a href="https://hub.docker.com/r/dpage/pgadmin4">pgAdmin 4</a></td>
+        <td>Management tool for Postgres</td>
+    </tr>
+    <tr>
         <td><a href="https://hub.docker.com/_/registry">Registry</a></td>
         <td>Docker image registry</td>
     </tr>
@@ -113,4 +117,5 @@ See the [README](/scripts/README.md) for more information
 - [x] Change intervals under `cluster/charts` from 1m to 1h
 - [x] [Auto-issue certs](https://cert-manager.io/docs/usage/ingress/) using cert-manager
 - [ ] Setup [renovatebot](https://github.com/renovatebot/renovate)
+- [ ] Add [cert-manager CRDs](https://github.com/loganmarchione/k8s_homelab/blob/master/cluster/crds/cert-manager/kustomization.yaml) to renovatebot
 - [x] Setup yamlint (using [GitHub Actions](https://github.com/ibiqlik/action-yamllint) or just by running `pip3 install yamllint` in the workflow)
