@@ -59,6 +59,11 @@ kubectl create secret generic cluster-secret-vars --namespace=flux-system \
 
 kubectl create secret generic letsencrypt-secret-vars --namespace=cert-manager \
   --from-literal=SECRET_AWS_ACCESS_KEY=wJalrXUtnFEMIKK7MDENGKbPxRfiCYEXAMPLEKEY
+
+kubectl create secret generic pgadmin-secret-vars \
+  --namespace=pgadmin \
+  --from-literal=PGADMIN_DEFAULT_EMAIL=name@email.com \
+  --from-literal=PGADMIN_DEFAULT_PASSWORD=supersecretpasswordgoeshere
 ```
 
 Verify the secrets were created.
