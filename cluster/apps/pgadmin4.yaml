@@ -1,0 +1,96 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pgadmin4-config-pvc
+  namespace: pgadmin4
+  annotations:
+    volumeType: local
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-path-customized
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgadmin4-deployment
+  namespace: pgadmin4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgadmin4
+  template:
+    metadata:
+      labels:
+        app: pgadmin4
+    spec:
+      containers:
+        - name: pgadmin4
+          image: dpage/pgadmin4:6.14 
+          ports:
+            - containerPort: 80
+          env:
+            - name: PGADMIN_DISABLE_POSTFIX
+              value: "true"
+            - name: PGADMIN_DEFAULT_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: pgadmin-secret-vars
+                  key: PGADMIN_DEFAULT_EMAIL
+            - name: PGADMIN_DEFAULT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pgadmin-secret-vars
+                  key: PGADMIN_DEFAULT_PASSWORD
+          volumeMounts:
+            - name: config
+              mountPath: /var/lib/pgadmin
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: pgadmin4-config-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pgadmin4-service
+  namespace: pgadmin4
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 80
+      port: 80
+      protocol: TCP
+  selector:
+    app: pgadmin4
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pgadmin4-ingress
+  namespace: pgadmin4
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: pgadmin4.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pgadmin4-service
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - pgadmin4.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: pgadmin4-tls
