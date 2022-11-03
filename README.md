@@ -17,22 +17,22 @@ The core components of the cluster
         <th>Description</th>
     </tr>
     <tr>
-        <td><img width="32" src="https://cncf-branding.netlify.app/img/projects/k3s/icon/color/k3s-icon-color.svg"></td>
+        <td><img align=top width="32" src="https://cncf-branding.netlify.app/img/projects/k3s/icon/color/k3s-icon-color.svg"></td>
         <td><a href="https://k3s.io/">K3s</a></td>
         <td>Lightweight Kubernetes</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png"></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png"></td>
         <td><a href="https://traefik.io/">Traefik</a></td>
         <td>Kubernetes Ingress Controller</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://cncf-branding.netlify.app/img/projects/helm/icon/color/helm-icon-color.svg"></td>
+        <td><img align=top width="32" src="https://cncf-branding.netlify.app/img/projects/helm/icon/color/helm-icon-color.svg"></td>
         <td><a href="https://helm.sh/">Helm</a></td>
         <td>The package manager for Kubernetes</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://cncf-branding.netlify.app/img/projects/flux/icon/color/flux-icon-color.svg"></td>
+        <td><img align=top width="32" src="https://cncf-branding.netlify.app/img/projects/flux/icon/color/flux-icon-color.svg"></td>
         <td><a href="https://fluxcd.io/">Flux CD</a></td>
         <td>Continuous delivery solutions for Kubernetes </td>
     </tr>
@@ -49,17 +49,17 @@ The infrastructure that everything else depends on
         <th>Description</th>
     </tr>
     <tr>
-        <td><img width="32" src="https://raw.githubusercontent.com/rancher/ui/master/public/assets/images/logos/welcome-cow.svg"></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/rancher/ui/master/public/assets/images/logos/welcome-cow.svg"></td>
         <td><a href="https://github.com/rancher/local-path-provisioner/">Local Path Provisioner</a></td>
         <td>Local storage based on <code>hostPath</code> and <code>local</code> storage providers</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png"></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png"></td>
         <td><a href="https://cert-manager.io/">cert-manager</a></td>
         <td>X.509 certificate management for Kubernetes</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://raw.githubusercontent.com/portainer/portainer/develop/app/assets/images/logo_ico.png"></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/portainer/portainer/develop/app/assets/images/logo_ico.png"></td>
         <td><a href="https://www.portainer.io/">Portainer</a></td>
         <td>Web-based management for Kubernetes</td>
     </tr>
