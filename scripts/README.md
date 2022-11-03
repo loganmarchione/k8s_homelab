@@ -122,6 +122,12 @@ You can view the storage class below.
 kubectl get storageclass
 ```
 
+The location of the files are `/var/lib/rancher/k3s/storage`
+
+```
+ls -la /var/lib/rancher/k3s/storage
+```
+
 ### cert-manager
 
 After a few minutes, make sure that Let's Encrypt registered a `ClusterIssuer` and `secret` for both `production` and `staging`.
