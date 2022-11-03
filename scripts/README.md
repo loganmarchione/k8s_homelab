@@ -51,13 +51,15 @@ Now, create a series of secrets.
 Keep in mind that these secrets will be in your shell history and clipboard (you should clear both). Obviously replace the secrets (don't copy/paste directly).
 
 ```
-kubectl create secret generic cluster-secret-vars --namespace=flux-system \
+kubectl create secret generic cluster-secret-vars \
+  --namespace=flux-system \
   --from-literal=SECRET_INTERNAL_DOMAIN_NAME=your.domain.com \
   --from-literal=SECRET_LETS_ENCRYPT_EMAIL=name@email.com \
   --from-literal=SECRET_AWS_REGION=region-here-1 \
   --from-literal=SECRET_AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 
-kubectl create secret generic letsencrypt-secret-vars --namespace=cert-manager \
+kubectl create secret generic letsencrypt-secret-vars \
+  --namespace=cert-manager \
   --from-literal=SECRET_AWS_ACCESS_KEY=wJalrXUtnFEMIKK7MDENGKbPxRfiCYEXAMPLEKEY
 
 kubectl create secret generic pgadmin-secret-vars \
