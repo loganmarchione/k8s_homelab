@@ -64,7 +64,7 @@ installK3s() {
   fi
 
   message "STATE: Creating starter namespaces"
-  kubectl apply -f namespaces.yaml
+  kubectl apply -f ../cluster/namespaces/namespaces.yaml
 }
 
 installHelm() {

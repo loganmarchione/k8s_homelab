@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cert-manager
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: codeserver
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cyberchef
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: drawio
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: flux-system
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pgadmin
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: portainer
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: registry
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: string-is
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: whoami

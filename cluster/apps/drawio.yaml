@@ -1,9 +1,4 @@
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: drawio
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
