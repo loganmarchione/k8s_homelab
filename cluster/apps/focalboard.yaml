@@ -37,6 +37,8 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /opt/focalboard/config.json
+              subPath: config.json
+              readOnly: "true"
             - name: data
               mountPath: /data
       volumes:
