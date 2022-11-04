@@ -87,6 +87,10 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Diagram creation</td>
     </tr>
     <tr>
+        <td><a href="https://hub.docker.com/r/mattermost/focalboard/">Focalboard</a></td>
+        <td>Project and task management (Kanban board)</td>
+    </tr>
+    <tr>
         <td><a href="https://hub.docker.com/r/miniflux/miniflux">Miniflux</a></td>
         <td>Minimalist and opinionated feed reader</td>
     </tr>
@@ -122,4 +126,5 @@ See the [README](/scripts/README.md) for more information
 - [x] [Auto-issue certs](https://cert-manager.io/docs/usage/ingress/) using cert-manager
 - [ ] Setup [renovatebot](https://github.com/renovatebot/renovate)
 - [ ] Add [cert-manager CRDs](https://github.com/loganmarchione/k8s_homelab/blob/master/cluster/crds/cert-manager/kustomization.yaml) to renovatebot
+- [ ] Change install bash scripts to Ansible playbooks
 - [x] Setup yamlint (using [GitHub Actions](https://github.com/ibiqlik/action-yamllint) or just by running `pip3 install yamllint` in the workflow)
