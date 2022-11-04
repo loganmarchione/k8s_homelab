@@ -1,0 +1,105 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: focalboard-config-pvc
+  namespace: focalboard
+  annotations:
+    volumeType: local
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-path-customized
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: focalboard-data-pvc
+  namespace: focalboard
+  annotations:
+    volumeType: local
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-path-customized
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: focalboard-deployment
+  namespace: focalboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: focalboard
+  template:
+    metadata:
+      labels:
+        app: focalboard
+    spec:
+      containers:
+        - name: focalboard
+          image: mattermost/focalboard:7.4.3
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: config
+              mountPath: /opt/focalboard
+          volumeMounts:
+            - name: data
+              mountPath: /data
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: focalboard-config-pvc
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: focalboard-data-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: focalboard-service
+  namespace: focalboard
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 8000
+      port: 8000
+      protocol: TCP
+  selector:
+    app: focalboard
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: focalboard-ingress
+  namespace: focalboard
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: focalboard.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: focalboard-service
+                port:
+                  number: 8000
+  tls:
+    - hosts:
+        - focalboard.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: focalboard-tls
