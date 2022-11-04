@@ -21,15 +21,15 @@ spec:
             - containerPort: 8080
           env:
             - name: RUN_MIGRATIONS
-              value: 1
+              value: "1"
             - name: BASE_URL
               value: https://miniflux.${SECRET_INTERNAL_DOMAIN_NAME}
             - name: POLLING_FREQUENCY
-              value: 15
+              value: "15"
             - name: BATCH_SIZE
-              value: 75
+              value: "75"
             - name: CREATE_ADMIN
-              value: 1
+              value: "1"
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
