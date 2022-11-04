@@ -73,6 +73,30 @@ kubectl create secret generic miniflux-secret-vars \
   --from-literal=DATABASE_URL='postgres://db_user:db_password@db.your.domain.com:5432/db_name?sslmode=verify-full' \
   --from-literal=ADMIN_USERNAME=admin \
   --from-literal=ADMIN_PASSWORD=super_secret_password_goes_here
+
+cat <<EOF > config.json
+{
+  "serverRoot": "http://localhost:8000",
+  "port": 8000,
+  "dbtype": "postgres",
+  "dbconfig": "postgres://db_user:db_password@db.your.domain.com:5432/db_name?sslmode=verify-full&connect_timeout=10",
+  "useSSL": false,
+  "webpath": "./pack",
+  "filespath": "/data/files",
+  "telemetry": true,
+  "session_expire_time": 2592000,
+  "session_refresh_time": 18000,
+  "localOnly": false,
+  "enableLocalMode": true,
+  "localModeSocketLocation": "/var/tmp/focalboard_local.socket"
+}
+EOF
+
+kubectl create secret generic focalboard-secret-vars \
+    --namespace=focalboard \
+    --from-file=config.json
+
+rm config.json
 ```
 
 Verify the secrets were created.
