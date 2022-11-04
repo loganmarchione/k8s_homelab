@@ -87,6 +87,10 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Diagram creation</td>
     </tr>
     <tr>
+        <td><a href="https://hub.docker.com/r/miniflux/miniflux">Miniflux</a></td>
+        <td>Minimalist and opinionated feed reader</td>
+    </tr>
+    <tr>
         <td><a href="https://hub.docker.com/r/dpage/pgadmin4">pgAdmin 4</a></td>
         <td>Management tool for Postgres</td>
     </tr>
