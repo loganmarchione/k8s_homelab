@@ -50,14 +50,14 @@ spec:
           ports:
             - containerPort: 8000
           volumeMounts:
-            #            - name: config
-            #              mountPath: /opt/focalboard
+            - name: config
+              mountPath: /opt/focalboard/config.json
             - name: data
               mountPath: /data
       volumes:
         - name: config
-          persistentVolumeClaim:
-            claimName: focalboard-config-pvc
+          secret:
+            secretName: focalboard-secret-vars
         - name: data
           persistentVolumeClaim:
             claimName: focalboard-data-pvc
