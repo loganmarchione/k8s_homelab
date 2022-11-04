@@ -50,8 +50,8 @@ spec:
           ports:
             - containerPort: 8000
           volumeMounts:
-            - name: config
-              mountPath: /opt/focalboard
+            #            - name: config
+            #              mountPath: /opt/focalboard
             - name: data
               mountPath: /data
       volumes:
