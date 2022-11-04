@@ -52,14 +52,12 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /opt/focalboard
-          volumeMounts:
             - name: data
               mountPath: /data
       volumes:
         - name: config
           persistentVolumeClaim:
             claimName: focalboard-config-pvc
-      volumes:
         - name: data
           persistentVolumeClaim:
             claimName: focalboard-data-pvc
