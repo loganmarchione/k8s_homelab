@@ -5,6 +5,7 @@ Some assumptions I'm making...
 - This is intended to be run on a single-node cluster (i.e., master and worker on same node)
 - These scripts are intended to be executed on the single node itself (you'll need sudo access)
 - This will only run on amd64 hardware
+- The database server is external to all of this and is already created
 
 Start by cloning the repo, editing the `.env` file, and bootstrapping the cluster (installing K3s, Helm, etc...).
 
@@ -65,7 +66,13 @@ kubectl create secret generic letsencrypt-secret-vars \
 kubectl create secret generic pgadmin-secret-vars \
   --namespace=pgadmin4 \
   --from-literal=PGADMIN_DEFAULT_EMAIL=name@email.com \
-  --from-literal=PGADMIN_DEFAULT_PASSWORD=supersecretpasswordgoeshere
+  --from-literal=PGADMIN_DEFAULT_PASSWORD=super_secret_password_goes_here
+
+kubectl create secret generic miniflux-secret-vars \
+  --namespace=miniflux \
+  --from-literal=DATABASE_URL='postgres://db_user:db_password@db.youdomain.com:5432/db_name?sslmode=verify-full' \
+  --from-literal=ADMIN_USERNAME=admin \
+  --from-literal=ADMIN_PASSWORD=super_secret_password_goes_here
 ```
 
 Verify the secrets were created.
