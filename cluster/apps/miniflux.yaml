@@ -1,0 +1,87 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miniflux-deployment
+  namespace: miniflux
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: miniflux
+  template:
+    metadata:
+      labels:
+        app: miniflux
+    spec:
+      containers:
+        - name: miniflux
+          image: miniflux/miniflux:2.0.39
+          ports:
+            - containerPort: 8080
+          env:
+            - name: RUN_MIGRATIONS
+              value: 1
+            - name: BASE_URL
+              value: https://miniflux.${SECRET_INTERNAL_DOMAIN_NAME}
+            - name: POLLING_FREQUENCY
+              value: 15
+            - name: BATCH_SIZE
+              value: 75
+            - name: CREATE_ADMIN
+              value: 1
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: miniflux-secret-vars
+                  key: DATABASE_URL
+            - name: ADMIN_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: miniflux-secret-vars
+                  key: ADMIN_USERNAME
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: miniflux-secret-vars
+                  key: ADMIN_PASSWORD
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: miniflux-service
+  namespace: miniflux
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 8080
+      port: 8080
+      protocol: TCP
+  selector:
+    app: miniflux
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: miniflux-ingress
+  namespace: miniflux
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: miniflux.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: miniflux-service
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - miniflux.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: miniflux-tls

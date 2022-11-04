@@ -27,6 +27,11 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: miniflux
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: pgadmin4
 ---
 apiVersion: v1
