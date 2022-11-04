@@ -70,7 +70,7 @@ kubectl create secret generic pgadmin-secret-vars \
 
 kubectl create secret generic miniflux-secret-vars \
   --namespace=miniflux \
-  --from-literal=DATABASE_URL='postgres://db_user:db_password@db.youdomain.com:5432/db_name?sslmode=verify-full' \
+  --from-literal=DATABASE_URL='postgres://db_user:db_password@db.your.domain.com:5432/db_name?sslmode=verify-full' \
   --from-literal=ADMIN_USERNAME=admin \
   --from-literal=ADMIN_PASSWORD=super_secret_password_goes_here
 ```
