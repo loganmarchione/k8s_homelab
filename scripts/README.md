@@ -74,6 +74,11 @@ kubectl create secret generic miniflux-secret-vars \
   --from-literal=ADMIN_USERNAME=admin \
   --from-literal=ADMIN_PASSWORD=super_secret_password_goes_here
 
+kubectl create secret generic webdav-secret-vars \
+  --namespace=webdav \
+  --from-literal=WEBDAV_USER=admin \
+  --from-literal=WEBDAV_PASS=super_secret_password_goes_here
+
 cat <<EOF > config.json
 {
   "serverRoot": "http://localhost:8000",
