@@ -57,4 +57,9 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: webdav
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: whoami
