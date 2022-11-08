@@ -34,6 +34,17 @@ spec:
           image: loganmarchione/docker-webdav-nginx:0.1.0
           ports:
             - containerPort: 80
+          env:
+            - name: WEBDAV_USER
+              valueFrom:
+                secretKeyRef:
+                  name: webdav-secret-vars
+                  key: WEBDAV_USER
+            - name: WEBDAV_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: webdav-secret-vars
+                  key: WEBDAV_PASS
           volumeMounts:
             - name: data
               mountPath: /var/www/webdav
