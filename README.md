@@ -107,8 +107,16 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Docker image registry UI</td>
     </tr>
     <tr>
+        <td><a href="https://hub.docker.com/r/loganmarchione/docker-php-startpage">Startpage</a></td>
+        <td>PHP/HTML startpage</td>
+    </tr>
+    <tr>
         <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
         <td>A Dockerized version of <a href="https://github.com/recurser/string-is">string.is</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://hub.docker.com/r/loganmarchione/docker-webdav-nginx">WebDAV</a></td>
+        <td>Nginx WebDAV server</td>
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/traefik/whoami/">whoami</a></td>
