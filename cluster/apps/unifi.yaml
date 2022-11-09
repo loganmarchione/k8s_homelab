@@ -119,7 +119,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: unifi.${SECRET_INTERNAL_DOMAIN_NAME}
+    - host: unifi-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
       http:
         paths:
           - path: /
