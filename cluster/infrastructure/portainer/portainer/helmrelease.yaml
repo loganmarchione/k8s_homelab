@@ -28,7 +28,7 @@ spec:
 #     enabled: "false"
     image:
       repository: portainer/portainer-ce
-      tag: 2.16.0-alpine
+      tag: 2.16.1-alpine
     ingress:
       enabled: "true"
       hosts:
