@@ -81,7 +81,7 @@ metadata:
   name: unifi-service-tcp
   namespace: unifi
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - name: speedtest
       targetPort: 6789
@@ -100,7 +100,7 @@ metadata:
   name: unifi-service-udp
   namespace: unifi
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - name: stun
       targetPort: 3478
