@@ -1,0 +1,107 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: unifi-data-pvc
+  namespace: unifi
+  annotations:
+    volumeType: local
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: local-path-customized
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unifi-deployment
+  namespace: unifi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: unifi
+  template:
+    metadata:
+      labels:
+        app: unifi
+    spec:
+      containers:
+        - name: unifi
+          image: ryansch/unifi-rpi:7.2.94
+          ports:
+            - containerPort: 3478
+              protocol: UDP
+            - containerPort: 8080
+              protocol: TCP
+            - containerPort: 8443
+              protocol: TCP
+            - containerPort: 10001
+              protocol: UDP
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/unifi
+          resources:
+            requests:
+              memory: "512Mi"
+            limits:
+              memory: "2048Mi"
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: unifi-data-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: unifi-service
+  namespace: unifi
+spec:
+  type: ClusterIP
+  ports:
+    - name: STUN
+      targetPort: 3478
+      port: 3478
+      protocol: UDP
+    - name: Communication
+      targetPort: 8080
+      port: 8080
+      protocol: TCP
+    - name: http
+      targetPort: 8443
+      port: 8443
+      protocol: TCP
+    - name: Discovery
+      targetPort: 10001
+      port: 10001
+      protocol: UDP
+  selector:
+    app: unifi
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: unifi-ingress
+  namespace: unifi
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: unifi.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: unifi-service
+                port:
+                  number: 8443
+  tls:
+    - hosts:
+        - unifi-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: unifi-tls
