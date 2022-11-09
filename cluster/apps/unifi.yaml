@@ -117,7 +117,6 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     traefik.ingress.kubernetes.io/router.tls: "true"
-    ingress.kubernetes.io/protocol: https
 spec:
   rules:
     - host: unifi-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
