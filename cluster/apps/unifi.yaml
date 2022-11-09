@@ -35,6 +35,8 @@ spec:
           ports:
             - containerPort: 3478
               protocol: UDP
+            - containerPort: 6789
+              protocol: TCP
             - containerPort: 8080
               protocol: TCP
             - containerPort: 8443
@@ -62,18 +64,44 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - name: stun
-      targetPort: 3478
-      port: 3478
-      protocol: UDP
-    - name: communication
-      targetPort: 8080
-      port: 8080
-      protocol: TCP
     - name: http
       targetPort: 8443
       port: 8443
       protocol: TCP
+  selector:
+    app: unifi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: unifi-service-tcp
+  namespace: unifi
+spec:
+  type: ClusterIP
+  ports:
+    - name: speedtest
+      targetPort: 6789
+      port: 6789
+      protocol: TCP
+    - name: communication
+      targetPort: 8080
+      port: 8080
+      protocol: TCP
+  selector:
+    app: unifi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: unifi-service-udp
+  namespace: unifi
+spec:
+  type: ClusterIP
+  ports:
+    - name: stun
+      targetPort: 3478
+      port: 3478
+      protocol: UDP
     - name: discovery
       targetPort: 10001
       port: 10001
