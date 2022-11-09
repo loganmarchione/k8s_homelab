@@ -1,4 +1,6 @@
 ---
+# Creating a custom HelmChartConfig to allow Traefik to talk to self-signed certificates
+# https://github.com/k3s-io/k3s/issues/1313
 apiVersion: helm.cattle.io/v1
 kind: HelmChartConfig
 metadata:

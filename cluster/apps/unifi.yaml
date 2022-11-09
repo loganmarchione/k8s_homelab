@@ -95,6 +95,8 @@ kind: Service
 metadata:
   name: unifi-service-udp
   namespace: unifi
+  annotations:
+    traefik.ingress.kubernetes.io/service.serversscheme: https
 spec:
   type: ClusterIP
   ports:
