@@ -61,7 +61,7 @@ metadata:
 ---
 apiVersion: v1
 kind: Namespace
-metadata:                                                                                                                                                   
+metadata:
   name: unifi
 ---
 apiVersion: v1

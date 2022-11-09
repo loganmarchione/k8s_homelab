@@ -22,10 +22,10 @@ spec:
   upgrade:
     remediation:
       retries: 5
-# https://portainer.github.io/k8s/charts/portainer/
+  # https://portainer.github.io/k8s/charts/portainer/
   values:
-#   enterpriseEdition:
-#     enabled: "false"
+    #   enterpriseEdition:
+    #      enabled: "false"
     image:
       repository: portainer/portainer-ce
       tag: 2.16.1-alpine
