@@ -62,11 +62,11 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - name: STUN
+    - name: stun
       targetPort: 3478
       port: 3478
       protocol: UDP
-    - name: Communication
+    - name: communication
       targetPort: 8080
       port: 8080
       protocol: TCP
@@ -74,7 +74,7 @@ spec:
       targetPort: 8443
       port: 8443
       protocol: TCP
-    - name: Discovery
+    - name: discovery
       targetPort: 10001
       port: 10001
       protocol: UDP
