@@ -115,6 +115,10 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>A Dockerized version of <a href="https://github.com/recurser/string-is">string.is</a></td>
     </tr>
     <tr>
+        <td><a href="https://hub.docker.com/r/ryansch/unifi-rpi">UniFi</a></td>
+        <td>A Dockerized version of <a href="https://www.ui.com/download/unifi/">UniFi Controller</a></td>
+    </tr>
+    <tr>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-webdav-nginx">WebDAV</a></td>
         <td>Nginx WebDAV server</td>
     </tr>
