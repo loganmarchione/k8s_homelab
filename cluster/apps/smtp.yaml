@@ -1,0 +1,91 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: smtp-data-pvc
+  namespace: smtp
+  annotations:
+    volumeType: local
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+  storageClassName: local-path-customized
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smtp-deployment
+  namespace: smtp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smtp
+  template:
+    metadata:
+      labels:
+        app: smtp
+    spec:
+      containers:
+        - name: smtp
+          image: loganmarchione/docker-postfixrelay:1.2.0
+          ports:
+            - containerPort: 25
+          env:
+            - name: TZ
+              value: America/New_York
+            - name: RELAY_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: smtp-secret-vars
+                  key: RELAY_HOST
+            - name: RELAY_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: smtp-secret-vars
+                  key: RELAY_PORT
+            - name: TEST_EMAIL 
+              valueFrom:
+                secretKeyRef:
+                  name: smtp-secret-vars
+                  key: TEST_EMAIL
+            - name: MYORIGIN 
+              valueFrom:
+                secretKeyRef:
+                  name: smtp-secret-vars
+                  key: MYORIGIN
+            - name: RELAY_USER 
+              valueFrom:
+                secretKeyRef:
+                  name: smtp-secret-vars
+                  key: RELAY_USER 
+            - name: RELAY_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: smtp-secret-vars
+                  key: RELAY_PASS
+          volumeMounts:
+            - name: data
+              mountPath: /var/spool/postfix
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: smtp-data-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: smtp-service-tcp
+  namespace: smtp
+spec:
+  type: LoadBalancer
+  ports:
+    - name: smtp
+      targetPort: 25
+      port: smtp
+      protocol: TCP
+  selector:
+    app: smtp
