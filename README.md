@@ -107,6 +107,10 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Docker image registry UI</td>
     </tr>
     <tr>
+        <td><a href="https://hub.docker.com/r/loganmarchione/docker-postfixrelay">SMTP relay</a></td>
+        <td>SMTP (Postfix) relay</td>
+    </tr>
+    <tr>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-php-startpage">Startpage</a></td>
         <td>PHP/HTML startpage</td>
     </tr>
