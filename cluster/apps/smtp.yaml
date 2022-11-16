@@ -85,7 +85,7 @@ spec:
   ports:
     - name: smtp
       targetPort: 25
-      port: smtp
+      port: 25
       protocol: TCP
   selector:
     app: smtp
