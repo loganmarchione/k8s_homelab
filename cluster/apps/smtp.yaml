@@ -47,21 +47,21 @@ spec:
                 secretKeyRef:
                   name: smtp-secret-vars
                   key: RELAY_PORT
-            - name: TEST_EMAIL 
+            - name: TEST_EMAIL
               valueFrom:
                 secretKeyRef:
                   name: smtp-secret-vars
                   key: TEST_EMAIL
-            - name: MYORIGIN 
+            - name: MYORIGIN
               valueFrom:
                 secretKeyRef:
                   name: smtp-secret-vars
                   key: MYORIGIN
-            - name: RELAY_USER 
+            - name: RELAY_USER
               valueFrom:
                 secretKeyRef:
                   name: smtp-secret-vars
-                  key: RELAY_USER 
+                  key: RELAY_USER
             - name: RELAY_PASS
               valueFrom:
                 secretKeyRef:
