@@ -38,4 +38,3 @@ spec:
     - hosts:
         - traefik-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
       secretName: traefik-dashboard-tls
-
