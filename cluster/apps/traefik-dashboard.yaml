@@ -33,6 +33,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-production
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.middlewares: kube-system-traefik-auth@kubernetescrd
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
   rules:
     - host: traefik-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
