@@ -38,7 +38,7 @@ spec:
     - host: traefik-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
       http:
         paths:
-          - path: /dashboard/
+          - path: "/dashboard"
             pathType: Prefix
             backend:
               service:
