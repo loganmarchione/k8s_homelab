@@ -1,12 +1,12 @@
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: traefik-auth
-  namespace: kube-system
-spec:
-  basicAuth:
-    secret: traefik-secret-vars
+#---
+#apiVersion: traefik.containo.us/v1alpha1
+#kind: Middleware
+#metadata:
+#  name: traefik-auth
+#  namespace: kube-system
+#spec:
+#  basicAuth:
+#    secret: traefik-secret-vars
 ---
 apiVersion: v1
 kind: Service
@@ -32,13 +32,13 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.middlewares: kube-system-traefik-auth@kubernetescrd
+      #    traefik.ingress.kubernetes.io/router.middlewares: kube-system-traefik-auth@kubernetescrd
 spec:
   rules:
     - host: traefik-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
       http:
         paths:
-          - path: /
+          - path: /dashboard/
             pathType: Prefix
             backend:
               service:
