@@ -61,13 +61,10 @@ kind: Service
 metadata:
   name: unifi-service
   namespace: unifi
-  # Need annotation to allow Traefik to talk to self-signed certificates
-  # https://github.com/k3s-io/k3s/issues/1313#issuecomment-1309324759
-  #  annotations:
-  #    traefik.ingress.kubernetes.io/service.serversscheme: https
 spec:
   type: ClusterIP
   ports:
+      # this needs to be https so that traefik knows we're talking to an app that's using a self-signed cert
     - name: https
       targetPort: 8443
       port: 8443
