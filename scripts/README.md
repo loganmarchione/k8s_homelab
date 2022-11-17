@@ -59,6 +59,12 @@ kubectl create secret generic cluster-secret-vars \
   --from-literal=SECRET_AWS_REGION=region-here-1 \
   --from-literal=SECRET_AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 
+kubectl create secret generic traefik-secret-vars \
+  --namespace=kube-system \
+  --type=kubernetes.io/basic-auth \
+  --from-literal=username=admin \
+  --from-literal=password=super_secret_password_goes_here
+
 kubectl create secret generic letsencrypt-secret-vars \
   --namespace=cert-manager \
   --from-literal=SECRET_AWS_ACCESS_KEY=wJalrXUtnFEMIKK7MDENGKbPxRfiCYEXAMPLEKEY
