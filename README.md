@@ -108,15 +108,19 @@ The applications that run in my homelab (listed in alphabetical order)
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-postfixrelay">SMTP relay</a></td>
-        <td>SMTP (Postfix) relay</td>
+        <td>SMTP (Postfix) relay (my own container image)</td>
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-php-startpage">Startpage</a></td>
-        <td>PHP/HTML startpage</td>
+        <td>PHP/HTML startpage (my own container image)</td>
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
         <td>A Dockerized version of <a href="https://github.com/recurser/string-is">string.is</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://doc.traefik.io/traefik/operations/dashboard/">Traefik dashboard</a></td>
+        <td>This was already installed, just exposing it with ingress and basic auth</a></td>
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/ryansch/unifi-rpi">UniFi</a></td>
@@ -124,7 +128,7 @@ The applications that run in my homelab (listed in alphabetical order)
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-webdav-nginx">WebDAV</a></td>
-        <td>Nginx WebDAV server</td>
+        <td>Nginx WebDAV server (my own container image)</td>
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/traefik/whoami/">whoami</a></td>
