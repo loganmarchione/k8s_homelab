@@ -83,7 +83,7 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>A Dockerized version of <a href="https://github.com/gchq/CyberChef/">GCHQ's Cyber Swiss Army Knife</a></td>
     </tr>
     <tr>
-        <td><a href="https://hub.docker.com/r/jgraph/drawio">Diagram.net (aka Draw.io)</a></td>
+        <td><a href="https://hub.docker.com/r/jgraph/drawio">Diagrams.net (aka Draw.io)</a></td>
         <td>Diagram creation</td>
     </tr>
     <tr>
