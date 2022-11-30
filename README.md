@@ -73,7 +73,7 @@ The applications that run in my homelab (listed in alphabetical order)
     <tr>
         <td><img vertical-align=baseline width="32" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"></td>
         <td><a href="https://hub.docker.com/r/linuxserver/code-server">Code Server</a></td>
-        <td>A Dockerized version of <a href="https://code.visualstudio.com/">VS Code</a></td>
+        <td>A Dockerized version of <a href="https://github.com/coder/code-server">code-server</a></td>
     </tr>
     <tr>
          <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/gchq/CyberChef/master/src/web/static/images/logo/cyberchef_hat.svg"></td>
