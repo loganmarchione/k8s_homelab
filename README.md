@@ -83,12 +83,16 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>A Dockerized version of <a href="https://github.com/gchq/CyberChef/">GCHQ's Cyber Swiss Army Knife</a></td>
     </tr>
     <tr>
-        <td><a href="https://www.diagrams.net/">Diagram.net (aka Draw.io)</a></td>
+        <td><a href="https://hub.docker.com/r/jgraph/drawio">Diagram.net (aka Draw.io)</a></td>
         <td>Diagram creation</td>
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/mattermost/focalboard/">Focalboard</a></td>
         <td>Project and task management (Kanban board)</td>
+    </tr>
+    <tr>
+        <td><a href="https://hub.docker.com/r/grafana/grafana-oss">Grafana</a></td>
+        <td>Part of the TIG stack (Telegraf, InfluxDB, Grafana)</td>
     </tr>
     <tr>
         <td><a href="https://hub.docker.com/r/miniflux/miniflux">Miniflux</a></td>
