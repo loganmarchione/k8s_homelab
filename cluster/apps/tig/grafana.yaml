@@ -37,8 +37,8 @@ spec:
           env:
             - name: GF_SERVER_DOMAIN
               value: https://grafana.${SECRET_INTERNAL_DOMAIN_NAME}
-            - name: grafana-clock-panel,grafana-piechart-panel,grafana-worldmap-panel,magnesium-wordcloud-panel,grafana-opensearch-datasource
-              value:
+            - name: GF_INSTALL_PLUGINS
+              value: grafana-clock-panel,grafana-piechart-panel,grafana-worldmap-panel,magnesium-wordcloud-panel,grafana-opensearch-datasource
           volumeMounts:
             - name: data
               mountPath: /var/lib/grafana
