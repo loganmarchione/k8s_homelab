@@ -71,7 +71,7 @@ The applications that run in my homelab (listed in alphabetical order)
         <th>Description</th>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"></td>
         <td><a href="https://hub.docker.com/r/linuxserver/code-server">Code Server</a></td>
         <td>A Dockerized version of <a href="https://code.visualstudio.com/">VS Code</a></td>
     </tr>
@@ -121,12 +121,12 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Docker image registry UI</td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/twbs/icons/main/icons/envelope-at.svg"></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-postfixrelay">SMTP relay</a></td>
         <td>SMTP (Postfix) relay (my own container image)</td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/php/web-php/master/images/logos/new-php-logo.png"></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-php-startpage">Startpage</a></td>
         <td>PHP/HTML startpage (my own container image)</td>
     </tr>
