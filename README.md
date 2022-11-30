@@ -22,7 +22,7 @@ The core components of the cluster
         <td>Lightweight Kubernetes</td>
     </tr>
     <tr>
-        <td><img align=top width="32" src="https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png"></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/traefik/traefik/master/webui/src/assets/traefik.avatar.svg"></td>
         <td><a href="https://traefik.io/">Traefik</a></td>
         <td>Kubernetes Ingress Controller</td>
     </tr>
@@ -81,27 +81,27 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>A Dockerized version of <a href="https://github.com/gchq/CyberChef/">GCHQ's Cyber Swiss Army Knife</a></td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/jgraph/drawio/dev/src/main/webapp/images/drawlogo128.png"></td>
         <td><a href="https://hub.docker.com/r/jgraph/drawio">Diagrams.net (aka Draw.io)</a></td>
         <td>Diagram creation</td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/mattermost/focalboard/main/webapp/static/favicon.svg"></td>
         <td><a href="https://hub.docker.com/r/mattermost/focalboard/">Focalboard</a></td>
         <td>Project and task management (Kanban board)</td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/grafana/grafana/main/public/img/grafana_icon.svg"></td>
         <td><a href="https://hub.docker.com/r/grafana/grafana-oss">Grafana</a></td>
         <td>Part of the TIG stack (Telegraf, InfluxDB, Grafana)</td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/miniflux/v2/main/ui/static/bin/favicon-32.png"></td>
         <td><a href="https://hub.docker.com/r/miniflux/miniflux">Miniflux</a></td>
         <td>Minimalist and opinionated feed reader</td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/pgadmin-org/pgadmin4/master/runtime/assets/pgAdmin4.png"></td>
         <td><a href="https://hub.docker.com/r/dpage/pgadmin4">pgAdmin 4</a></td>
         <td>Management tool for Postgres</td>
     </tr>
@@ -111,12 +111,12 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Web-based management for Kubernetes</td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/docker/docs/main/assets/images/engine.svg"></td>
         <td><a href="https://hub.docker.com/_/registry">Registry</a></td>
         <td>Docker image registry</td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/docker/docs/main/assets/images/engine.svg"></td>
         <td><a href="https://hub.docker.com/r/joxit/docker-registry-ui">Registry UI</a></td>
         <td>Docker image registry UI</td>
     </tr>
@@ -131,12 +131,12 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>PHP/HTML startpage (my own container image)</td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/recurser/string-is/develop/src/images/logo.svg"></td>
         <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
         <td>A Dockerized version of <a href="https://github.com/recurser/string-is">string.is</a></td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/traefik/traefik/master/webui/src/assets/traefik.avatar.svg"></td>
         <td><a href="https://doc.traefik.io/traefik/operations/dashboard/">Traefik dashboard</a></td>
         <td>This was already installed, just exposing it with ingress and basic auth</a></td>
     </tr>
@@ -151,7 +151,7 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Nginx WebDAV server (my own container image)</td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/traefik/traefik/master/webui/src/assets/traefik.avatar.svg"></td>
         <td><a href="https://hub.docker.com/r/traefik/whoami/">whoami</a></td>
         <td>Test web app written in Go</td>
     </tr>
