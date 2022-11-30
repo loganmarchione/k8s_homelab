@@ -58,11 +58,6 @@ The infrastructure that everything else depends on
         <td><a href="https://cert-manager.io/">cert-manager</a></td>
         <td>X.509 certificate management for Kubernetes</td>
     </tr>
-    <tr>
-        <td><img align=top width="32" src="https://raw.githubusercontent.com/portainer/portainer/develop/app/assets/images/logo_ico.png"></td>
-        <td><a href="https://www.portainer.io/">Portainer</a></td>
-        <td>Web-based management for Kubernetes</td>
-    </tr>
 </table>
 
 ### `cluster/apps`
@@ -71,70 +66,92 @@ The applications that run in my homelab (listed in alphabetical order)
 
 <table>
     <tr>
+        <th>Logo</th>
         <th>Name</th>
         <th>Description</th>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/linuxserver/code-server">Code Server</a></td>
         <td>A Dockerized version of <a href="https://code.visualstudio.com/">VS Code</a></td>
     </tr>
     <tr>
+         <td><img align=top width="32" src="https://raw.githubusercontent.com/gchq/CyberChef/master/src/web/static/images/logo/cyberchef_hat.svg"></td>
         <td><a href="https://hub.docker.com/r/mpepping/cyberchef">CyberChef</a></td>
         <td>A Dockerized version of <a href="https://github.com/gchq/CyberChef/">GCHQ's Cyber Swiss Army Knife</a></td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/jgraph/drawio">Diagrams.net (aka Draw.io)</a></td>
         <td>Diagram creation</td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/mattermost/focalboard/">Focalboard</a></td>
         <td>Project and task management (Kanban board)</td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/grafana/grafana-oss">Grafana</a></td>
         <td>Part of the TIG stack (Telegraf, InfluxDB, Grafana)</td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/miniflux/miniflux">Miniflux</a></td>
         <td>Minimalist and opinionated feed reader</td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/dpage/pgadmin4">pgAdmin 4</a></td>
         <td>Management tool for Postgres</td>
     </tr>
     <tr>
+        <td><img align=top width="32" src="https://raw.githubusercontent.com/portainer/portainer/develop/app/assets/images/logo_ico.png"></td>
+        <td><a href="https://www.portainer.io/">Portainer</a></td>
+        <td>Web-based management for Kubernetes</td>
+    </tr>
+    <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/_/registry">Registry</a></td>
         <td>Docker image registry</td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/joxit/docker-registry-ui">Registry UI</a></td>
         <td>Docker image registry UI</td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-postfixrelay">SMTP relay</a></td>
         <td>SMTP (Postfix) relay (my own container image)</td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-php-startpage">Startpage</a></td>
         <td>PHP/HTML startpage (my own container image)</td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
         <td>A Dockerized version of <a href="https://github.com/recurser/string-is">string.is</a></td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://doc.traefik.io/traefik/operations/dashboard/">Traefik dashboard</a></td>
         <td>This was already installed, just exposing it with ingress and basic auth</a></td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/ryansch/unifi-rpi">UniFi</a></td>
         <td>A Dockerized version of <a href="https://www.ui.com/download/unifi/">UniFi Controller</a></td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-webdav-nginx">WebDAV</a></td>
         <td>Nginx WebDAV server (my own container image)</td>
     </tr>
     <tr>
+        <td></td>
         <td><a href="https://hub.docker.com/r/traefik/whoami/">whoami</a></td>
         <td>Test web app written in Go</td>
     </tr>
