@@ -141,12 +141,12 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>This was already installed, just exposing it with ingress and basic auth</a></td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://www.ui.com/microsite/logo192.png"></td>
         <td><a href="https://hub.docker.com/r/ryansch/unifi-rpi">UniFi</a></td>
         <td>A Dockerized version of <a href="https://www.ui.com/download/unifi/">UniFi Controller</a></td>
     </tr>
     <tr>
-        <td></td>
+        <td><img align=top width="32" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/320px-Nginx_logo.svg.png"></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-webdav-nginx">WebDAV</a></td>
         <td>Nginx WebDAV server (my own container image)</td>
     </tr>
