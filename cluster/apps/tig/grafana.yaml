@@ -35,16 +35,6 @@ spec:
           ports:
             - containerPort: 3000
           env:
-            - name: GF_SECURITY_ADMIN_USER
-              valueFrom:
-                secretKeyRef:
-                  name: tig-secret-vars
-                  key: GF_SECURITY_ADMIN_USER
-            - name: GF_SECURITY_ADMIN_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: tig-secret-vars
-                  key: GF_SECURITY_ADMIN_PASSWORD
             - name: GF_SERVER_DOMAIN
               value: grafana.${SECRET_INTERNAL_DOMAIN_NAME}
             - name: GF_INSTALL_PLUGINS
