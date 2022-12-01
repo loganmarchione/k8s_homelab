@@ -120,7 +120,9 @@ spec:
                   key: TELEGRAF_X509_SOURCES
           volumeMounts:
             - name: config
-              mountPath: /etc/telegraf
+              mountPath: /etc/telegraf/telegraf.conf
+              subPath: telegraf.conf
+              readOnly: true
       volumes:
         - name: config
           configMap:
