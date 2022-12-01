@@ -102,7 +102,7 @@ spec:
       containers:
         - name: telegraf-x509
           image: telegraf:1.23-alpine
-          command: ["sleep", "3601"]
+          command: ["sleep", "3600"]
           env:
             - name: INFLUXDB_WRITE_USER
               valueFrom:
