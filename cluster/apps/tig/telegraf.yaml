@@ -82,7 +82,7 @@ data:
     ###############################################################################
     [[inputs.x509_cert]]
       exclude_root_certs = false
-      sources = [$TELEGRAF_X509_SOURCES]
+      sources = ["${TELEGRAF_X509_SOURCES}"]
 ---
 apiVersion: apps/v1
 kind: Deployment
