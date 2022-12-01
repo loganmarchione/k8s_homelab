@@ -102,6 +102,9 @@ spec:
       containers:
         - name: telegraf-x509
           image: telegraf:1.23-alpine
+          envFrom:
+            - secretRef:
+                name: tig-secret-vars
           env:
             - name: INFLUXDB_WRITE_USER
               valueFrom:
