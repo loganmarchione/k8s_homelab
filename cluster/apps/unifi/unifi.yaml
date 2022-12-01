@@ -64,7 +64,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-      # this needs to be https so that traefik knows we're talking to an app that's using a self-signed cert
+    # this needs to be https so that traefik knows we're talking to an app that's using a self-signed cert
     - name: https
       targetPort: 8443
       port: 8443
