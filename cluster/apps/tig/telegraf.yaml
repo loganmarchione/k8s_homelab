@@ -102,9 +102,6 @@ spec:
       containers:
         - name: telegraf-x509
           image: telegraf:1.23-alpine
-          envFrom:
-            - secretRef:
-                name: tig-secret-vars
           env:
             - name: INFLUXDB_WRITE_USER
               valueFrom:
@@ -123,9 +120,7 @@ spec:
                   key: TELEGRAF_X509_SOURCES
           volumeMounts:
             - name: config
-              mountPath: /etc/telegraf/telegraf.conf
-              subPath: telegraf.conf
-              readOnly: true
+              mountPath: /etc/telegraf
       volumes:
         - name: config
           configMap:
