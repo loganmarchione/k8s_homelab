@@ -60,9 +60,15 @@ kubectl create secret generic cluster-secret-vars \
   --from-literal=SECRET_LETS_ENCRYPT_EMAIL=name@email.com \
   --from-literal=SECRET_AWS_REGION=region-here-1 \
   --from-literal=SECRET_AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE \
-  --from-literal=INFLUXDB_WRITE_USER=admin \
-  --from-literal=INFLUXDB_WRITE_PASS=super_secret_password_goes_here \
-  --from-literal=TELEGRAF_X509_SOURCES='"https://192.168.1.1:8443", "https://loganmarchione.com:443"'
+  --from-literal=INFLUX_DB_HOST=hostname \
+  --from-literal=INFLUX_DB_WRITE_USER=admin \
+  --from-literal=INFLUX_DB_WRITE_PASS=super_secret_password_goes_here \
+  --from-literal=INFLUX_DB_NAME=DBName \
+  --from-literal=TELEGRAF_X509_SOURCES='"https://192.168.1.1:8443", "https://loganmarchione.com:443"' \
+  --from-literal=FOCALBOARD_DB_HOST=hostname \
+  --from-literal=FOCALBOARD_DB_USER=admin \
+  --from-literal=FOCALBOARD_DB_PASS=super_secret_password_goes_here \
+  --from-literal=FOCALBOARD_DB_NAME=DBName
 
 kubectl create secret generic traefik-secret-vars \
   --namespace=kube-system \
@@ -89,30 +95,6 @@ kubectl create secret generic webdav-secret-vars \
   --namespace=webdav \
   --from-literal=WEBDAV_USER=admin \
   --from-literal=WEBDAV_PASS=super_secret_password_goes_here
-
-cat <<EOF > config.json
-{
-  "serverRoot": "http://localhost:8000",
-  "port": 8000,
-  "dbtype": "postgres",
-  "dbconfig": "postgres://db_user:db_password@db.your.domain.com:5432/db_name?sslmode=verify-full&connect_timeout=10",
-  "useSSL": false,
-  "webpath": "./pack",
-  "filespath": "/data/files",
-  "telemetry": true,
-  "session_expire_time": 2592000,
-  "session_refresh_time": 18000,
-  "localOnly": false,
-  "enableLocalMode": true,
-  "localModeSocketLocation": "/var/tmp/focalboard_local.socket"
-}
-EOF
-
-kubectl create secret generic focalboard-secret-vars \
-    --namespace=focalboard \
-    --from-file=config.json
-
-rm config.json
 
 kubectl create secret generic smtp-secret-vars \
   --namespace=smtp \
