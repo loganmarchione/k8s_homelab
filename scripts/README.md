@@ -61,7 +61,7 @@ kubectl create secret generic cluster-secret-vars \
   --from-literal=SECRET_AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE \
   --from-literal=INFLUXDB_WRITE_USER=admin \
   --from-literal=INFLUXDB_WRITE_PASS=super_secret_password_goes_here \
-  --from-literal=TELEGRAF_X509_SOURCES='"https://10.10.1.9:5001,"https://loganmarchione.com:443"'
+  --from-literal=TELEGRAF_X509_SOURCES='"https://192.168.1.1:8443", "https://loganmarchione.com:443"'
 
 kubectl create secret generic traefik-secret-vars \
   --namespace=kube-system \
