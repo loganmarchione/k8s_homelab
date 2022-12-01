@@ -66,8 +66,8 @@ spec:
               mountPath: /data
       volumes:
         - name: config
-          secret:
-            secretName: focalboard-secret-vars
+          configMap:
+            name: focalboard-config-map
         - name: data
           persistentVolumeClaim:
             claimName: focalboard-data-pvc
