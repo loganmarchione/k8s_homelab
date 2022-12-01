@@ -75,7 +75,7 @@ data:
       skip_database_creation = true
       retention_policy = ""
       timeout = "5s"
-      username = "$INFLUXDB_WRITE_USER"
+      username = "${INFLUXDB_WRITE_USER}"
       password = "$INFLUXDB_WRITE_PASS"
     ###############################################################################
     #                            INPUT PLUGINS                                    #
