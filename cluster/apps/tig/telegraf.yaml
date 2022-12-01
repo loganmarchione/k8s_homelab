@@ -104,10 +104,7 @@ spec:
           image: telegraf:1.23-alpine
           env:
             - name: INFLUXDB_WRITE_USER
-              valueFrom:
-                secretKeyRef:
-                  name: tig-secret-vars
-                  key: INFLUXDB_WRITE_USER
+              value: test
             - name: INFLUXDB_WRITE_PASS
               valueFrom:
                 secretKeyRef:
