@@ -70,13 +70,13 @@ data:
     #                            OUTPUT PLUGINS                                   #
     ###############################################################################
     [[outputs.influxdb]]
-      urls = ["http://influx.${SECRET_INTERNAL_DOMAIN_NAME}:8086"]
-      database = "CertStats"
+      urls = ["http://${INFLUX_DB_HOST}.${SECRET_INTERNAL_DOMAIN_NAME}:8086"]
+      database = "${INFLUX_DB_NAME}"
       skip_database_creation = true
       retention_policy = ""
       timeout = "5s"
-      username = "${INFLUXDB_WRITE_USER}"
-      password = "${INFLUXDB_WRITE_PASS}"
+      username = "${INFLUX_DB_WRITE_USER}"
+      password = "${INFLUX_DB_WRITE_PASS}"
     ###############################################################################
     #                            INPUT PLUGINS                                    #
     ###############################################################################
@@ -102,22 +102,6 @@ spec:
       containers:
         - name: telegraf-x509
           image: telegraf:1.23-alpine
-          env:
-            - name: INFLUXDB_WRITE_USER
-              valueFrom:
-                secretKeyRef:
-                  name: tig-secret-vars
-                  key: INFLUXDB_WRITE_USER
-            - name: INFLUXDB_WRITE_PASS
-              valueFrom:
-                secretKeyRef:
-                  name: tig-secret-vars
-                  key: INFLUXDB_WRITE_PASS
-            - name: TELEGRAF_X509_SOURCES
-              valueFrom:
-                secretKeyRef:
-                  name: tig-secret-vars
-                  key: TELEGRAF_X509_SOURCES
           volumeMounts:
             - name: config
               mountPath: /etc/telegraf/telegraf.conf
