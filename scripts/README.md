@@ -5,8 +5,9 @@ Some assumptions I'm making...
 - This is intended to be run on a single-node cluster (i.e., master and worker on same node)
 - These scripts are intended to be executed on the single node itself (you'll need sudo access)
 - This will only run on amd64 hardware
-- The database server for some applications (e.g., Gitea, Miniflux, etc...) is external to all of this and is already created
-- DNS is already setup
+- This will **not** "just work" out of the box
+  - The database server for some applications (e.g., Gitea, Miniflux, etc...) is external to all of this and needs to be created
+  - DNS needs to be setup
 
 Start by cloning the repo, editing the `.env` file, and bootstrapping the cluster (installing K3s, Helm, etc...).
 
