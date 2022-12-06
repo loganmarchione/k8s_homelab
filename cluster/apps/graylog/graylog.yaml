@@ -1,0 +1,123 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: graylog-data-pvc
+  namespace: graylog
+  annotations:
+    volumeType: local
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+  storageClassName: local-path-customized
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graylog-deployment
+  namespace: graylog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graylog
+  template:
+    metadata:
+      labels:
+        app: graylog
+    spec:
+      containers:
+        - name: graylog
+          image: graylog/graylog:4.3.9-jre11
+          env:
+            - name: GRAYLOG_HTTP_BIND_ADDRESS
+              value: '0.0.0.0:9000'
+                #            - name: GRAYLOG_HTTP_EXTERNAL_URI
+                #              value: 'http://10.10.1.32:9000/'
+            - name: GRAYLOG_ELASTICSEARCH_HOSTS
+              valueFrom:
+                secretKeyRef:
+                  name: graylog-secret-vars
+                  key: GRAYLOG_ELASTICSEARCH_HOSTS
+            - name: GRAYLOG_MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: graylog-secret-vars
+                  key: GRAYLOG_MONGODB_URI
+            - name: GRAYLOG_PASSWORD_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: graylog-secret-vars
+                  key: GRAYLOG_PASSWORD_SECRET
+            - name: GRAYLOG_ROOT_PASSWORD_SHA2
+              valueFrom:
+                secretKeyRef:
+                  name: graylog-secret-vars
+                  key: GRAYLOG_ROOT_PASSWORD_SHA2
+          ports:
+            - containerPort: 9000
+          volumeMounts:
+            - name: data
+              mountPath: /usr/share/graylog/data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: graylog-data-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: graylog-service
+  namespace: graylog
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 9000
+      port: 9000
+      protocol: TCP
+  selector:
+    app: graylog
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: graylog-service-udp
+  namespace: graylog
+spec:
+  type: LoadBalancer
+  ports:
+    - name: pfsense
+      targetPort: 8515
+      port: 8515
+      protocol: UDP
+  selector:
+    app: graylog
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: graylog-ingress
+  namespace: graylog
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: graylog.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: graylog-service
+                port:
+                  number: 9000
+  tls:
+    - hosts:
+        - graylog.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: graylog-tls
