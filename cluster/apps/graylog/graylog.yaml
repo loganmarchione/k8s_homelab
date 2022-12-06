@@ -35,8 +35,8 @@ spec:
           env:
             - name: GRAYLOG_HTTP_BIND_ADDRESS
               value: '0.0.0.0:9000'
-                #            - name: GRAYLOG_HTTP_EXTERNAL_URI
-                #              value: 'http://10.10.1.32:9000/'
+            - name: GRAYLOG_HTTP_EXTERNAL_URI
+              value: 'http://127.0.0.1:9000/'
             - name: GRAYLOG_ELASTICSEARCH_HOSTS
               valueFrom:
                 secretKeyRef:
