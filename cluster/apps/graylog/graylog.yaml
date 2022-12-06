@@ -62,10 +62,15 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /usr/share/graylog/data
+            - name: geoipupdate-data
+              mountPath: /usr/share/GeoIP
       volumes:
         - name: data
           persistentVolumeClaim:
             claimName: graylog-data-pvc
+        - name: geoipupdate-data
+          persistentVolumeClaim:
+            claimName: geoipupdate-data-pvc
 ---
 apiVersion: v1
 kind: Service
