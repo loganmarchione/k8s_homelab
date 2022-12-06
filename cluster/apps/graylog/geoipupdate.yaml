@@ -36,7 +36,7 @@ spec:
             - name: GEOIPUPDATE_EDITION_IDS
               value: 'GeoLite2-ASN GeoLite2-City GeoLite2-Country'
             - name: GEOIPUPDATE_FREQUENCY
-              value: 72
+              value: '72'
             - name: GEOIPUPDATE_ACCOUNT_ID
               valueFrom:
                 secretKeyRef:
