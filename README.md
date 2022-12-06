@@ -96,6 +96,16 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Part of the TIG stack (Telegraf, InfluxDB, Grafana)</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/graylog.svg"></td>
+        <td><a href="https://hub.docker.com/r/graylog/graylog/">Graylog</a></td>
+        <td>Open-source log management</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/maxmind.svg"></td>
+        <td><a href="https://hub.docker.com/r/maxmindinc/geoipupdate">MaxMind GeoIP Update</a></td>
+        <td>GeoIP database</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/miniflux.svg"></td>
         <td><a href="https://hub.docker.com/r/miniflux/miniflux">Miniflux</a></td>
         <td>Minimalist and opinionated feed reader</td>
