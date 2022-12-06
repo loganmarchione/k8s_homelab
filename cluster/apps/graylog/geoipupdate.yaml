@@ -54,4 +54,3 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: geoipupdate-data-pvc
-
