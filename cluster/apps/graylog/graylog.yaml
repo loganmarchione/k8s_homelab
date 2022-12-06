@@ -36,7 +36,7 @@ spec:
             - name: GRAYLOG_HTTP_BIND_ADDRESS
               value: '0.0.0.0:9000'
             - name: GRAYLOG_HTTP_EXTERNAL_URI
-              value: 'http://127.0.0.1:9000/'
+              value: https://graylog.${SECRET_INTERNAL_DOMAIN_NAME}/
             - name: GRAYLOG_ELASTICSEARCH_HOSTS
               valueFrom:
                 secretKeyRef:
