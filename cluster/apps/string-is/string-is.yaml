@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: string-is
-          image: daveperrett/string-is:v1.34.6
+          image: daveperrett/string-is:v1.34.7
           ports:
             - containerPort: 3000
 ---
