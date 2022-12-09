@@ -131,7 +131,7 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Docker image registry UI</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/twbs/icons/main/icons/envelope-at.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/Templarian/MaterialDesign/master/svg/email-outline.svg"></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-postfixrelay">SMTP relay</a></td>
         <td>SMTP (Postfix) relay (my own container image)</td>
     </tr>
