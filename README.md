@@ -49,7 +49,7 @@ The infrastructure that everything else depends on
         <th>Description</th>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/rancher-cow.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/rancher.svg"></td>
         <td><a href="https://github.com/rancher/local-path-provisioner/">Local Path Provisioner</a></td>
         <td>Local storage based on <code>hostPath</code> and <code>local</code> storage providers</td>
     </tr>
@@ -111,7 +111,7 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Minimalist and opinionated feed reader</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/postgresql-slonik.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/postgresql.svg"></td>
         <td><a href="https://hub.docker.com/r/dpage/pgadmin4">pgAdmin 4</a></td>
         <td>Management tool for Postgres</td>
     </tr>
