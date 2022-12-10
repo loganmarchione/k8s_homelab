@@ -17,22 +17,22 @@ The core components of the cluster
         <th>Description</th>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/k3s.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/k3s.svg"></td>
         <td><a href="https://k3s.io/">K3s</a></td>
         <td>Lightweight Kubernetes</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/traefik-gopher.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/traefik-gopher.svg"></td>
         <td><a href="https://traefik.io/">Traefik</a></td>
         <td>Kubernetes Ingress Controller</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/helm.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/helm.svg"></td>
         <td><a href="https://helm.sh/">Helm</a></td>
         <td>The package manager for Kubernetes</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/fluxcd.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/fluxcd.svg"></td>
         <td><a href="https://fluxcd.io/">Flux CD</a></td>
         <td>Continuous delivery solutions for Kubernetes </td>
     </tr>
@@ -49,12 +49,12 @@ The infrastructure that everything else depends on
         <th>Description</th>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/rancher.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/rancher.svg"></td>
         <td><a href="https://github.com/rancher/local-path-provisioner/">Local Path Provisioner</a></td>
         <td>Local storage based on <code>hostPath</code> and <code>local</code> storage providers</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/cert-manager.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/cert-manager.svg"></td>
         <td><a href="https://cert-manager.io/">cert-manager</a></td>
         <td>X.509 certificate management for Kubernetes</td>
     </tr>
@@ -71,62 +71,62 @@ The applications that run in my homelab (listed in alphabetical order)
         <th>Description</th>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/visualstudiocode.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/visualstudiocode.svg"></td>
         <td><a href="https://hub.docker.com/r/linuxserver/code-server">Code Server</a></td>
         <td>A Dockerized version of <a href="https://github.com/coder/code-server">code-server</a></td>
     </tr>
     <tr>
-         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/cyberchef.svg"></td>
+         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/cyberchef.svg"></td>
         <td><a href="https://hub.docker.com/r/mpepping/cyberchef">CyberChef</a></td>
         <td>A Dockerized version of <a href="https://github.com/gchq/CyberChef/">GCHQ's Cyber Swiss Army Knife</a></td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/diagramsdotnet-color.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/diagramsdotnet-color.svg"></td>
         <td><a href="https://hub.docker.com/r/jgraph/drawio">Diagrams.net (aka Draw.io)</a></td>
         <td>Diagram creation</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/focalboard.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/focalboard.svg"></td>
         <td><a href="https://hub.docker.com/r/mattermost/focalboard/">Focalboard</a></td>
         <td>Project and task management (Kanban board)</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/grafana.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/grafana.svg"></td>
         <td><a href="https://hub.docker.com/r/grafana/grafana-oss">Grafana</a></td>
         <td>Part of the TIG stack (Telegraf, InfluxDB, Grafana)</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/graylog.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/graylog.svg"></td>
         <td><a href="https://hub.docker.com/r/graylog/graylog/">Graylog</a></td>
         <td>Open-source log management</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/maxmind.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/maxmind.svg"></td>
         <td><a href="https://hub.docker.com/r/maxmindinc/geoipupdate">MaxMind GeoIP Update</a></td>
         <td>GeoIP database</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/miniflux.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/miniflux.svg"></td>
         <td><a href="https://hub.docker.com/r/miniflux/miniflux">Miniflux</a></td>
         <td>Minimalist and opinionated feed reader</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/postgresql.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/postgresql.svg"></td>
         <td><a href="https://hub.docker.com/r/dpage/pgadmin4">pgAdmin 4</a></td>
         <td>Management tool for Postgres</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/portainer.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/portainer.svg"></td>
         <td><a href="https://www.portainer.io/">Portainer</a></td>
         <td>Web-based management for Kubernetes</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/docker.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/docker.svg"></td>
         <td><a href="https://hub.docker.com/_/registry">Registry</a></td>
         <td>Docker image registry</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/docker.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/docker.svg"></td>
         <td><a href="https://hub.docker.com/r/joxit/docker-registry-ui">Registry UI</a></td>
         <td>Docker image registry UI</td>
     </tr>
@@ -136,12 +136,12 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>SMTP (Postfix) relay (my own container image)</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/php.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/php.svg"></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-php-startpage">Startpage</a></td>
         <td>PHP/HTML startpage (my own container image)</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/stringis.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/stringis.svg"></td>
         <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
         <td>A Dockerized version of <a href="https://github.com/recurser/string-is">string.is</a></td>
     </tr>
@@ -151,22 +151,22 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Part of the TIG stack (Telegraf, InfluxDB, Grafana)</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/traefik-gopher.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/traefik-gopher.svg"></td>
         <td><a href="https://doc.traefik.io/traefik/operations/dashboard/">Traefik dashboard</a></td>
         <td>This was already installed, just exposing it with ingress and basic auth</a></td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/ubiquiti.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/ubiquiti.svg"></td>
         <td><a href="https://hub.docker.com/r/ryansch/unifi-rpi">UniFi</a></td>
         <td>A Dockerized version of <a href="https://www.ui.com/download/unifi/">UniFi Controller</a></td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/nginx.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/nginx.svg"></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-webdav-nginx">WebDAV</a></td>
         <td>Nginx WebDAV server (my own container image)</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg_assets/main/assets/go-blue.svg"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/go-blue.svg"></td>
         <td><a href="https://hub.docker.com/r/traefik/whoami/">whoami</a></td>
         <td>Test web app written in Go</td>
     </tr>
