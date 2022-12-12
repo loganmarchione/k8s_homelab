@@ -182,5 +182,6 @@ See the [README](/scripts/README.md) for more information
 - [x] [Auto-issue certs](https://cert-manager.io/docs/usage/ingress/) using cert-manager
 - [x] Setup [renovatebot](https://github.com/renovatebot/renovate)
 - [ ] Add [cert-manager CRDs](https://github.com/loganmarchione/k8s_homelab/blob/master/cluster/crds/cert-manager/kustomization.yaml) to renovatebot
+- [ ] Setup [Docker digest pinning]()
 - [ ] Change install bash scripts to Ansible or Terraform (example [here](https://github.com/lieberlois/k3s-hetzner-tf/blob/main/resources.tf#L13-L28))
 - [x] Setup yamlint (using [GitHub Actions](https://github.com/ibiqlik/action-yamllint) or just by running `pip3 install yamllint` in the workflow)
