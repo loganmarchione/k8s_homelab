@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: codeserver
-          image: linuxserver/code-server:4.9.0
+          image: linuxserver/code-server:4.9.1
           ports:
             - containerPort: 8443
           volumeMounts:
