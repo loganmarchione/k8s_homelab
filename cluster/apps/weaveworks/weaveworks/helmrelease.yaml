@@ -27,9 +27,9 @@ spec:
     image:
       repository: ghcr.io/weaveworks/wego-app
     ingress:
-      enabled: "false"
+      enabled: false
     service:
-      create: "true"
+      create: true
       type: ClusterIP
     securityContext:
       capabilities:
@@ -41,3 +41,6 @@ spec:
     adminUser:
       create: true
       username: weave-user
+    rbac:
+      create: true
+      impersonationResourceNames: [${weave-user}]
