@@ -43,4 +43,5 @@ spec:
       username: weave-user
     rbac:
       create: true
-      impersonationResourceNames: [${weave-user}]
+      impersonationResourceNames:
+        - ${weave-user}
