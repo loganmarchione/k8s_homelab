@@ -40,9 +40,6 @@ spec:
       runAsUser: 1000
     adminUser:
       create: true
-      username: ${user}
     rbac:
       create: true
-      impersonationResourceNames:
-        - ${user}
       impersonationResources: ["users"]
