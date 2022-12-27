@@ -161,6 +161,11 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>A Dockerized version of <a href="https://www.ui.com/download/unifi/">UniFi Controller</a></td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/weaveworks.svg"></td>
+        <td><a href="https://www.weave.works/product/gitops/">Weave GitOps</a></td>
+        <td>Web-based management for Flux</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/nginx.svg"></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-webdav-nginx">WebDAV</a></td>
         <td>Nginx WebDAV server (my own container image)</td>
