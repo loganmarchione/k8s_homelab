@@ -1,0 +1,25 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: weave-ingress
+  namespace: flux-system
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: weave.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: weave
+                port:
+                  number: 9001
+  tls:
+    - hosts:
+        - weave.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: weave-tls
