@@ -44,4 +44,4 @@ spec:
       create: true
       impersonationResources: ["users"]
       impersonationResourceNames:
-        - ${username}
+        - admin
