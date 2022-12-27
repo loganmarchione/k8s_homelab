@@ -70,6 +70,11 @@ kubectl create secret generic cluster-secret-vars \
   --from-literal=FOCALBOARD_DB_PASS=super_secret_password_goes_here \
   --from-literal=FOCALBOARD_DB_NAME=DBName
 
+kubectl create secret generic cluster-user-auth \
+  --namespace flux-system \
+  --from-literal=username=admin \
+  --from-literal=password='bcrypt_password_hash_goes_here'
+
 kubectl create secret generic traefik-secret-vars \
   --namespace=kube-system \
   --type=kubernetes.io/basic-auth \
