@@ -40,3 +40,4 @@ spec:
       runAsUser: 1000
     adminUser:
       create: true
+      username: weave-user
