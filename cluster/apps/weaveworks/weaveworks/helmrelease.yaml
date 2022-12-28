@@ -38,8 +38,6 @@ spec:
       readOnlyRootFilesystem: true
       runAsNonRoot: true
       runAsUser: 1000
-    adminUser:
-      create: true
     rbac:
       create: true
       impersonationResources: ["users", "groups"]
