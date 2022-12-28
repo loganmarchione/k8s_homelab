@@ -21,6 +21,7 @@ metadata:
   namespace: webdav
 spec:
   replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: webdav
