@@ -42,6 +42,7 @@ spec:
       create: true
       createClusterRole: true
       createSecret: false
+      username: "admin"
     rbac:
       create: true
       impersonationResources: ["users", "groups"]
