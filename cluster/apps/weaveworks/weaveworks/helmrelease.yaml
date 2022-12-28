@@ -42,6 +42,4 @@ spec:
       create: true
     rbac:
       create: true
-      impersonationResources: ["users"]
-      impersonationResourceNames:
-        - admin
+      impersonationResources: ["users", "groups"]
