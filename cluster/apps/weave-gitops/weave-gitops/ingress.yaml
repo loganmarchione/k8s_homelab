@@ -16,7 +16,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: weaveworks-weave-gitops
+                name: weave-gitops
                 port:
                   number: 9001
   tls:
