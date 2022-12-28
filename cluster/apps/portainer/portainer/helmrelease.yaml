@@ -28,9 +28,9 @@ spec:
       repository: portainer/portainer-ce
       # tag: 2.16.1-alpine
     ingress:
-      enabled: "false"
+      enabled: false
     persistence:
-      enabled: "true"
+      enabled: true
       storageClass: local-path-customized
       size: 5Gi
     service:
