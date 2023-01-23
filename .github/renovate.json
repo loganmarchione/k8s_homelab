@@ -6,6 +6,15 @@
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard",
   "labels": ["renovatebot"],
+  "packageRules": [
+    {
+      "managers": ["kubernetes"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    }
+  ],
   "flux": {
     "fileMatch": ["cluster/.+\\.ya?ml$"]
   },
