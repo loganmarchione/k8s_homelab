@@ -10,7 +10,7 @@
     {
       "managers": ["kubernetes"],
       "matchUpdateTypes": ["patch"],
-      "excludePackagePatterns": ["*unifi*"],
+      "excludePackagePatterns": ["ryansch/unifi-rpi"],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
