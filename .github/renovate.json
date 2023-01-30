@@ -26,5 +26,12 @@
   "kubernetes": {
     "fileMatch": ["cluster/.+\\.ya?ml$"],
     "ignorePaths": ["cluster/base/"]
-  }
+  },
+  "regexManagers": [
+    {
+      "fileMatch": "cluster/crds/./kustomization.yaml",
+      "matchStrings": ["https:\/\/github\.com\/(?<depName>.*\/.*?)\/releases\/download\/(?<currentValue>.*?)\/"],
+      "datasourceTemplate": "github-releases",
+    }
+  ]
 }
