@@ -1,8 +1,5 @@
 ---
-# Leaving this here for reference, but not using it anymore
-# Now installing CRDs using the Helm parameter `installCRDs`
-# ---
-# apiVersion: kustomize.config.k8s.io/v1beta1
-# kind: Kustomization
-# resources:
-#  - https://github.com/jetstack/cert-manager/releases/download/v1.11.0/cert-manager.crds.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - https://github.com/jetstack/cert-manager/releases/download/v1.11.0/cert-manager.crds.yaml
