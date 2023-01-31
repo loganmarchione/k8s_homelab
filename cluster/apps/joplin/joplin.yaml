@@ -23,6 +23,10 @@ spec:
           env:
             - name: DB_CLIENT
               value: "pg"
+            - name: APP_PORT
+              value: "22300"
+            - name: APP_BASE_URL
+              value: "https://joplin.${SECRET_INTERNAL_DOMAIN_NAME}"
             - name: POSTGRES_CONNECTION_STRING
               valueFrom:
                 secretKeyRef:
