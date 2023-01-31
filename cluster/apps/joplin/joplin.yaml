@@ -1,0 +1,70 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: joplin-deployment
+  namespace: joplin
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: joplin
+  template:
+    metadata:
+      labels:
+        app: joplin
+    spec:
+      containers:
+        - name: joplin
+          image: joplin/server:2.9.7-beta
+          ports:
+            - containerPort: 22300
+          env:
+            - name: DB_CLIENT
+              value: "pg"
+            - name: POSTGRES_CONNECTION_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: joplin-secret-vars
+                  key: POSTGRES_CONNECTION_STRING
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: joplin-service
+  namespace: joplin
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 22300
+      port: 22300
+      protocol: TCP
+  selector:
+    app: joplin
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: joplin-ingress
+  namespace: joplin
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: joplin.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: joplin-service
+                port:
+                  number: 22300
+  tls:
+    - hosts:
+        - joplin.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: joplin-tls
