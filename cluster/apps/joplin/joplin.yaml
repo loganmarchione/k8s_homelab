@@ -27,11 +27,31 @@ spec:
               value: "22300"
             - name: APP_BASE_URL
               value: "https://joplin.${SECRET_INTERNAL_DOMAIN_NAME}"
-            - name: POSTGRES_CONNECTION_STRING
+            - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: joplin-secret-vars
-                  key: POSTGRES_CONNECTION_STRING
+                  key: POSTGRES_PASSWORD
+            - name: POSTGRES_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: joplin-secret-vars
+                  key: POSTGRES_DATABSE
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: joplin-secret-vars
+                  key: POSTGRES_USER
+            - name: POSTGRES_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: joplin-secret-vars
+                  key: POSTGRES_PORT
+            - name: POSTGRES_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: joplin-secret-vars
+                  key: POSTGRES_HOST
 ---
 apiVersion: v1
 kind: Service
