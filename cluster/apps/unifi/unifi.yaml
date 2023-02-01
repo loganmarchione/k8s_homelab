@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: unifi
-          image: ryansch/unifi-rpi:7.3.81
+          image: ryansch/unifi-rpi:7.3.83
           ports:
             - containerPort: 3478
               protocol: UDP
