@@ -101,6 +101,11 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Open-source log management</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/joplin.svg"></td>
+        <td><a href="https://hub.docker.com/r/joplin/server">Joplin</a></td>
+        <td>Joplin sync server</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/maxmind.svg"></td>
         <td><a href="https://hub.docker.com/r/maxmindinc/geoipupdate">MaxMind GeoIP Update</a></td>
         <td>GeoIP database</td>
