@@ -121,7 +121,11 @@ kubectl create secret generic graylog-secret-vars \
 
 kubectl create secret generic joplin-secret-vars \
   --namespace=joplin \
-  --from-literal=POSTGRES_CONNECTION_STRING='postgresql://db_user:db_password@db.your.domain.com:5432/db_name?sslmode=true'
+  --from-literal=POSTGRES_PASSWORD=db_password \
+  --from-literal=POSTGRES_DATABASE=db_name \
+  --from-literal=POSTGRES_USER=db_user \
+  --from-literal=POSTGRES_PORT=5432 \
+  --from-literal=POSTGRES_HOST=db.your.domain.com
 ```
 
 Verify the secrets were created.
