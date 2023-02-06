@@ -101,6 +101,11 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Open-source log management</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/joplin.svg"></td>
+        <td><a href="https://hub.docker.com/r/joplin/server">Joplin</a></td>
+        <td>Joplin sync server</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/maxmind.svg"></td>
         <td><a href="https://hub.docker.com/r/maxmindinc/geoipupdate">MaxMind GeoIP Update</a></td>
         <td>GeoIP database</td>
@@ -161,6 +166,11 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>A Dockerized version of <a href="https://www.ui.com/download/unifi/">UniFi Controller</a></td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/weaveworks.svg"></td>
+        <td><a href="https://www.weave.works/product/gitops/">Weave GitOps</a></td>
+        <td>Web-based management for Flux</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/nginx.svg"></td>
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-webdav-nginx">WebDAV</a></td>
         <td>Nginx WebDAV server (my own container image)</td>
@@ -181,7 +191,7 @@ See the [README](/scripts/README.md) for more information
 - [x] Change intervals under `cluster/charts` from 1m to 1h
 - [x] [Auto-issue certs](https://cert-manager.io/docs/usage/ingress/) using cert-manager
 - [x] Setup [renovatebot](https://github.com/renovatebot/renovate)
-- [ ] Add [cert-manager CRDs](https://github.com/loganmarchione/k8s_homelab/blob/master/cluster/crds/cert-manager/kustomization.yaml) to renovatebot
+- [x] Add [cert-manager CRDs](https://github.com/loganmarchione/k8s_homelab/blob/master/cluster/crds/cert-manager/kustomization.yaml) to renovatebot (discussion [here](https://github.com/renovatebot/renovate/discussions/20118))
 - [ ] Setup [Docker digest pinning](https://docs.renovatebot.com/docker/#digest-pinning)
 - [ ] Change install bash scripts to Ansible or Terraform (example [here](https://github.com/lieberlois/k3s-hetzner-tf/blob/main/resources.tf#L13-L28))
 - [x] Setup yamlint (using [GitHub Actions](https://github.com/ibiqlik/action-yamllint) or just by running `pip3 install yamllint` in the workflow)

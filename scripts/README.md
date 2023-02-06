@@ -70,6 +70,11 @@ kubectl create secret generic cluster-secret-vars \
   --from-literal=FOCALBOARD_DB_PASS=super_secret_password_goes_here \
   --from-literal=FOCALBOARD_DB_NAME=DBName
 
+kubectl create secret generic cluster-user-auth \
+  --namespace flux-system \
+  --from-literal=username=admin \
+  --from-literal=password='bcrypt_password_hash_goes_here'
+
 kubectl create secret generic traefik-secret-vars \
   --namespace=kube-system \
   --type=kubernetes.io/basic-auth \
@@ -113,6 +118,14 @@ kubectl create secret generic graylog-secret-vars \
   --from-literal=GRAYLOG_MONGODB_URI='mongodb://db_user:db_password@db.your.domain.com:27017/db_name?ssl=true' \
   --from-literal=GRAYLOG_PASSWORD_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
   --from-literal=GRAYLOG_ROOT_PASSWORD_SHA2=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+kubectl create secret generic joplin-secret-vars \
+  --namespace=joplin \
+  --from-literal=POSTGRES_PASSWORD=db_password \
+  --from-literal=POSTGRES_DATABASE=db_name \
+  --from-literal=POSTGRES_USER=db_user \
+  --from-literal=POSTGRES_PORT=5432 \
+  --from-literal=POSTGRES_HOST=db.your.domain.com
 ```
 
 Verify the secrets were created.

@@ -21,6 +21,7 @@ metadata:
   namespace: unifi
 spec:
   replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: unifi
@@ -31,7 +32,7 @@ spec:
     spec:
       containers:
         - name: unifi
-          image: ryansch/unifi-rpi:7.3.76
+          image: ryansch/unifi-rpi:7.3.83
           ports:
             - containerPort: 3478
               protocol: UDP

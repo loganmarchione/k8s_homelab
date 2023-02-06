@@ -21,6 +21,7 @@ metadata:
   namespace: graylog
 spec:
   replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: graylog
@@ -31,7 +32,7 @@ spec:
     spec:
       containers:
         - name: graylog
-          image: graylog/graylog:4.3.10-jre11
+          image: graylog/graylog:5.0.3
           env:
             - name: GRAYLOG_HTTP_BIND_ADDRESS
               value: '0.0.0.0:9000'

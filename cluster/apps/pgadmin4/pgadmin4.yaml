@@ -21,6 +21,7 @@ metadata:
   namespace: pgadmin4
 spec:
   replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: pgadmin4
@@ -31,7 +32,7 @@ spec:
     spec:
       containers:
         - name: pgadmin4
-          image: dpage/pgadmin4:6.17
+          image: dpage/pgadmin4:6.19
           ports:
             - containerPort: 80
           env:

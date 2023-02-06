@@ -6,6 +6,16 @@
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard",
   "labels": ["renovatebot"],
+  "packageRules": [
+    {
+      "managers": ["kubernetes"],
+      "matchUpdateTypes": ["patch"],
+      "excludePackagePatterns": ["ryansch/unifi-rpi"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    }
+  ],
   "flux": {
     "fileMatch": ["cluster/.+\\.ya?ml$"]
   },
@@ -16,5 +26,17 @@
   "kubernetes": {
     "fileMatch": ["cluster/.+\\.ya?ml$"],
     "ignorePaths": ["cluster/base/"]
-  }
+  },
+  "regexManagers": [
+    {
+      "fileMatch": ["cluster\/.+\/kustomization.ya?ml$"],
+      "matchStrings": ["https:\/\/github\.com\/(?<depName>.*\/.*?)\/releases\/download\/(?<currentValue>.*?)\/"],
+      "datasourceTemplate": "github-releases",
+    },
+    {
+      "fileMatch": ["cluster\/.+\/kustomization.ya?ml$"],
+      "matchStrings": ["https:\/\/raw.githubusercontent.com\/(?<depName>[^\/]*\/[^\/]*)\/(?<currentValue>.*?)\/"],
+      "datasourceTemplate": "github-tags",
+    }
+  ]
 }

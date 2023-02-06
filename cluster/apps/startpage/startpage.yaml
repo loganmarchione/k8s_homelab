@@ -21,6 +21,7 @@ metadata:
   namespace: startpage
 spec:
   replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: startpage
@@ -31,7 +32,7 @@ spec:
     spec:
       containers:
         - name: startpage
-          image: loganmarchione/docker-php-startpage:0.3.4
+          image: loganmarchione/docker-php-startpage:0.4.4
           ports:
             - containerPort: 80
           volumeMounts:

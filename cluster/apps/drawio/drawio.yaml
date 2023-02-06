@@ -6,6 +6,7 @@ metadata:
   namespace: drawio
 spec:
   replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: drawio
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
         - name: drawio
-          image: jgraph/drawio:20.7.3
+          image: jgraph/drawio:20.8.16
           ports:
             - containerPort: 8080
           env:

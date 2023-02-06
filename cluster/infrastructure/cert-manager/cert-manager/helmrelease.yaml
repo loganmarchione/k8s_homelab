@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: cert-manager
-      version: v1.10.1
+      version: v1.11.0
       sourceRef:
         kind: HelmRepository
         name: jetstack-charts
@@ -23,4 +23,6 @@ spec:
     remediation:
       retries: 5
   values:
+    # this needs to be set to false because Helm 3 can't upgrade existing CRDs
+    # https://github.com/helm/community/blob/main/hips/hip-0011.md
     installCRDs: false
