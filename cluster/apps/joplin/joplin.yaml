@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: joplin
-          image: joplin/server:2.10.6-beta
+          image: joplin/server:2.10.9-beta
           ports:
             - containerPort: 22300
           env:
