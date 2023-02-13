@@ -36,7 +36,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: joplin-secret-vars
-                  key: POSTGRES_DATABASE
+                  key: POSTGRES_DATABSE
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
