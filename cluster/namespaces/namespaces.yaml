@@ -32,6 +32,11 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: gitea
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: graylog
 ---
 apiVersion: v1
