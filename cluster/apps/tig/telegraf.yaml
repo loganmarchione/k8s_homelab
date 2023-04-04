@@ -102,7 +102,7 @@ spec:
     spec:
       containers:
         - name: telegraf-x509
-          image: telegraf:1.26.0-alpine
+          image: telegraf:1.26.1-alpine
           volumeMounts:
             - name: config
               mountPath: /etc/telegraf/telegraf.conf
