@@ -151,7 +151,7 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>A Dockerized version of <a href="https://github.com/recurser/string-is">string.is</a></td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/influxdata/telegraf/master/assets/TelegrafTiger.png"></td>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/homelab-svg-assets/main/assets/influx.svg"></td>
         <td><a href="https://hub.docker.com/_/telegraf">Telegraf</a></td>
         <td>Part of the TIG stack (Telegraf, InfluxDB, Grafana)</td>
     </tr>
