@@ -19,7 +19,7 @@ spec:
         - name: jellyfin-vue
           image: ghcr.io/jellyfin/jellyfin-vue:stable-rc.0.3.1
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           env:
             - name: DEFAULT_SERVERS
               value: https://jellyfin.${SECRET_INTERNAL_DOMAIN_NAME}
@@ -33,8 +33,8 @@ spec:
   type: ClusterIP
   ports:
     - name: http
-      targetPort: 8080
-      port: 8080
+      targetPort: 80
+      port: 80
       protocol: TCP
   selector:
     app: jellyfin-vue
@@ -58,7 +58,7 @@ spec:
               service:
                 name: jellyfin-vue-service
                 port:
-                  number: 8080
+                  number: 80
   tls:
     - hosts:
         - jellyfin-vue.${SECRET_INTERNAL_DOMAIN_NAME}
