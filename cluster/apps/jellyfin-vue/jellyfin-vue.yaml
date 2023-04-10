@@ -1,0 +1,65 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jellyfin-vue-deployment
+  namespace: jellyfin-vue
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: jellyfin-vue
+  template:
+    metadata:
+      labels:
+        app: jellyfin-vue
+    spec:
+      containers:
+        - name: jellyfin-vue
+          image: ghcr.io/jellyfin/jellyfin-vue:stable-rc.0.3.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DEFAULT_SERVERS
+              value: https://jellyfin.${SECRET_INTERNAL_DOMAIN_NAME}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jellyfin-vue-service
+  namespace: jellyfin-vue
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 8080
+      port: 8080
+      protocol: TCP
+  selector:
+    app: jellyfin-vue
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jellyfin-vue-ingress
+  namespace: jellyfin-vue
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: jellyfin-vue.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: jellyfin-vue-service
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - jellyfin-vue.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: jellyfin-vue-tls
