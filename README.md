@@ -101,6 +101,11 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Open-source log management</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/jellyfin.svg"></td>
+        <td><a href="https://github.com/jellyfin/jellyfin-vue/">Jellyfin Vue</a></td>
+        <td>Experimental Jellyfin frontend</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/joplin.svg"></td>
         <td><a href="https://hub.docker.com/r/joplin/server">Joplin</a></td>
         <td>Joplin sync server</td>
