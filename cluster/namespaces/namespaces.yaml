@@ -57,6 +57,11 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: navidrome
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: pgadmin4
 ---
 apiVersion: v1
