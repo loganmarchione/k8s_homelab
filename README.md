@@ -112,7 +112,7 @@ The applications that run in my homelab (listed in alphabetical order)
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/maxmind.svg"></td>
-        <td><a href="https://hub.docker.com/r/maxmindinc/geoipupdate">MaxMind GeoIP Update</a></td>
+        <td><a href="https://github.com/maxmind/geoipupdate/">MaxMind GeoIP Update</a></td>
         <td>GeoIP database</td>
     </tr>
     <tr>
@@ -121,13 +121,18 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Minimalist and opinionated feed reader</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/navidrome.svg"></td>
+        <td><a href="https://github.com/navidrome/navidrome">Navidrome</a></td>
+        <td>Modern Music Server and Streamer compatible with Subsonic/Airsonic</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/postgresql.svg"></td>
         <td><a href="https://hub.docker.com/r/dpage/pgadmin4">pgAdmin 4</a></td>
         <td>Management tool for Postgres</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/portainer.svg"></td>
-        <td><a href="https://www.portainer.io/">Portainer</a></td>
+        <td><a href="https://github.com/portainer/portainer">Portainer</a></td>
         <td>Web-based management for Kubernetes</td>
     </tr>
     <tr>
@@ -172,7 +177,7 @@ The applications that run in my homelab (listed in alphabetical order)
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/weaveworks.svg"></td>
-        <td><a href="https://www.weave.works/product/gitops/">Weave GitOps</a></td>
+        <td><a href="https://github.com/weaveworks/weave-gitops">Weave GitOps</a></td>
         <td>Web-based management for Flux</td>
     </tr>
     <tr>
