@@ -6,7 +6,7 @@ metadata:
   namespace: joplin
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: joplin
