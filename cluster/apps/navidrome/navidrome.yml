@@ -50,6 +50,18 @@ spec:
               value: "false"
             - name: ND_ENABLEFAVOURITES
               value: "false"
+            - name: ND_IMAGECACHESIZE
+              value: "512MB"
+            - name: ND_LASTFM_APIKEY
+              valueFrom:
+                secretKeyRef:
+                  name: navidrome-secret-vars
+                  key: ND_LASTFM_APIKEY
+            - name: ND_LASTFM_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: navidrome-secret-vars
+                  key: ND_LASTFM_SECRET
           volumeMounts:
             - name: data
               mountPath: /data
