@@ -62,6 +62,16 @@ spec:
                 secretKeyRef:
                   name: navidrome-secret-vars
                   key: ND_LASTFM_SECRET
+            - name: ND_SPOTIFY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: navidrome-secret-vars
+                  key: ND_SPOTIFY_ID
+            - name: ND_SPOTIFY_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: navidrome-secret-vars
+                  key: ND_SPOTIFY_SECRET
           volumeMounts:
             - name: data
               mountPath: /data
