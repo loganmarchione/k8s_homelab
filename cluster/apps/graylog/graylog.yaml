@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: graylog
-          image: graylog/graylog:5.0.6
+          image: graylog/graylog:5.0.7
           env:
             - name: GRAYLOG_HTTP_BIND_ADDRESS
               value: '0.0.0.0:9000'
