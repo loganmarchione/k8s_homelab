@@ -73,7 +73,7 @@ spec:
                 - --disableImplicitSessions
                 - --eval
                 - "db.adminCommand('ping')"
-            initialDelaySeconds: 30
+            initialDelaySeconds: 15
             periodSeconds: 30
             timeoutSeconds: 5
             successThreshold: 1
@@ -85,7 +85,7 @@ spec:
                 - --disableImplicitSessions
                 - --eval
                 - "db.adminCommand('ping')"
-            initialDelaySeconds: 30
+            initialDelaySeconds: 15
             periodSeconds: 30
             timeoutSeconds: 5
             successThreshold: 1
