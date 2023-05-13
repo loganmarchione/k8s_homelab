@@ -1,3 +1,4 @@
+---
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -10,13 +11,13 @@ spec:
       template:
         spec:
           containers:
-          - name: mongodb-backup
-            image: mongo:5.0.17
-            command: ["sh", "-c"]
-            args: ["mongodump --username ${GRAYLOG_MONGODB_USERNAME} --password ${GRAYLOG_MONGODB_PASSWORD} --authenticationDatabase admin --quiet --gzip --archive=/backup/$(uname -n)_$(date +%Y%m%d_%H%M)_all_mongo_dbs.gz"]
-            volumeMounts:
-              - name: backup-dir
-                mountPath: /backup
+            - name: mongodb-backup
+              image: mongo:5.0.17
+              command: ["sh", "-c"]
+              args: ["mongodump --username ${GRAYLOG_MONGODB_USERNAME} --password ${GRAYLOG_MONGODB_PASSWORD} --authenticationDatabase admin --quiet --gzip --archive=/backup/$(uname -n)_$(date +%Y%m%d_%H%M)_all_mongo_dbs.gz"]
+              volumeMounts:
+                - name: backup-dir
+                  mountPath: /backup
           restartPolicy: OnFailure
           volumes:
             - name: backup-dir
