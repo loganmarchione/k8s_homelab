@@ -121,6 +121,11 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Minimalist and opinionated feed reader</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/mongodb-forest-green.svg"></td>
+        <td><a href="https://hub.docker.com/_/mongo">MongoDB</a></td>
+        <td>NoSQL database</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/navidrome.svg"></td>
         <td><a href="https://github.com/navidrome/navidrome">Navidrome</a></td>
         <td>Modern Music Server and Streamer compatible with Subsonic/Airsonic</td>
