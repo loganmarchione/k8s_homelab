@@ -2,15 +2,30 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: k8s-backup-pv
+  name: mongodb-backup-pv
 spec:
   capacity:
-    storage: 2Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
   storageClassName: local-path-customized
   local:
     path: /custom/backup/backup/k8s
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongodb-backup-pvc
+  namespace: flux-system
+  annotations:
+    volumeType: local
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-path-customized
 ---
 apiVersion: batch/v1
 kind: CronJob
@@ -34,5 +49,5 @@ spec:
           restartPolicy: OnFailure
           volumes:
             - name: backup-dir
-              local:
-                path: /custom/backup/backup/k8s
+              persistentVolumeClaim:
+                claimName: mongodb-backup-pvc
