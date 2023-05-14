@@ -10,7 +10,7 @@ spec:
     - ReadWriteOnce
   storageClassName: local-path-customized
   local:
-    path: /custom/backup/backup/k8s
+    path: /custom/backup/backup/mongo
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -45,7 +45,7 @@ spec:
               args: ["mongodump --username ${GRAYLOG_MONGODB_USERNAME} --password ${GRAYLOG_MONGODB_PASSWORD} --authenticationDatabase admin --quiet --gzip --archive=/backup/$(uname -n)_$(date +%Y%m%d_%H%M)_all_mongo_dbs.gz"]
               volumeMounts:
                 - name: backup-dir
-                  mountPath: /k8s
+                  mountPath: /backup/mongo
           restartPolicy: OnFailure
           volumes:
             - name: backup-dir
