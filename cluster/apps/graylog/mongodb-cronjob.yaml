@@ -11,6 +11,14 @@ spec:
   storageClassName: local-path-customized
   local:
     path: /custom/backup/backup/mongo
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - kube01
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
