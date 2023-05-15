@@ -50,7 +50,7 @@ spec:
             - name: mongodb-backup
               image: mongo:5.0.17
               command: ["sh", "-c"]
-              args: ["mongodump --uri=\"mongodb-service.graylog.svc.cluster.local\" --username ${GRAYLOG_MONGODB_USERNAME} --password ${GRAYLOG_MONGODB_PASSWORD} --authenticationDatabase admin --gzip --archive=/backup/$(uname -n)_$(date +%Y%m%d_%H%M)_all_mongo_dbs.gz"]
+              args: ["mongodump --uri=\"mongodb://mongodb-service.graylog.svc.cluster.local\" --username ${GRAYLOG_MONGODB_USERNAME} --password ${GRAYLOG_MONGODB_PASSWORD} --authenticationDatabase admin --gzip --archive=/backup/$(uname -n)_$(date +%Y%m%d_%H%M)_all_mongo_dbs.gz"]
               volumeMounts:
                 - name: backup-dir
                   mountPath: /backup
