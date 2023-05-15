@@ -116,8 +116,7 @@ metadata:
   name: mongodb-service
   namespace: graylog
 spec:
-  # Headless service
-  clusterIP: None
+  type: ClusterIP
   ports:
     - name: http
       targetPort: 27017
