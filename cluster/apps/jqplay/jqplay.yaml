@@ -1,0 +1,68 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jqplay-deployment
+  namespace: jqplay
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: jqplay
+  template:
+    metadata:
+      labels:
+        app: jqplay
+    spec:
+      containers:
+        - name: jqplay
+          image: ghcr.io/owenthereal/jqplay:master
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: jqplay-secret-vars
+                  key: DATABASE_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jqplay-service
+  namespace: jqplay
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 8080
+      port: 8080
+      protocol: TCP
+  selector:
+    app: jqplay
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jqplay-ingress
+  namespace: jqplay
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: jqplay.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: jqplay-service
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - jqplay.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: jqplay-tls

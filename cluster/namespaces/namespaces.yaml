@@ -52,6 +52,11 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: jqplay
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: miniflux
 ---
 apiVersion: v1
