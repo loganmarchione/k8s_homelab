@@ -111,6 +111,11 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Joplin sync server</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/owenthereal/jqplay/master/assets/images/favicon.png"></td>
+        <td><a href="https://github.com/owenthereal/jqplay">jqplay</a></td>
+        <td>A playground for jq, written in Go </td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/maxmind.svg"></td>
         <td><a href="https://github.com/maxmind/geoipupdate/">MaxMind GeoIP Update</a></td>
         <td>GeoIP database</td>
