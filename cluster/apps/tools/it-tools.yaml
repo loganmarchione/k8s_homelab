@@ -1,0 +1,62 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: it-tools-deployment
+  namespace: tools
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: it-tools
+  template:
+    metadata:
+      labels:
+        app: it-tools
+    spec:
+      containers:
+        - name: it-tools
+          image: corentinth/it-tools:2023.4.23-92bd835
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: it-tools-service
+  namespace: tools
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 80
+      port: 80
+      protocol: TCP
+  selector:
+    app: it-tools
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: it-tools-ingress
+  namespace: tools
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: it-tools.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: it-tools-service
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - it-tools.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: it-tools-tls
