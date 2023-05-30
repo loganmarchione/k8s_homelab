@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: startpage
-          image: loganmarchione/docker-php-startpage:0.4.9
+          image: loganmarchione/docker-php-startpage:0.5.0
           ports:
             - containerPort: 80
           volumeMounts:
