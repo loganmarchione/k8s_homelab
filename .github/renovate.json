@@ -42,7 +42,7 @@
     },
     {
       "fileMatch": ["cluster\/.+\/kustomization.ya?ml$"],
-      "matchStrings": ["https:\/\/raw.githubusercontent\.com\/(?<depName>[^\/]*\/[^\/]*)\/(?<currentValue>.*?)\/"],
+      "matchStrings": ["https:\/\/raw\.githubusercontent\.com\/(?<depName>[^\/]*\/[^\/]*)\/(?<currentValue>.*?)\/"],
       "datasourceTemplate": "github-tags",
     }
   ]
