@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: navidrome-data-pvc
-  namespace: navidrome
+  namespace: media
   annotations:
     volumeType: local
 spec:
@@ -18,7 +18,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: navidrome-deployment
-  namespace: navidrome
+  namespace: media
 spec:
   replicas: 1
   revisionHistoryLimit: 2
@@ -91,7 +91,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: navidrome-service
-  namespace: navidrome
+  namespace: media
 spec:
   type: ClusterIP
   ports:
@@ -106,7 +106,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: navidrome-ingress
-  namespace: navidrome
+  namespace: media
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     traefik.ingress.kubernetes.io/router.tls: "true"
