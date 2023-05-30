@@ -37,11 +37,6 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: jellyfin
----
-apiVersion: v1
-kind: Namespace
-metadata:
   name: joplin
 ---
 apiVersion: v1
@@ -52,12 +47,12 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: miniflux
+  name: media
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: navidrome
+  name: miniflux
 ---
 apiVersion: v1
 kind: Namespace
