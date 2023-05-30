@@ -124,7 +124,7 @@ kubectl create secret generic joplin-secret-vars \
   --from-literal=POSTGRES_CONNECTION_STRING='postgresql://db_user:db_password@db.your.domain.com:5432/db_name?sslmode=verify-full'
 
 kubectl create secret generic navidrome-secret-vars \
-  --namespace=navidrome \
+  --namespace=media \
   --from-literal=ND_LASTFM_APIKEY=key_goes_here \
   --from-literal=ND_LASTFM_SECRET=secret_goes_here \
   --from-literal=ND_SPOTIFY_ID=key_goes_here \
