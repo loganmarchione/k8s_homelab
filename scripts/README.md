@@ -129,6 +129,10 @@ kubectl create secret generic navidrome-secret-vars \
   --from-literal=ND_LASTFM_SECRET=secret_goes_here \
   --from-literal=ND_SPOTIFY_ID=key_goes_here \
   --from-literal=ND_SPOTIFY_SECRET=secret_goes_here
+
+kubectl create secret generic jqplay-secret-vars \
+  --namespace=tools \
+  --from-literal=DATABASE_URL='postgres://db_user:db_password@db.your.domain.com:5432/db_name?sslmode=require'
 ```
 
 Verify the secrets were created.
