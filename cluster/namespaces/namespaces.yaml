@@ -12,11 +12,6 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cyberchef
----
-apiVersion: v1
-kind: Namespace
-metadata:
   name: drawio
 ---
 apiVersion: v1
@@ -38,11 +33,6 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: joplin
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: jqplay
 ---
 apiVersion: v1
 kind: Namespace
@@ -82,11 +72,6 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: string-is
----
-apiVersion: v1
-kind: Namespace
-metadata:
   name: tig
 ---
 apiVersion: v1
@@ -103,8 +88,3 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: webdav
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: whoami

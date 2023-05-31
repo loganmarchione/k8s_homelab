@@ -2,61 +2,61 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: string-is-deployment
-  namespace: string-is
+  name: whoami-deployment
+  namespace: tools
 spec:
-  replicas: 1
+  replicas: 3
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: string-is
+      app: whoami
   template:
     metadata:
       labels:
-        app: string-is
+        app: whoami
     spec:
       containers:
-        - name: string-is
-          image: daveperrett/string-is:v1.34.11
+        - name: whoami
+          image: traefik/whoami:v1.9.0
           ports:
-            - containerPort: 3000
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: string-is-service
-  namespace: string-is
+  name: whoami-service
+  namespace: tools
 spec:
   type: ClusterIP
   ports:
     - name: http
-      targetPort: 3000
-      port: 3000
+      targetPort: 80
+      port: 80
       protocol: TCP
   selector:
-    app: string-is
+    app: whoami
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: string-is-ingress
-  namespace: string-is
+  name: whoami-ingress
+  namespace: tools
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: string-is.${SECRET_INTERNAL_DOMAIN_NAME}
+    - host: whoami.${SECRET_INTERNAL_DOMAIN_NAME}
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: string-is-service
+                name: whoami-service
                 port:
-                  number: 3000
+                  number: 80
   tls:
     - hosts:
-        - string-is.${SECRET_INTERNAL_DOMAIN_NAME}
-      secretName: string-is-tls
+        - whoami.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: whoami-tls
