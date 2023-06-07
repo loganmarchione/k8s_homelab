@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: drawio-deployment
-  namespace: drawio
+  namespace: tools
 spec:
   replicas: 1
   revisionHistoryLimit: 2
@@ -28,7 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: drawio-service
-  namespace: drawio
+  namespace: tools
 spec:
   type: ClusterIP
   ports:
@@ -43,7 +43,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: drawio-ingress
-  namespace: drawio
+  namespace: tools 
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     traefik.ingress.kubernetes.io/router.tls: "true"
