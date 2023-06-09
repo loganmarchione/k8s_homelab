@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: registry-ui
-          image: joxit/docker-registry-ui:2.4.1
+          image: joxit/docker-registry-ui:2.5.0
           ports:
             - containerPort: 80
           env:
