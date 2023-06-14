@@ -22,16 +22,15 @@
       "automergeType": "pr",
       "platformAutomerge": true
     }
-  ],
-  "docker": {
-    "corentinth/it-tools": {
-      "matchUpdateTypes": ["pinDigest"],
-      "matchStrings": ["^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$"],
-      "replaceStrings": ["{{newVersion}}"],
+    {
+      "packageNames": ["corentinth/it-tools"],
+      "updateTypes": ["pinDigest"],
+      "matchStrings": ["corentinth/it-tools:\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+"],
+      "replaceString": "{{newVersion}}",
       "schedule": ["live"],
       "groupName": "custom-it-tools"
     }
-  },
+  ],
   "flux": {
     "fileMatch": ["cluster/.+\\.ya?ml$"]
   },
