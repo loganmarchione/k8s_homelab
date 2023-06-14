@@ -47,8 +47,8 @@
     },
     {
       "fileMatch": ["cluster/apps/tools/it-tools.yaml"],
-      "matchStrings": ["corentinth/it-tools:\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+?"],
-      "datasourceTemplate": "kubernetes"
+      "matchStrings": ["(?<=image: corentinth/it-tools:)[^\\s]+$"],
+      "matchReplace": "{{#if containsMatch \"{{newValue}}\" \"^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$\"}}{{newValue}}{{else}}{{oldValue}}{{/if}}"
     }
   ]
 }
