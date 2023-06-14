@@ -25,8 +25,8 @@
     {
       "packageNames": ["corentinth/it-tools"],
       "updateTypes": ["pinDigest"],
-      "matchStrings": ["corentinth/it-tools:\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+"],
-      "replace": "{{#if (containsMatch \"{{newValue}}\" \"^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$\")}}corentinth/it-tools:{{newValue}}{{else}}{{{.OriginalValue}}}{{/if}}",
+      "matchStrings": ["(corentinth/it-tools:)\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+"],
+      "matchReplace": "{{#if (containsMatch \"{{newValue}}\" \"^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$\")}}$1{{newValue}}{{else}}{{oldValue}}{{/if}}",
       "groupName": "custom-it-tools"
     }
   ],
