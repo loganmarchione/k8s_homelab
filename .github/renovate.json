@@ -23,11 +23,15 @@
       "platformAutomerge": true
     },
     {
-      "packageNames": ["corentinth/it-tools"],
-      "updateLabels": ["docker"],
-      "matchFilePatterns": ["cluster/.+\\.ya?ml"],
-      "matchStrings": ["(image: corentinth/it-tools:)\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+"],
-      "replaceString": "$1{{#if (containsMatch \"{{newValue}}\" \"^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$\")}}{{newValue}}{{else}}{{oldValue}}{{/if}}"
+      "depType": "docker",
+      "docker": {
+        "imageName": "corentinth/it-tools"
+      },
+      "matchUpdateTypes": ["pinDigest"],
+      "matchStrings": ["^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$"],
+      "replaceStrings": ["{{newVersion}}"],
+      "schedule": ["live"],
+      "groupName": "custom-it-tools"
     }
   ],
   "flux": {
