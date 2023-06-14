@@ -23,11 +23,8 @@
       "platformAutomerge": true
     },
     {
-      "packageNames": ["corentinth/it-tools"],
-      "updateTypes": ["pinDigest"],
-      "matchStrings": ["(corentinth/it-tools:)\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+"],
-      "replace": "$1{{newVersion}}",
-      "groupName": "custom-it-tools"
+      "matchPackageNames": ["corentinth/it-tools"],
+      "versioning": "loose"
     }
   ],
   "flux": {
