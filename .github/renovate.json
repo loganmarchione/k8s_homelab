@@ -21,6 +21,13 @@
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
+    },
+    {
+      "packageNames": ["corentinth/it-tools"],
+      "updateLabels": ["docker"],
+      "matchFilePatterns": ["cluster/.+\\.ya?ml"],
+      "matchStrings": ["(image: corentinth/it-tools:)\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+"],
+      "replaceString": "$1{{#if (containsMatch \"{{newValue}}\" \"^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$\")}}{{newValue}}{{else}}{{oldValue}}{{/if}}"
     }
   ],
   "flux": {
@@ -44,15 +51,6 @@
       "fileMatch": ["cluster\/.+\/kustomization.ya?ml$"],
       "matchStrings": ["https:\/\/raw\\.githubusercontent\\.com\/(?<depName>[^\/]*\/[^\/]*)\/(?<currentValue>.*?)\/"],
       "datasourceTemplate": "github-tags"
-    },
-    {
-      "fileMatch": ["cluster/apps/tools/it-tools.yaml"],
-      "matchStrings": ["(image: corentinth/it-tools:)\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+"],
-      "transform": "{{#replace}}{{oldValue}}{{/replace}}",
-      "replace": {
-        "search": "image: corentinth/it-tools:",
-        "replace": "image: corentinth/it-tools:{{#if (containsMatch \"{{newValue}}\" \"^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$\")}}{{newValue}}{{else}}{{oldValue}}{{/if}}"
-      }
     }
   ]
 }
