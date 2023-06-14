@@ -47,8 +47,12 @@
     },
     {
       "fileMatch": ["cluster/apps/tools/it-tools.yaml"],
-      "matchStrings": ["(?<=image: corentinth/it-tools:)[^\\s]+$"],
-      "matchReplace": "{{#if containsMatch \"{{newValue}}\" \"^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$\"}}{{newValue}}{{else}}{{oldValue}}{{/if}}"
+      "matchStrings": ["(image: corentinth/it-tools:)\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+"],
+      "transform": "{{#replace}}{{oldValue}}{{/replace}}",
+      "replace": {
+        "search": "image: corentinth/it-tools:",
+        "replace": "image: corentinth/it-tools:{{#if (containsMatch \"{{newValue}}\" \"^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$\")}}{{newValue}}{{else}}{{oldValue}}{{/if}}"
+      }
     }
   ]
 }
