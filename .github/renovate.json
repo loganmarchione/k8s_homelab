@@ -28,7 +28,7 @@
     },
     {
       "matchPackageNames": ["ghcr.io/jellyfin/jellyfin-vue"],
-      "versioning": "regex:^unstable\.(?<major>\d{4})-(?<minor>\d{2})-(?<patch>\d{2})\.(?<commit>[a-f0-9]{7})$"
+      "versioning": "regex:^unstable\.(?<major>\d{4})-(?<minor>\d{2})-(?<patch>\d{2}).*"
     }
   ],
   "flux": {
