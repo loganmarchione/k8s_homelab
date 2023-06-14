@@ -21,19 +21,17 @@
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
-    },
-    {
-      "depType": "docker",
-      "docker": {
-        "imageName": "corentinth/it-tools"
-      },
+    }
+  ],
+  "docker": {
+    "corentinth/it-tools": {
       "matchUpdateTypes": ["pinDigest"],
       "matchStrings": ["^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$"],
       "replaceStrings": ["{{newVersion}}"],
       "schedule": ["live"],
       "groupName": "custom-it-tools"
     }
-  ],
+  },
   "flux": {
     "fileMatch": ["cluster/.+\\.ya?ml$"]
   },
