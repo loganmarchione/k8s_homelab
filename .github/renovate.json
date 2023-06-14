@@ -26,7 +26,7 @@
       "packageNames": ["corentinth/it-tools"],
       "updateTypes": ["pinDigest"],
       "matchStrings": ["corentinth/it-tools:\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+"],
-      "replaceString": "{{newVersion}}",
+      "replace": "{{#if (containsMatch \"{{newValue}}\" \"^\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+$\")}}corentinth/it-tools:{{newValue}}{{else}}{{{.OriginalValue}}}{{/if}}",
       "groupName": "custom-it-tools"
     }
   ],
