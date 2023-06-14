@@ -25,6 +25,10 @@
     {
       "matchPackageNames": ["corentinth/it-tools"],
       "versioning": "loose"
+    },
+    {
+      "matchPackageNames": ["ghcr.io/jellyfin/jellyfin-vue"],
+      "versioning": "loose"
     }
   ],
   "flux": {
