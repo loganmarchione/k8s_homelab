@@ -44,6 +44,11 @@
       "fileMatch": ["cluster\/.+\/kustomization.ya?ml$"],
       "matchStrings": ["https:\/\/raw\\.githubusercontent\\.com\/(?<depName>[^\/]*\/[^\/]*)\/(?<currentValue>.*?)\/"],
       "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": ["cluster/apps/tools/it-tools.yaml"],
+      "matchStrings": ["corentinth/it-tools:\\d{4}\\.\\d{1,2}\\.\\d{1,2}-[0-9a-fA-F]+?"],
+      "datasourceTemplate": "kubernetes"
     }
   ]
 }
