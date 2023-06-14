@@ -21,7 +21,7 @@
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
-    }
+    },
     {
       "packageNames": ["corentinth/it-tools"],
       "updateTypes": ["pinDigest"],
