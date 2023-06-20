@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: webdav
-          image: loganmarchione/docker-webdav-nginx:0.2.0
+          image: loganmarchione/docker-webdav-nginx:0.3.1
           ports:
             - containerPort: 80
           env:
