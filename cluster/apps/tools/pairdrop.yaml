@@ -1,0 +1,62 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pairdrop-deployment
+  namespace: tools
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: pairdrop
+  template:
+    metadata:
+      labels:
+        app: pairdrop
+    spec:
+      containers:
+        - name: pairdrop
+          image: lscr.io/linuxserver/pairdrop:1.7.6
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pairdrop-service
+  namespace: tools
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 3000
+      port: 3000
+      protocol: TCP
+  selector:
+    app: pairdrop
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pairdrop-ingress
+  namespace: tools
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: pairdrop.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pairdrop-service
+                port:
+                  number: 3000
+  tls:
+    - hosts:
+        - pairdrop.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: pairdrop-tls
