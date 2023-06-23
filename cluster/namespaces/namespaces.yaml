@@ -77,9 +77,4 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: unifi
----
-apiVersion: v1
-kind: Namespace
-metadata:
   name: webdav

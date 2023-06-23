@@ -181,11 +181,6 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>This was already installed, just exposing it with ingress and basic auth</a></td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/ubiquiti.svg"></td>
-        <td><a href="https://hub.docker.com/r/ryansch/unifi-rpi">UniFi</a></td>
-        <td>A Dockerized version of <a href="https://www.ui.com/download/unifi/">UniFi Controller</a></td>
-    </tr>
-    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/weaveworks.svg"></td>
         <td><a href="https://github.com/weaveworks/weave-gitops">Weave GitOps</a></td>
         <td>Web-based management for Flux</td>
