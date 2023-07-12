@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: geoipupdate
-          image: ghcr.io/maxmind/geoipupdate:v5.1.1
+          image: ghcr.io/maxmind/geoipupdate:v6.0.0
           env:
             - name: GEOIPUPDATE_EDITION_IDS
               value: 'GeoLite2-ASN GeoLite2-City GeoLite2-Country'
