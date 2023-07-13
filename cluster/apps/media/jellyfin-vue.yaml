@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: jellyfin-vue
-          image: ghcr.io/jellyfin/jellyfin-vue:unstable.2023-07-04.4b5abc4
+          image: ghcr.io/jellyfin/jellyfin-vue:unstable.2023-07-12.7db79f0
           ports:
             - containerPort: 80
           env:
