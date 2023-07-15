@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: cyberchef
-          image: mpepping/cyberchef:v10.4.0
+          image: mpepping/cyberchef:v10.5.2
           ports:
             - containerPort: 8000
 ---
