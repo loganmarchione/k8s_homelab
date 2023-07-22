@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: miniflux
-          image: miniflux/miniflux:2.0.45
+          image: miniflux/miniflux:2.0.46
           ports:
             - containerPort: 8080
           env:
