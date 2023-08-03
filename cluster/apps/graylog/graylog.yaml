@@ -37,7 +37,7 @@ spec:
             - name: GRAYLOG_HTTP_BIND_ADDRESS
               value: '0.0.0.0:9000'
             - name: GRAYLOG_HTTP_EXTERNAL_URI
-              value: https://graylog.${SECRET_INTERNAL_DOMAIN_NAME}/
+              value: https://graylog-k3s.${SECRET_INTERNAL_DOMAIN_NAME}/
             - name: GRAYLOG_ELASTICSEARCH_HOSTS
               valueFrom:
                 secretKeyRef:
@@ -113,7 +113,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: graylog.${SECRET_INTERNAL_DOMAIN_NAME}
+    - host: graylog-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
       http:
         paths:
           - path: /
@@ -125,5 +125,5 @@ spec:
                   number: 9000
   tls:
     - hosts:
-        - graylog.${SECRET_INTERNAL_DOMAIN_NAME}
+        - graylog-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
       secretName: graylog-tls
