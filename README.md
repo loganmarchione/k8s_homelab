@@ -96,11 +96,6 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Part of the TIG stack (Telegraf, InfluxDB, Grafana)</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/graylog.svg"></td>
-        <td><a href="https://hub.docker.com/r/graylog/graylog/">Graylog</a></td>
-        <td>Open-source log management</td>
-    </tr>
-    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/ittools.svg"></td>
         <td><a href="https://hub.docker.com/r/corentinth/it-tools">IT-Tools</a></td>
         <td>Collection of handy online tools for developers</td>
@@ -119,11 +114,6 @@ The applications that run in my homelab (listed in alphabetical order)
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/owenthereal/jqplay/master/assets/images/favicon.png"></td>
         <td><a href="https://github.com/owenthereal/jqplay">jqplay</a></td>
         <td>A playground for jq, written in Go </td>
-    </tr>
-    <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/maxmind.svg"></td>
-        <td><a href="https://github.com/maxmind/geoipupdate/">MaxMind GeoIP Update</a></td>
-        <td>GeoIP database</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/miniflux.svg"></td>

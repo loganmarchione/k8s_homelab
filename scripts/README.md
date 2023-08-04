@@ -110,15 +110,6 @@ kubectl create secret generic smtp-secret-vars \
   --from-literal=RELAY_USER=admin \
   --from-literal=RELAY_PASS=super_secret_password_goes_here
 
-kubectl create secret generic graylog-secret-vars \
-  --namespace=graylog \
-  --from-literal=GEOIPUPDATE_ACCOUNT_ID=123456 \
-  --from-literal=GEOIPUPDATE_LICENSE_KEY=XXXXXXXXXXXXXXXX \
-  --from-literal=GRAYLOG_ELASTICSEARCH_HOSTS='http://elasticsearch.your.domain.com:9200' \
-  --from-literal=GRAYLOG_MONGODB_URI='mongodb://db_user:db_password@db.your.domain.com:27017/db_name?ssl=true' \
-  --from-literal=GRAYLOG_PASSWORD_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
-  --from-literal=GRAYLOG_ROOT_PASSWORD_SHA2=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
 kubectl create secret generic joplin-secret-vars \
   --namespace=joplin \
   --from-literal=POSTGRES_CONNECTION_STRING='postgresql://db_user:db_password@db.your.domain.com:5432/db_name?sslmode=verify-full'

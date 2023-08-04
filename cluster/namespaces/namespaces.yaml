@@ -22,11 +22,6 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: graylog
----
-apiVersion: v1
-kind: Namespace
-metadata:
   name: joplin
 ---
 apiVersion: v1
