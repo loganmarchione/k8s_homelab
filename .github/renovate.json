@@ -23,13 +23,6 @@
       "platformAutomerge": true
     },
     {
-      "managers": ["docker"],
-      "matchUpdateTypes": ["patch"],
-      "automerge": true,
-      "automergeType": "pr",
-      "platformAutomerge": true
-    },
-    {
       "matchPackageNames": ["corentinth/it-tools"],
       "versioning": "loose"
     },
