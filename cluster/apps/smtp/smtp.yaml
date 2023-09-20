@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: smtp
-          image: loganmarchione/docker-postfixrelay:1.4.0
+          image: loganmarchione/docker-postfixrelay:1.4.1
           ports:
             - containerPort: 25
           env:
