@@ -10,7 +10,7 @@
   "packageRules": [
     {
       "managers": ["kubernetes"],
-      "matchUpdateTypes": ["patch"],
+      "matchUpdateTypes": ["patch","digest"],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
