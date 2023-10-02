@@ -1,0 +1,62 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spdf-deployment
+  namespace: tools
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: spdf
+  template:
+    metadata:
+      labels:
+        app: spdf
+    spec:
+      containers:
+        - name: spdf
+          image: ghcr.io/frooodle/s-pdf:0.14.3
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spdf-service
+  namespace: tools
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      targetPort: 8080
+      port: 8080
+      protocol: TCP
+  selector:
+    app: spdf
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: spdf-ingress
+  namespace: tools
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: spdf.${SECRET_INTERNAL_DOMAIN_NAME}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: spdf-service
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - spdf.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: spdf-tls
