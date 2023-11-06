@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: it-tools
-          image: corentinth/it-tools:2023.11.1-e164afb
+          image: corentinth/it-tools:2023.11.2-7d94e11
           ports:
             - containerPort: 80
 ---
