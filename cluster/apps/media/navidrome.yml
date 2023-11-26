@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: navidrome
-          image: ghcr.io/navidrome/navidrome:0.50.0
+          image: ghcr.io/navidrome/navidrome:0.50.1
           ports:
             - containerPort: 4533
           env:
