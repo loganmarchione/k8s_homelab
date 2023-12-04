@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: codeserver
-          image: lscr.io/linuxserver/code-server:4.19.0
+          image: lscr.io/linuxserver/code-server:4.19.1
           ports:
             - containerPort: 8443
           volumeMounts:
