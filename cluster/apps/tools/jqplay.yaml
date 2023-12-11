@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: jqplay
-          image: ghcr.io/owenthereal/jqplay:master@sha256:b9fe59cdd6f6668768af51348bf6e8fefdd7eb3320a796e054ea8a4ae18a1e85
+          image: ghcr.io/owenthereal/jqplay:master@sha256:d83255c852862754ab99cc88b97f4da1876dcbe987bd2b8926009b0aa33c00e1
           ports:
             - containerPort: 8080
           env:
