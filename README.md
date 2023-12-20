@@ -116,11 +116,6 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Minimalist and opinionated feed reader</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/navidrome.svg"></td>
-        <td><a href="https://github.com/navidrome/navidrome">Navidrome</a></td>
-        <td>Modern Music Server and Streamer compatible with Subsonic/Airsonic</td>
-    </tr>
-    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/postgresql.svg"></td>
         <td><a href="https://hub.docker.com/r/dpage/pgadmin4">pgAdmin 4</a></td>
         <td>Management tool for Postgres</td>
