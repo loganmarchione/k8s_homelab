@@ -25,10 +25,6 @@
     {
       "matchPackageNames": ["corentinth/it-tools"],
       "versioning": "loose"
-    },
-    {
-      "matchPackageNames": ["ghcr.io/jellyfin/jellyfin-vue"],
-      "versioning": "regex:^unstable\\.(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)\\.(?<build>[^.]+)?$"
     }
   ],
   "flux": {
