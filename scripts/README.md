@@ -96,15 +96,6 @@ kubectl create secret generic webdav-secret-vars \
   --from-literal=WEBDAV_USER=admin \
   --from-literal=WEBDAV_PASS=super_secret_password_goes_here
 
-kubectl create secret generic smtp-secret-vars \
-  --namespace=smtp \
-  --from-literal=RELAY_HOST=smtp.public-domain.com \
-  --from-literal=RELAY_PORT=587 \
-  --from-literal=TEST_EMAIL=name@email.com \
-  --from-literal=MYORIGIN=your.domain.com \
-  --from-literal=RELAY_USER=admin \
-  --from-literal=RELAY_PASS=super_secret_password_goes_here
-
 kubectl create secret generic joplin-secret-vars \
   --namespace=joplin \
   --from-literal=POSTGRES_CONNECTION_STRING='postgresql://db_user:db_password@db.your.domain.com:5432/db_name?sslmode=verify-full'
