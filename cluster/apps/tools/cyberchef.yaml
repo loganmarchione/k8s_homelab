@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
         - name: cyberchef
-          image: mpepping/cyberchef:v10.9.0
+          image: ghcr.io/gchq/cyberchef:10.14.0
           ports:
-            - containerPort: 8000
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -30,8 +30,8 @@ spec:
   type: ClusterIP
   ports:
     - name: http
-      targetPort: 8000
-      port: 8000
+      targetPort: 80
+      port: 80
       protocol: TCP
   selector:
     app: cyberchef
@@ -55,7 +55,7 @@ spec:
               service:
                 name: cyberchef-service
                 port:
-                  number: 8000
+                  number: 80
   tls:
     - hosts:
         - cyberchef.${SECRET_INTERNAL_DOMAIN_NAME}
