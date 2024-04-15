@@ -7,14 +7,14 @@
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard",
   "labels": ["renovatebot"],
+  "separateMinorPatch": true,
   "packageRules": [
     {
       "managers": ["kubernetes"],
       "matchUpdateTypes": ["patch","digest"],
       "automerge": true,
       "automergeType": "pr",
-      "platformAutomerge": true,
-      "separateMinorPatch": true
+      "platformAutomerge": true
     },
     {
       "managers": ["flux"],
