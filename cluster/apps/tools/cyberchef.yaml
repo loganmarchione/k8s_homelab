@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: cyberchef
-          image: ghcr.io/gchq/cyberchef:10.16.0
+          image: ghcr.io/gchq/cyberchef:10.17.0
           ports:
             - containerPort: 80
 ---
