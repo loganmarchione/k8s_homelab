@@ -16,6 +16,13 @@
       "platformAutomerge": true
     },
     {
+      "managers": ["docker"],
+      "matchUpdateTypes": ["patch","digest"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    },
+    {
       "managers": ["flux"],
       "matchUpdateTypes": ["patch"],
       "automerge": true,
