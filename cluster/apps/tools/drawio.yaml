@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: drawio
-          image: jgraph/drawio:24.2.7
+          image: jgraph/drawio:24.3.1
           ports:
             - containerPort: 8080
           env:
