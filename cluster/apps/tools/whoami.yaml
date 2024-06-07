@@ -59,4 +59,4 @@ spec:
   tls:
     - hosts:
         - whoami-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
-      secretName: whoami-tls
+      secretName: whoami-k3s-tls
