@@ -46,7 +46,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: whoami.${SECRET_INTERNAL_DOMAIN_NAME}
+    - host: whoami-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
       http:
         paths:
           - path: /
@@ -58,5 +58,5 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - whoami.${SECRET_INTERNAL_DOMAIN_NAME}
+        - whoami-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
       secretName: whoami-tls
