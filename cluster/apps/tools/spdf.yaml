@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: spdf
-          image: ghcr.io/frooodle/s-pdf:0.18.1
+          image: ghcr.io/stirling-tools/s-pdf:0.26.0
           ports:
             - containerPort: 8080
 ---
