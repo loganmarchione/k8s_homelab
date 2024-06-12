@@ -108,12 +108,17 @@ The applications that run in my homelab (listed in alphabetical order)
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/owenthereal/jqplay/master/assets/images/favicon.png"></td>
         <td><a href="https://github.com/owenthereal/jqplay">jqplay</a></td>
-        <td>A playground for jq, written in Go </td>
+        <td>A playground for jq, written in Go</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/miniflux.svg"></td>
         <td><a href="https://hub.docker.com/r/miniflux/miniflux">Miniflux</a></td>
         <td>Minimalist and opinionated feed reader</td>
+    </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/pairdrop.svg"></td>
+        <td><a href="https://hub.docker.com/r/linuxserver/pairdrop">PairDrop</a></td>
+        <td>Local file sharing in your web browser (AirDrop alternative)</td>
     </tr>
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/postgresql.svg"></td>
@@ -140,6 +145,12 @@ The applications that run in my homelab (listed in alphabetical order)
         <td><a href="https://hub.docker.com/r/loganmarchione/docker-php-startpage">Startpage</a></td>
         <td>PHP/HTML startpage (my own container image)</td>
     </tr>
+    <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/stirlingpdf.svg"></td>
+        <td><a href="https://hub.docker.com/r/frooodle/s-pdf">StirlingPDF</a></td>
+        <td>web-based PDF manipulation tool</td>
+    </tr>
+
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/stringis.svg"></td>
         <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
