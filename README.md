@@ -150,7 +150,6 @@ The applications that run in my homelab (listed in alphabetical order)
         <td><a href="https://hub.docker.com/r/frooodle/s-pdf">StirlingPDF</a></td>
         <td>web-based PDF manipulation tool</td>
     </tr>
-
     <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/stringis.svg"></td>
         <td><a href="https://hub.docker.com/r/daveperrett/string-is">string.is</a></td>
