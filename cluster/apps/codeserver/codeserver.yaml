@@ -35,6 +35,11 @@ spec:
           image: lscr.io/linuxserver/code-server:4.90.0
           ports:
             - containerPort: 8443
+          env:
+            - name: DOCKER_MODS
+              value: "linuxserver/mods:code-server-docker|linuxserver/mods:code-server-extension-arguments"
+            - name: VSCODE_EXTENSION_IDS
+              value: "ms-python.python"
           volumeMounts:
             - name: config
               mountPath: /config
