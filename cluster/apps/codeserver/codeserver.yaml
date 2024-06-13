@@ -39,7 +39,7 @@ spec:
             - name: DOCKER_MODS
               value: "linuxserver/mods:code-server-docker|linuxserver/mods:code-server-extension-arguments"
             - name: VSCODE_EXTENSION_IDS
-              value: "arcticicestudio.nord-visual-studio-code|dracula-theme.theme-dracula|eamodio.gitlens|golang.go|HashiCorp.HCL|HashiCorp.terraform|ms-azuretools.vscode-docker|ms-python.python|redhat.ansible|redhat.vscode-xml|redhat.vscode-yaml|vscode-icons-team.vscode-icons"
+              value: "arcticicestudio.nord-visual-studio-code|dracula-theme.theme-dracula|eamodio.gitlens|golang.go|HashiCorp.HCL|HashiCorp.terraform|ms-azuretools.vscode-docker|ms-python.python|redhat.ansible|redhat.vscode-xml|redhat.vscode-yaml|streetsidesoftware.code-spell-checker|vscode-icons-team.vscode-icons"
           volumeMounts:
             - name: config
               mountPath: /config
