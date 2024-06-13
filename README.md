@@ -161,11 +161,6 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>This was already installed, just exposing it with ingress and basic auth</a></td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/nginx.svg"></td>
-        <td><a href="https://hub.docker.com/r/loganmarchione/docker-webdav-nginx">WebDAV</a></td>
-        <td>Nginx WebDAV server (my own container image)</td>
-    </tr>
-    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/go-blue.svg"></td>
         <td><a href="https://hub.docker.com/r/traefik/whoami/">whoami</a></td>
         <td>Test web app written in Go</td>
