@@ -39,7 +39,7 @@ spec:
             - name: DOCKER_MODS
               value: "linuxserver/mods:code-server-docker|linuxserver/mods:code-server-extension-arguments"
             - name: VSCODE_EXTENSION_IDS
-              value: "ms-python.python"
+              value: "HashiCorp.HCL|HashiCorp.terraform|ms-azuretools.vscode-docker|ms-python.python|redhat.ansible|redhat.vscode-xml|redhat.vscode-yaml"
           volumeMounts:
             - name: config
               mountPath: /config
