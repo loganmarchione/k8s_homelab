@@ -141,11 +141,6 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Docker image registry UI</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/php.svg"></td>
-        <td><a href="https://hub.docker.com/r/loganmarchione/docker-php-startpage">Startpage</a></td>
-        <td>PHP/HTML startpage (my own container image)</td>
-    </tr>
-    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/stirlingpdf.svg"></td>
         <td><a href="https://hub.docker.com/r/frooodle/s-pdf">StirlingPDF</a></td>
         <td>web-based PDF manipulation tool</td>

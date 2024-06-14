@@ -47,11 +47,6 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: startpage
----
-apiVersion: v1
-kind: Namespace
-metadata:
   name: tig
 ---
 apiVersion: v1
