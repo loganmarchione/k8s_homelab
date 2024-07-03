@@ -77,7 +77,7 @@ The applications that run in my homelab (listed in alphabetical order)
     </tr>
     <tr>
          <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/cyberchef.svg"></td>
-        <td><a href="https://hub.docker.com/r/mpepping/cyberchef">CyberChef</a></td>
+        <td><a href="https://github.com/gchq/CyberChef">CyberChef</a></td>
         <td>A Dockerized version of <a href="https://github.com/gchq/CyberChef/">GCHQ's Cyber Swiss Army Knife</a></td>
     </tr>
     <tr>
