@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: grafana
-          image: grafana/grafana-oss:11.2.2
+          image: grafana/grafana-oss:11.3.0
           ports:
             - containerPort: 3000
           env:
