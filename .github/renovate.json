@@ -1,53 +1,86 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     "schedule:nonOfficeHours"
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard",
-  "labels": ["renovatebot"],
+  "labels": [
+    "renovatebot"
+  ],
   "separateMinorPatch": true,
   "packageRules": [
     {
-      "managers": ["kubernetes"],
-      "matchUpdateTypes": ["patch","digest"],
+      "matchManagers": [
+        "kubernetes"
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "digest"
+      ],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
     },
     {
-      "managers": ["flux"],
-      "matchUpdateTypes": ["patch"],
+      "matchManagers": [
+        "flux"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
     },
     {
-      "matchPackageNames": ["corentinth/it-tools"],
+      "matchPackageNames": [
+        "corentinth/it-tools"
+      ],
       "versioning": "loose"
     }
   ],
   "flux": {
-    "fileMatch": ["cluster/.+\\.ya?ml$"]
+    "fileMatch": [
+      "cluster/.+\\.ya?ml$"
+    ]
   },
   "helm-values": {
-    "fileMatch": ["cluster/.+\\.ya?ml$"],
-    "ignorePaths": ["cluster/base/"]
+    "fileMatch": [
+      "cluster/.+\\.ya?ml$"
+    ],
+    "ignorePaths": [
+      "cluster/base/"
+    ]
   },
   "kubernetes": {
-    "fileMatch": ["cluster/.+\\.ya?ml$"],
-    "ignorePaths": ["cluster/base/"]
+    "fileMatch": [
+      "cluster/.+\\.ya?ml$"
+    ],
+    "ignorePaths": [
+      "cluster/base/"
+    ]
   },
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["cluster\/.+\/kustomization.ya?ml$"],
-      "matchStrings": ["https:\/\/github\\.com\/(?<depName>.*\/.*?)\/releases\/download\/(?<currentValue>.*?)\/"],
+      "customType": "regex",
+      "fileMatch": [
+        "cluster/.+/kustomization.ya?ml$"
+      ],
+      "matchStrings": [
+        "https://github\\.com/(?<depName>.*/.*?)/releases/download/(?<currentValue>.*?)/"
+      ],
       "datasourceTemplate": "github-releases"
     },
     {
-      "fileMatch": ["cluster\/.+\/kustomization.ya?ml$"],
-      "matchStrings": ["https:\/\/raw\\.githubusercontent\\.com\/(?<depName>[^\/]*\/[^\/]*)\/(?<currentValue>.*?)\/"],
+      "customType": "regex",
+      "fileMatch": [
+        "cluster/.+/kustomization.ya?ml$"
+      ],
+      "matchStrings": [
+        "https://raw\\.githubusercontent\\.com/(?<depName>[^/]*/[^/]*)/(?<currentValue>.*?)/"
+      ],
       "datasourceTemplate": "github-tags"
     }
   ]
