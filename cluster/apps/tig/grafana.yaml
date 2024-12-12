@@ -70,6 +70,8 @@ metadata:
   namespace: tig
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
+    cert-manager.io/private-key-algorithm: RSA
+    cert-manager.io/private-key-size: 4096
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:

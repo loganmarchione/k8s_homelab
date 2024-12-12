@@ -31,6 +31,8 @@ metadata:
   namespace: kube-system
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
+    cert-manager.io/private-key-algorithm: RSA
+    cert-manager.io/private-key-size: 4096
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.middlewares: kube-system-traefik-auth@kubernetescrd
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
