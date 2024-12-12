@@ -58,8 +58,6 @@ kubectl create secret generic cluster-secret-vars \
   --namespace=flux-system \
   --from-literal=SECRET_INTERNAL_DOMAIN_NAME=your.domain.com \
   --from-literal=SECRET_LETS_ENCRYPT_EMAIL=name@email.com \
-  --from-literal=SECRET_AWS_REGION=region-here-1 \
-  --from-literal=SECRET_AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE \
   --from-literal=FOCALBOARD_DB_HOST=hostname \
   --from-literal=FOCALBOARD_DB_USER=admin \
   --from-literal=FOCALBOARD_DB_PASS=super_secret_password_goes_here \
@@ -76,9 +74,9 @@ kubectl create secret generic traefik-secret-vars \
   --from-literal=username=admin \
   --from-literal=password=super_secret_password_goes_here
 
-kubectl create secret generic letsencrypt-secret-vars \
+kubectl create secret generic cloudflare-api-token-secret \
   --namespace=cert-manager \
-  --from-literal=SECRET_AWS_ACCESS_KEY=wJalrXUtnFEMIKK7MDENGKbPxRfiCYEXAMPLEKEY
+  --from-literal=api-token='token_goes_here'
 
 kubectl create secret generic pgadmin-secret-vars \
   --namespace=pgadmin4 \
