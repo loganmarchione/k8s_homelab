@@ -75,9 +75,17 @@ installHelm() {
   rmdir linux-amd64
 }
 
+installCmctl() {
+  message "STATE: Installing cmctl"
+  sudo curl -sSL --remote-name https://github.com/cert-manager/cmctl/releases/download/v"${VERSION_CMCTL}"/cmctl_linux_amd64
+  sudo mv cmctl_linux_amd64 /usr/local/bin/cmctl
+  sudo chmod +x /usr/local/bin/cmctl
+}
+
 userCheck
 installPackages
 installK3s
 installHelm
+installCmctl
 
 message "STATE: Completed! Copy/paste this command into your terminal: export KUBECONFIG=\$HOME/.kube/config"
