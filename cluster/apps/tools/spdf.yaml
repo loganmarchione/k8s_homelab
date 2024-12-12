@@ -48,6 +48,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-production
     cert-manager.io/private-key-algorithm: RSA
     cert-manager.io/private-key-size: 4096
+    cert-manager.io/private-key-rotation-policy: Always
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
