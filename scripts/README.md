@@ -178,3 +178,8 @@ If the certificates are not issuing, use the commands below to troubleshoot.
 kubectl get certificaterequest --all-namespaces
 kubectl get order --all-namespaces
 ```
+
+If you need to renew all certificates when you make a a change (e.g., changing DNS solvers)
+```
+cmctl renew --all --all-namespaces
+```
