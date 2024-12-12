@@ -22,7 +22,7 @@ spec:
             - containerPort: 8080
           env:
             - name: SYSTEM_ENABLEANALYTICS
-              value: false
+              value: "false"
 ---
 apiVersion: v1
 kind: Service
