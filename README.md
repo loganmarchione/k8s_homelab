@@ -106,11 +106,6 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Joplin sync server</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/owenthereal/jqplay/master/assets/images/favicon.png"></td>
-        <td><a href="https://github.com/owenthereal/jqplay">jqplay</a></td>
-        <td>A playground for jq, written in Go</td>
-    </tr>
-    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/miniflux.svg"></td>
         <td><a href="https://hub.docker.com/r/miniflux/miniflux">Miniflux</a></td>
         <td>Minimalist and opinionated feed reader</td>
