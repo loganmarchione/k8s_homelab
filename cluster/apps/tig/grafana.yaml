@@ -76,7 +76,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: grafana.${SECRET_INTERNAL_DOMAIN_NAME}
+    - host: grafana-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
       http:
         paths:
           - path: /
@@ -88,5 +88,5 @@ spec:
                   number: 3000
   tls:
     - hosts:
-        - grafana.${SECRET_INTERNAL_DOMAIN_NAME}
-      secretName: grafana-tls
+        - grafana-k3s.${SECRET_INTERNAL_DOMAIN_NAME}
+      secretName: grafana-k3s-tls
