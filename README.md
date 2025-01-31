@@ -91,11 +91,6 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Project and task management (Kanban board)</td>
     </tr>
     <tr>
-        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/grafana.svg"></td>
-        <td><a href="https://hub.docker.com/r/grafana/grafana-oss">Grafana</a></td>
-        <td>Part of the TIG stack (Telegraf, InfluxDB, Grafana)</td>
-    </tr>
-    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/ittools.svg"></td>
         <td><a href="https://hub.docker.com/r/corentinth/it-tools">IT-Tools</a></td>
         <td>Collection of handy online tools for developers</td>
