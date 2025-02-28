@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: pgadmin4
-          image: dpage/pgadmin4:9.0
+          image: dpage/pgadmin4:9.1
           ports:
             - containerPort: 80
           env:
