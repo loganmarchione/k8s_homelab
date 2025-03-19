@@ -26,7 +26,15 @@ spec:
   values:
     app:
       ingress:
-        enabled: false
+        enabled: true
+        hosts: dashboard.${SECRET_INTERNAL_DOMAIN_NAME}
+      ingressClassName: traefik
+      issuer:
+        name: ClusterIssuer
+        scope: cluster
+      tls:
+        enabled: true
+        secretName: "dashboard-tls"
     metricsScraper:
       enabled: false
     metrics-server:
