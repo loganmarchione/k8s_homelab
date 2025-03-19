@@ -17,6 +17,11 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: k8s-dashboard
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: focalboard
 ---
 apiVersion: v1
