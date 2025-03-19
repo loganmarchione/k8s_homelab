@@ -40,7 +40,6 @@ spec:
           traefik.ingress.kubernetes.io/router.tls: "true"
       tls:
         enabled: true
-        secretName: "dashboard-tls"
     metricsScraper:
       enabled: false
     metrics-server:
