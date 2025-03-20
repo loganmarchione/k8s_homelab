@@ -25,6 +25,9 @@ spec:
   # https://github.com/kubernetes/dashboard/blob/master/charts/kubernetes-dashboard/values.yaml
   values:
     app:
+      settings:
+        global:
+          defaultNamespace: _all
       ingress:
         enabled: true
         hosts:
@@ -44,7 +47,7 @@ spec:
           enabled: true
           secretName: kubernetes-dashboard-tls
     metricsScraper:
-      enabled: false
+      enabled: true
     metrics-server:
       enabled: false
     kong:
