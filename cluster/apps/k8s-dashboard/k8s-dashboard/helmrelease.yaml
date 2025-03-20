@@ -27,7 +27,8 @@ spec:
     app:
       ingress:
         enabled: true
-        hosts: dashboard.${SECRET_INTERNAL_DOMAIN_NAME}
+        hosts:
+          - dashboard.${SECRET_INTERNAL_DOMAIN_NAME}
       ingressClassName: traefik
       issuer:
         name: letsencrypt-production
