@@ -166,12 +166,22 @@ kubectl get certificate --all-namespaces
 ```
 
 If the certificates are not issuing, use the commands below to troubleshoot.
+
 ```
 kubectl get certificaterequest --all-namespaces
 kubectl get order --all-namespaces
 ```
 
 If you need to renew all certificates when you make a a change (e.g., changing DNS solvers)
+
 ```
 cmctl renew --all --all-namespaces
+```
+
+### Kubernetes dashboard
+
+Run the command below to get the bearer token for the Kubernetes dashboard
+
+```
+kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath="{.data.token}" | base64 -d
 ```
