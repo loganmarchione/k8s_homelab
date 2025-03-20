@@ -30,6 +30,7 @@ spec:
         hosts:
           - dashboard.${SECRET_INTERNAL_DOMAIN_NAME}
       ingressClassName: traefik
+      useDefaultIngressClass: false
       issuer:
         name: letsencrypt-production
         scope: cluster
