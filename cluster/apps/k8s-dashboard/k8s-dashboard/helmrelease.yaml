@@ -29,20 +29,21 @@ spec:
         enabled: true
         hosts:
           - dashboard.${SECRET_INTERNAL_DOMAIN_NAME}
-      ingressClassName: traefik
-      useDefaultIngressClass: false
-      issuer:
-        name: letsencrypt-production
-        scope: cluster
-      annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-production
-        cert-manager.io/private-key-algorithm: RSA
-        cert-manager.io/private-key-size: "4096"
-        cert-manager.io/private-key-rotation-policy: Always
-        traefik.ingress.kubernetes.io/router.tls: "true"
-      tls:
-        enabled: true
-        secretName: k8s-dashboard-tls
+        ingressClassName: traefik
+        useDefaultIngressClass: false
+        useDefaultAnnotations: false
+        issuer:
+          name: letsencrypt-production
+          scope: cluster
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
+          cert-manager.io/private-key-algorithm: RSA
+          cert-manager.io/private-key-size: "4096"
+          cert-manager.io/private-key-rotation-policy: Always
+          traefik.ingress.kubernetes.io/router.tls: "true"
+        tls:
+          enabled: true
+          secretName: k8s-dashboard-tls
     metricsScraper:
       enabled: false
     metrics-server:
