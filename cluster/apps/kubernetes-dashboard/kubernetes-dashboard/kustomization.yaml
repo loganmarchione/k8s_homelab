@@ -5,3 +5,4 @@ resources:
   - helmrelease.yaml
   - serviceaccount.yaml
   - clusterrolebinding.yaml
+  - secret.yaml
