@@ -96,6 +96,11 @@ The applications that run in my homelab (listed in alphabetical order)
         <td>Collection of handy online tools for developers</td>
     </tr>
     <tr>
+        <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/kubernetes.svg"></td>
+        <td><a href="https://github.com/kubernetes/dashboard">Kubernetes dashboard</a></td>
+        <td>General-purpose web UI for Kubernetes clusters</td>
+    </tr>
+    <tr>
         <td><img vertical-align=baseline width="32" src="https://raw.githubusercontent.com/loganmarchione/svg-assets/main/assets/miniflux.svg"></td>
         <td><a href="https://hub.docker.com/r/miniflux/miniflux">Miniflux</a></td>
         <td>Minimalist and opinionated feed reader</td>
