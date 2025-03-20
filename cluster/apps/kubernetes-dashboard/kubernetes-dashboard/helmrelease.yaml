@@ -2,8 +2,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: k8s-dashboard
-  namespace: k8s-dashboard
+  name: kubernetes-dashboard
+  namespace: kubernetes-dashboard
 spec:
   interval: 15m
   chart:
@@ -12,7 +12,7 @@ spec:
       version: 7.11.1
       sourceRef:
         kind: HelmRepository
-        name: k8s-dashboard-charts
+        name: kubernetes-dashboard-charts
         namespace: flux-system
       interval: 15m
   install:
@@ -42,7 +42,7 @@ spec:
           traefik.ingress.kubernetes.io/router.tls: "true"
         tls:
           enabled: true
-          secretName: k8s-dashboard-tls
+          secretName: kubernetes-dashboard-tls
     metricsScraper:
       enabled: false
     metrics-server:

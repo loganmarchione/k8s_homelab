@@ -17,7 +17,7 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: k8s-dashboard
+  name: kubernetes-dashboard
 ---
 apiVersion: v1
 kind: Namespace
