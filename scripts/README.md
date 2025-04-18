@@ -24,8 +24,8 @@ Start by cloning the repo, editing the `.env` file, and bootstrapping the cluste
 Starting by cloning the repo, editing a few variables, and then installing K3s.
 
 ```
-git clone https://github.com/loganmarchione/k8s_homelab.git
-cd k8s_homelab/scripts
+git clone https://github.com/loganmarchione/homelab-k8s.git
+cd homelab-k8s/scripts
 cp -p .env_sample .env
 vim .env
 #MAKE YOUR CHANGES IN THE .env FILE
